@@ -1,0 +1,16 @@
+.next/
+.next-*/
+node_modules/
+harness/
+pnpm-lock.yaml
+
+# Vendored/hash-locked skill content and change-tracked docs — not this
+# project's own source, don't reformat.
+.agents/
+.claude/
+openspec/
+docs/
+skills-lock.json
+AGENTS.md
+CLAUDE.md
+README.md

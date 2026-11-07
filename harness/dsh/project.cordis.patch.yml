@@ -1,0 +1,45 @@
+# Project overlay for DeepSeek Harness (ADR-0004).
+#
+#   Launch from the repository root:  dsh web --patch harness/dsh/project.cordis.patch.yml
+#   One task, non-interactive:       dsh headless --patch harness/dsh/project.cordis.patch.yml "..."
+#   Inspect the composed tree:       dsh web --patch harness/dsh/project.cordis.patch.yml --dump-config
+#
+# Written against @deepseek-ai/dsh 0.2.2-rc.1 (developer preview). Row ids below
+# come from its shipped bundles; re-run --dump-config after every dsh upgrade.
+# No credentials belong here: model keys go through Settings → Models into
+# $DSH_HOME/.credentials.yaml. A patch replaces a row's whole `config`.
+#
+# Already native, so deliberately NOT configured here:
+#   - AGENTS.md + CLAUDE.md are loaded by dsh-agent-instructions.
+#   - .agents/skills/ is a project skill root of dsh-skill-filesystem.
+#   - Sessions start in the `workspace-write` sandbox with `ask` approval.
+#   - The driver model. Each person picks it in Settings → Models or the
+#     session's model picker (ChatGPT Plus via the `openai-codex` sign-in,
+#     Claude via an Anthropic API key, DeepSeek, ...; see ADR-0004). Those
+#     choices live in ~/.dsh/profiles/<profile>/cordis.patch.yml, and a --patch
+#     overlay applies after that layer. So this file never names the
+#     `agent-default-model` or `llm-pi-ai` rows: doing so would override everyone.
+
+# Data egress: by default dsh attaches session logs (up to 8 MiB per request)
+# to official DeepSeek API requests. This repository's code and data stay out.
+- id: session-log-deepseek
+  disabled: true
+
+# Also drop the active plugin-package list attached to those requests. Session
+# telemetry stays at the shipped FEEDBACK_ONLY: nothing is sent unless a person
+# explicitly submits feedback in the UI.
+- id: plugin-package-inventory-deepseek
+  disabled: true
+
+- insert:
+    # Project memory (ADR-0004). Needs `engram` v3.6.2 on
+    # PATH; storage stays in ~/.engram, scoped to this Git project. Shared
+    # recall is exported with `engram sync` into .engram/ and reviewed like code.
+    - id: memory-engram
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: engram
+        transport: stdio
+        command: engram
+        args: [mcp]
+        cwd: !!js process.cwd()

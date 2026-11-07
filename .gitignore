@@ -1,0 +1,27 @@
+node_modules/
+.pnpm-store/
+dist/
+build/
+.next/
+.next-*/
+.env
+.env.*
+/.ai-login.local.md
+!.env.example
+
+# Verification evidence (per-run logs/screenshots) — keep out of git
+harness/runs/
+
+# Engram (ADR-0004): `engram sync` chunks + manifest under .engram/ ARE tracked
+# (review before commit; harness/checks/memory-secrets.sh scans them); the
+# working database stays local.
+.engram/engram.db
+.engram/engram.db-*
+.engram/tmp/
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Windows folder metadata
+desktop.ini
+Thumbs.db

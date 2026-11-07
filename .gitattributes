@@ -1,0 +1,10 @@
+# Always LF in the repository and working tree, so the Windows checkout and the
+# WSL gate clone see the same bytes (audit: "no CRLF committed").
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.woff2 binary

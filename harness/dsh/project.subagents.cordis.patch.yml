@@ -1,0 +1,28 @@
+# Optional overlay: let the dsh agent delegate one-shot tasks to Codex and
+# Claude Code (ADR-0004). Kept apart from project.cordis.patch.yml because the
+# rows it configures exist only once the provider bundles are installed:
+#
+#   dsh plugin --profile web add @deepseek-ai/dsh-subagent-codex@0.2.2-rc.1 @deepseek-ai/dsh-subagent-claude-code@0.2.2-rc.1
+#   dsh web --patch harness/dsh/project.cordis.patch.yml --patch harness/dsh/project.subagents.cordis.patch.yml
+#
+# Installing selects each bundle's own layer, which inserts the provider rows
+# (subagent-codex, subagent-claude-code) and the global tools subagent_codex and
+# subagent_claude_code. This file only fixes the permission mode of each provider
+# (a patch replaces the row's whole `config`; the bundles ship none).
+#
+# Each delegation starts a fresh, unattended product session in the parent
+# workspace and returns only its final answer. Authentication stays native
+# (`codex login`, `claude` login on this machine): no keys here. Credential-
+# shaped environment variables are scrubbed before the child starts.
+# Never select the sandbox-bypass modes (`dangerously-bypass-approvals-and-sandbox`,
+# `bypassPermissions`); harness/tests/agent-harness.test.cjs rejects them.
+
+# Codex: workspace-write sandbox; permission requests go to Codex auto-review.
+- id: subagent-codex
+  config:
+    permissionMode: approve-for-me
+
+# Claude Code: file edits allowed; every other permission prompt is denied.
+- id: subagent-claude-code
+  config:
+    permissionMode: acceptEdits
