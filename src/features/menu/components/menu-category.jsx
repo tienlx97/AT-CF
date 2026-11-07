@@ -22,12 +22,12 @@ export function MenuCategory({ category, first = false }) {
               {category.name}
             </h2>
             {category.description ? (
-              <p className="mt-2 text-base text-brand-ink/75">
+              <p className="mt-2 text-base text-brand-ink">
                 {category.description}
               </p>
             ) : null}
           </div>
-          <p className="text-sm font-semibold text-brand-ink/70">
+          <p className="text-sm font-semibold text-brand-ink/80">
             {category.items.length} món
           </p>
         </div>

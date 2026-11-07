@@ -2,16 +2,19 @@ import { fallbackSrc, srcSet } from '@/shared/api/media';
 
 /**
  * <picture> with AVIF + WebP srcsets, real width/height (no layout shift),
- * a blur placeholder behind it, lazy unless `priority`.
+ * a blur placeholder behind it, lazy unless `priority`. Only the page's LCP
+ * candidate should also pass `highPriority`, so it does not compete with the
+ * other eager images and the critical scripts on a slow connection.
  * @param {{
  *   item: import('@/shared/types/media').MediaItem, sizes: string, priority?: boolean,
- *   className?: string, imgClassName?: string, alt?: string, fill?: boolean
+ *   highPriority?: boolean, className?: string, imgClassName?: string, alt?: string, fill?: boolean
  * }} props
  */
 export function ResponsiveImage({
   item,
   sizes,
   priority = false,
+  highPriority = priority,
   className = '',
   imgClassName = '',
   alt,
@@ -39,7 +42,7 @@ export function ResponsiveImage({
         height={item.height}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        fetchPriority={priority ? 'high' : 'auto'}
+        fetchPriority={highPriority ? 'high' : 'auto'}
         className={`${fill ? 'h-full w-full object-cover' : 'h-auto w-full'} ${imgClassName}`}
       />
     </picture>

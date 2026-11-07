@@ -34,7 +34,6 @@ export function FeaturedDrinks() {
                 <Link
                   href="/menu/"
                   className="group block transition-transform duration-200 hover:-translate-y-0.5"
-                  aria-label={`${item.name}, ${formatPrice(item.price)}`}
                 >
                   <div className="zoom-frame relative aspect-[4/5] bg-surface">
                     {photo ? (
@@ -45,7 +44,7 @@ export function FeaturedDrinks() {
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center p-4 text-center">
-                        <span className="label-caps leading-relaxed text-brand-ink/55">
+                        <span className="label-caps leading-relaxed text-brand-ink/80">
                           Ảnh ly {item.name}
                         </span>
                       </div>

@@ -54,6 +54,7 @@ export function MasonryGrid({
                 item={item}
                 fill
                 priority={index < eager}
+                highPriority={index === 0 && eager > 0}
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
               />
             )}

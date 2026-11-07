@@ -12,14 +12,14 @@ import { introPhoto } from './intro';
 import { SectionHead } from './section-head';
 
 const WANTED = [
-  { label: 'Ảnh mặt tiền quán, dù xanh', ratio: '4 / 5' },
-  { label: 'Ảnh máy pha cà phê', ratio: '1 / 1' },
-  { label: 'Ảnh ly cà phê muối', ratio: '4 / 5' },
-  { label: 'Ảnh tem ly mang đi', ratio: '1 / 1' },
-  { label: 'Ảnh khách lấy ly buổi sáng', ratio: '4 / 3' },
-  { label: 'Ảnh quầy pha chế', ratio: '4 / 5' },
-  { label: 'Ảnh bàn ghế trước quán', ratio: '1 / 1' },
-  { label: 'Ảnh rót cà phê', ratio: '4 / 5' },
+  { label: 'Ảnh mặt tiền quán, dù xanh' },
+  { label: 'Ảnh máy pha cà phê' },
+  { label: 'Ảnh ly cà phê muối' },
+  { label: 'Ảnh tem ly mang đi' },
+  { label: 'Ảnh khách lấy ly buổi sáng' },
+  { label: 'Ảnh quầy pha chế' },
+  { label: 'Ảnh bàn ghế trước quán' },
+  { label: 'Ảnh rót cà phê' },
 ];
 
 /** The 8–12 best photos as masonry, each opening the lightbox, then a link to /hinh-anh. */
@@ -40,13 +40,10 @@ export function GalleryPreview() {
           {photos.length ? (
             <MasonryGrid items={photos} onOpen={setIndex} />
           ) : (
-            <ul className="columns-2 gap-3 md:columns-4 md:gap-4">
+            <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
               {WANTED.map((shot) => (
-                <li
-                  key={shot.label}
-                  className="mb-3 break-inside-avoid md:mb-4"
-                >
-                  <MediaPlaceholder label={shot.label} ratio={shot.ratio} />
+                <li key={shot.label}>
+                  <MediaPlaceholder label={shot.label} ratio="1 / 1" />
                 </li>
               ))}
             </ul>

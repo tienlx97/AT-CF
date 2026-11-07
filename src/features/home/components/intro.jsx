@@ -19,8 +19,8 @@ export function Intro() {
   const photo = introPhoto();
   return (
     <section aria-labelledby="gioi-thieu" className="py-20 md:py-28">
-      <div className="site-wrap grid items-center gap-10 md:grid-cols-12 md:gap-6">
-        <div className="md:col-span-5">
+      <div className="site-wrap grid items-start gap-10 md:grid-cols-12 md:gap-6">
+        <div className="md:col-span-6">
           <p className="label-caps text-brand">Cà phê pha máy · Mang đi</p>
           <h2
             id="gioi-thieu"
@@ -28,7 +28,7 @@ export function Intro() {
           >
             Quán cà phê mang đi của người {site.address.district}
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-brand-ink/80">
+          <p className="mt-5 text-lg leading-relaxed text-brand-ink">
             {site.intro}
           </p>
           <dl className="mt-8 grid grid-cols-3 gap-4 border-t border-brand-ink/10 pt-6">

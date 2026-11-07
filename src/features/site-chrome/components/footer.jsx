@@ -9,14 +9,14 @@ import { NAV_LINKS, site } from '@/shared/config/site';
 /** Brand-green footer with the white logo, contacts and hours. */
 export function Footer() {
   const { store, online } = site.hours;
-  const heading = 'label-caps mb-4 text-white/70';
+  const heading = 'label-caps mb-4 text-white/90';
   const link = 'nav-link nav-link--light';
   return (
     <footer className="bg-brand pt-16 pb-28 text-white md:pb-12">
       <div className="site-wrap grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4">
           <Logo tone="white" size="lg" />
-          <p className="mt-5 max-w-xs text-base leading-relaxed text-white/90">
+          <p className="mt-5 max-w-xs text-base leading-relaxed text-white">
             {site.tagline}
           </p>
           {site.social.facebook ? (
@@ -102,7 +102,7 @@ export function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="site-wrap mt-14 border-t border-white/20 pt-6 text-sm text-white/80">
+      <div className="site-wrap mt-14 border-t border-white/20 pt-6 text-sm text-white/90">
         © 2026 Anh Tú Coffee · Cà phê pha máy nguyên chất từ {site.foundedYear}
       </div>
     </footer>

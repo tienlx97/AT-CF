@@ -9,7 +9,7 @@ export default async function homeReels(page, { width, check }) {
   await page.shot('reels');
   const posters = await page.eval('document.querySelectorAll("section[aria-labelledby=video-ngan] li button").length');
   check('4–8 reel posters', posters >= 4 && posters <= 8, `${posters}`);
-  const before = page.requests.filter((u) => u.endsWith('.mp4')).length;
+  const before = page.requests.filter((u) => u.endsWith('.mp4') && !u.includes('/hero/')).length;
   check('no clip loads before a tap', before === 0, `${before} mp4 requests`);
 
   await page.click('section[aria-labelledby=video-ngan] li:nth-child(2) button');
@@ -18,7 +18,7 @@ export default async function homeReels(page, { width, check }) {
   check('tap opens the clip in the lightbox', dialog);
   const counter = await page.eval('document.querySelector("[data-lightbox-counter]")?.textContent');
   check('counter shows position', counter === `2 / ${posters}`, counter);
-  const mp4 = page.requests.filter((u) => u.endsWith('.mp4'));
+  const mp4 = page.requests.filter((u) => u.endsWith('.mp4') && !u.includes('/hero/'));
   check('the clip loads after the tap', mp4.length >= 1, mp4.join(', '));
   const focusIn = await page.eval('document.querySelector("[role=dialog]").contains(document.activeElement)');
   check('focus moves into the lightbox', focusIn);

@@ -24,7 +24,7 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
     />
   ) : (
     <div className="flex h-full w-full items-center justify-center bg-surface-alt p-3 text-center">
-      <span className="text-[0.6875rem] leading-snug font-bold tracking-[0.18em] text-brand-ink/60 uppercase">
+      <span className="text-[0.6875rem] leading-snug font-bold tracking-[0.18em] text-brand-ink/80 uppercase">
         {item.name}
       </span>
     </div>
@@ -52,7 +52,7 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
           </p>
         </div>
         {item.description ? (
-          <p className="mt-1 text-base leading-relaxed text-brand-ink/75">
+          <p className="mt-1 text-base leading-relaxed text-brand-ink/85">
             {item.description}
           </p>
         ) : null}

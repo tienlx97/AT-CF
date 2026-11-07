@@ -21,27 +21,27 @@ export function ContactOrder() {
     <section
       id="dat-online"
       aria-labelledby="lien-he-dat-mon"
-      className="bg-brand py-20 text-white md:py-28"
+      className="bg-brand-ink py-20 text-white md:py-28"
     >
       <div className="site-wrap grid gap-12 md:grid-cols-12 md:gap-6">
-        <div className="md:col-span-5">
-          <p className="label-caps text-white/80">Liên hệ · Đặt món</p>
+        <div className="md:col-span-6">
+          <p className="label-caps text-white/90">Liên hệ · Đặt món</p>
           <h2
             id="lien-he-dat-mon"
             className="mt-3 text-3xl leading-tight font-extrabold tracking-tight md:text-[2.75rem]"
           >
             Gọi, nhắn Zalo hoặc đặt online
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-white/90">
+          <p className="mt-4 text-lg leading-relaxed text-white">
             Sáng ghé quán lấy ly mang đi. Từ {onlineHours}, đặt online và nhận
             tận nơi.
           </p>
         </div>
-        <div className="grid gap-6 md:col-span-7">
+        <div className="grid gap-6 md:col-span-6">
           <div>
-            <h3 className="label-caps mb-4 text-white/80">
+            <p className="label-caps mb-4 text-white/90">
               Đặt online {onlineHours}
-            </h3>
+            </p>
             {platforms.length ? (
               <ul
                 className={`grid gap-3 ${platforms.length > 1 ? 'sm:grid-cols-2' : ''}`}
@@ -72,7 +72,7 @@ export function ContactOrder() {
               </ul>
             ) : (
               <p
-                className="border border-white/25 p-5 text-base leading-relaxed text-white/90"
+                className="border border-white/25 p-5 text-base leading-relaxed text-white"
                 data-order-fallback
               >
                 Gian hàng ShopeeFood và GrabFood sắp mở. Trong lúc chờ, đặt qua
@@ -81,13 +81,13 @@ export function ContactOrder() {
             )}
           </div>
           <div>
-            <h3 className="label-caps mb-4 text-white/80">Liên hệ</h3>
+            <p className="label-caps mb-4 text-white/90">Liên hệ</p>
             <ul className="grid gap-3 sm:grid-cols-2">
               <li>
                 <a href={telHref(site.phone)} className={CARD}>
                   <Phone aria-hidden="true" className="size-6 shrink-0" />
                   <span>
-                    <span className="block text-sm text-white/80">
+                    <span className="block text-sm text-white/90">
                       Gọi đặt món
                     </span>
                     <span className="block text-xl font-extrabold tabular-nums">
@@ -108,7 +108,7 @@ export function ContactOrder() {
                     className="size-6 shrink-0"
                   />
                   <span>
-                    <span className="block text-sm text-white/80">
+                    <span className="block text-sm text-white/90">
                       Nhắn tin
                     </span>
                     <span className="block text-xl font-extrabold">Zalo</span>

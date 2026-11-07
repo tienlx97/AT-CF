@@ -45,7 +45,7 @@ export function Hero() {
           aria-hidden="true"
           className="absolute inset-0 -z-20 flex items-start justify-end p-6 pt-24"
         >
-          <span className="label-caps max-w-[18rem] text-right leading-relaxed text-white/45">
+          <span className="label-caps max-w-[18rem] text-right leading-relaxed text-white/90">
             Chờ video hero: rót cà phê tại quầy, dù xanh của quán
           </span>
         </div>
@@ -81,7 +81,7 @@ export function Hero() {
         >
           Cà phê pha máy mang đi ở {site.address.district}
         </h1>
-        <p className="mt-5 max-w-xl text-lg leading-relaxed font-medium text-white/90 md:text-xl">
+        <p className="mt-5 max-w-xl text-lg leading-relaxed font-medium text-white md:text-xl">
           {site.tagline} Bán tại quán {shortTime(store.open)} –{' '}
           {shortTime(store.close)}, đặt online đến {shortTime(online.close)}.
         </p>
@@ -95,7 +95,7 @@ export function Hero() {
             Chỉ đường
           </Button>
         </div>
-        <p className="label-caps mt-10 hidden text-white/70 md:block">
+        <p className="label-caps mt-10 hidden text-white/90 md:block">
           {site.address.street} · {site.address.district} · {site.address.city}
         </p>
       </div>

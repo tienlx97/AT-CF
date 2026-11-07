@@ -24,10 +24,14 @@ test('every built route has a Vietnamese title and description', () => {
   }
 });
 
-test('root layout sets lang="vi" and the Vietnamese font subset', () => {
+test('root layout sets lang="vi" and preloads the Vietnamese font file', () => {
   const layout = readFileSync(file('layout.jsx'), 'utf8');
   assert.match(layout, /lang="vi"/);
-  assert.match(layout, /'vietnamese'/);
+  assert.match(layout, /montserrat-vietnamese-wght-normal\.woff2/);
+  assert.match(layout, /rel="preload"/);
+  const css = readFileSync(file('globals.css'), 'utf8');
+  // Vietnamese letters (Ữ Ặ Ỷ: U+1EA0–1EF9) and đ map to the preloaded file.
+  assert.match(css, /montserrat-vietnamese-wght-normal\.woff2[\s\S]*?U\+1EA0-1EF9/);
 });
 
 test('globals.css declares exactly the four brand colour tokens', () => {

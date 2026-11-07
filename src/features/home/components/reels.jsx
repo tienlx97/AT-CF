@@ -66,8 +66,8 @@ export function Reels() {
                   aria-label={`Chờ video: ${shot.toLowerCase()}`}
                   className="flex aspect-[9/16] flex-col items-center justify-center gap-3 bg-white/8 p-4 text-center"
                 >
-                  <Play aria-hidden="true" className="size-7 text-white/50" />
-                  <span className="label-caps leading-relaxed text-white/60">
+                  <Play aria-hidden="true" className="size-7 text-white/90" />
+                  <span className="label-caps leading-relaxed text-white/90">
                     {shot}
                   </span>
                 </div>

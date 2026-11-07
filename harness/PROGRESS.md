@@ -3,6 +3,28 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — launch-performance 1.1 + 1.2: Lighthouse ≥ 90, deploy guide
+
+- `harness/ui/lighthouse.mjs` (Lighthouse 13 mobile, local CLI run async so its own
+  static server answers; brotli like the hosts). Baseline: home 78 / lien-he 80 (LCP 5.9 s:
+  the next/font latin-ext file for Vietnamese letters was not preloaded) and contrast fails.
+- Fixes: self-hosted Montserrat variable, 2 preloaded files (`public/fonts/`, OFL);
+  contrast pass (body text full ink, labels ≥ 90%/80%, contact band on brand-ink);
+  featured/reel aria names match visible text; gallery eager 2, only the first high priority;
+  taste-skill layout fixes (6/6 splits, one secondary style, nav no-wrap, even placeholders).
+- Result, no media: `harness/runs/lighthouse-launch-1.1/` — 99–100 ×4 on all 4 routes, LCP
+  ~1.0 s, CLS 0, home 221 KB. With fixture media (hero, 14 photos, clips):
+  `harness/runs/lighthouse-launch-1.1-with-media/` — 100 ×4, home 1008 KB incl. 715 KB
+  mobile hero video (≈ 290 KB without it; budget 1.5 MB).
+- taste-skill `consistency.mjs`: 164 → 131 FAIL; the rest are owner-brief overrides recorded
+  in `openspec/changes/launch-performance/proposal.md`.
+- Final flows at 375/390/1440 all passed (`harness/runs/ui-launch-1.1/final-*`), SEO checks passed.
+- `docs/deploy.md`: Vercel via GitHub, Cloudflare Pages / Netlify fallback, R2/Bunny for heavy
+  video, domain purchase + DNS, Google Business Profile and Search Console.
+- Gate `harness/runs/20261107-133101-NnqGEH/` (passed, fresh).
+- Harness gap: a PowerShell hashtable of single-pair arrays flattened and corrupted 9 files
+  (restored from git). Multi-file edits now go through a small node script or the edit tool.
+
 ## 2026-11-07 — seo-sharing 1.1 + 1.2: metadata, JSON-LD, share image, icons
 
 - Root metadata (metadataBase, title template, OG/Twitter large card with `/og.png`),

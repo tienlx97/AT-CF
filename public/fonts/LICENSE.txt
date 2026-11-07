@@ -1,0 +1,4 @@
+Montserrat (variable, latin and vietnamese subsets)
+Copyright 2011 The Montserrat Project Authors (https://github.com/JulietaUla/Montserrat)
+Licensed under the SIL Open Font License, Version 1.1: https://openfontlicense.org
+Files from the @fontsource-variable/montserrat package (see package.json).

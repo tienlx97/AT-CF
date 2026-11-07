@@ -19,7 +19,7 @@ export function Visit({ headingLevel = 'h2' }) {
       className={`bg-surface-alt ${headingLevel === 'h1' ? 'pt-28 pb-20 md:pt-36 md:pb-28' : 'py-20 md:py-28'}`}
     >
       <div className="site-wrap grid gap-10 md:grid-cols-12 md:gap-6">
-        <div className="md:col-span-5">
+        <div className="md:col-span-6">
           <p className="label-caps text-brand">Giờ mở cửa · Địa chỉ</p>
           <Heading
             id="gio-mo-cua"
@@ -39,14 +39,12 @@ export function Visit({ headingLevel = 'h2' }) {
                   <p className="text-2xl font-extrabold tabular-nums">
                     {shortTime(row.from)} – {shortTime(row.to)}
                   </p>
-                  <p className="mt-1 text-base text-brand-ink/80">
-                    {row.label}
-                  </p>
+                  <p className="mt-1 text-base text-brand-ink">{row.label}</p>
                 </div>
               </li>
             ))}
           </ul>
-          <p className="mt-6 flex gap-3 text-lg leading-relaxed">
+          <p className="mt-6 flex gap-4 text-lg leading-relaxed">
             <MapPin
               aria-hidden="true"
               className="mt-1 size-5 shrink-0 text-brand"
@@ -58,7 +56,11 @@ export function Visit({ headingLevel = 'h2' }) {
             </span>
           </p>
           <div className="mt-8">
-            <Button href={directionsUrl(site.geo)} className="w-full sm:w-auto">
+            <Button
+              href={directionsUrl(site.geo)}
+              variant="secondary"
+              className="w-full sm:w-auto"
+            >
               <Navigation aria-hidden="true" className="size-5" />
               Chỉ đường đến quán
             </Button>

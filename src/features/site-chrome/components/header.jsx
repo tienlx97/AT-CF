@@ -45,7 +45,7 @@ export function Header() {
           </Link>
           <nav aria-label="Chính" className="hidden md:block">
             <NavLinks
-              className="flex items-center gap-8"
+              className="flex items-center gap-6 whitespace-nowrap lg:gap-8"
               linkClassName="text-[0.9375rem] font-semibold"
             />
           </nav>

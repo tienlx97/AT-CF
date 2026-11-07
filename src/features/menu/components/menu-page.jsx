@@ -22,7 +22,7 @@ export function MenuPage() {
           <h1 className="mt-3 text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl">
             Menu Anh Tú Coffee
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-ink/80">
+          <p className="mt-4 max-w-2xl text-lg text-brand-ink">
             Giá từ {formatPrice(range.min)} đến {formatPrice(range.max)} một ly.
             Cập nhật {formatDate(menu.updatedAt)}.
           </p>

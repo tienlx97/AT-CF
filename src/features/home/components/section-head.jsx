@@ -7,8 +7,8 @@ import Link from 'next/link';
  * @param {{ id: string, label: string, title: string, lead?: string, link?: { href: string, label: string }, tone?: 'light' | 'dark' }} props
  */
 export function SectionHead({ id, label, title, lead, link, tone = 'dark' }) {
-  const muted = tone === 'light' ? 'text-white/75' : 'text-brand-ink/75';
-  const accent = tone === 'light' ? 'text-white/80' : 'text-brand';
+  const muted = tone === 'light' ? 'text-white' : 'text-brand-ink';
+  const accent = tone === 'light' ? 'text-white/90' : 'text-brand';
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
       <div className="max-w-2xl">

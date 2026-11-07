@@ -13,8 +13,8 @@ export function MediaPlaceholder({
 }) {
   const skin =
     tone === 'brand'
-      ? 'bg-brand-ink text-white/80'
-      : 'bg-surface-alt text-brand-ink/70';
+      ? 'bg-brand-ink text-white/90'
+      : 'bg-surface-alt text-brand-ink/80';
   return (
     <div
       role="img"

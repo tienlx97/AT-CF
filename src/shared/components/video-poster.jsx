@@ -8,11 +8,14 @@ import { Play } from 'lucide-react';
  * }} props
  */
 export function VideoPoster({ item, onPlay, className = '', label }) {
+  const duration = item.duration
+    ? `${Math.floor(item.duration / 60)}:${String(Math.round(item.duration % 60)).padStart(2, '0')}`
+    : '';
   return (
     <button
       type="button"
       onClick={onPlay}
-      aria-label={label ?? `Xem video: ${item.alt}`}
+      aria-label={`${duration ? `${duration} ` : ''}${label ?? `Xem video: ${item.alt}`}`}
       className={`group zoom-frame relative block w-full bg-brand-ink ${className}`}
       style={{
         backgroundImage: item.blur ? `url(${item.blur})` : undefined,
@@ -38,9 +41,9 @@ export function VideoPoster({ item, onPlay, className = '', label }) {
           />
         </span>
       </span>
-      {item.duration ? (
+      {duration ? (
         <span className="absolute right-2 bottom-2 rounded-[2px] bg-black/60 px-1.5 py-0.5 text-xs font-semibold text-white">
-          {`${Math.floor(item.duration / 60)}:${String(Math.round(item.duration % 60)).padStart(2, '0')}`}
+          {duration}
         </span>
       ) : null}
     </button>

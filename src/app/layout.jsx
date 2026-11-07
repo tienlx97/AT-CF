@@ -1,17 +1,17 @@
 import './globals.css';
 
-import { Montserrat } from 'next/font/google';
-
 import { SiteFrame } from '@/features/site-chrome';
 import { BRAND_COLORS } from '@/shared/config/brand';
 import { site } from '@/shared/config/site';
 
-const montserrat = Montserrat({
-  subsets: ['latin', 'vietnamese'],
-  weight: ['500', '600', '700', '800'],
-  display: 'swap',
-  variable: '--font-montserrat',
-});
+// Montserrat variable font, self-hosted in two files (latin + vietnamese ranges,
+// @font-face in globals.css) and both preloaded. next/font/google also pulled a
+// 68 KB latin-ext file, not preloaded, for Vietnamese letters, which delayed the
+// LCP heading to 5.9 s on Lighthouse's slow 4G (launch-performance 1.1).
+const FONT_FILES = [
+  '/fonts/montserrat-latin-wght-normal.woff2',
+  '/fonts/montserrat-vietnamese-wght-normal.woff2',
+];
 
 const HOME_TITLE = `${site.name} — Cà phê pha máy nguyên chất, mang đi | Bình Tân, TP.HCM`;
 const DESCRIPTION =
@@ -58,7 +58,19 @@ export const viewport = {
 /** @param {{ children: import('react').ReactNode }} props */
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi" className={montserrat.variable}>
+    <html lang="vi">
+      <head>
+        {FONT_FILES.map((href) => (
+          <link
+            key={href}
+            rel="preload"
+            href={href}
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
+        ))}
+      </head>
       <body className="font-sans antialiased">
         <SiteFrame>{children}</SiteFrame>
       </body>

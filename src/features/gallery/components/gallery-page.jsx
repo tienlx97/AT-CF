@@ -44,7 +44,7 @@ export function GalleryPage() {
           <h1 className="mt-3 text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl">
             Hình ảnh Anh Tú Coffee
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-ink/80">
+          <p className="mt-4 max-w-2xl text-lg text-brand-ink">
             Quầy pha máy, những ly mang đi và buổi sáng ở quán. Bấm vào ảnh để
             xem lớn.
           </p>
@@ -78,7 +78,7 @@ export function GalleryPage() {
                 >
                   {f.label}
                   <span
-                    className={`text-sm font-semibold ${active ? 'text-white/80' : 'text-brand-ink/60'}`}
+                    className={`text-sm font-semibold ${active ? 'text-white/90' : 'text-brand-ink/80'}`}
                   >
                     {counts[f.id]}
                   </span>
@@ -95,7 +95,7 @@ export function GalleryPage() {
       >
         <div className="site-wrap">
           {visible.length ? (
-            <MasonryGrid items={visible} onOpen={setIndex} eager={4} />
+            <MasonryGrid items={visible} onOpen={setIndex} eager={2} />
           ) : (
             <div className="mx-auto max-w-md">
               <MediaPlaceholder
@@ -106,7 +106,7 @@ export function GalleryPage() {
           )}
           {shown < items.length ? (
             <div className="mt-10 flex flex-col items-center gap-3">
-              <p className="text-sm text-brand-ink/70" aria-live="polite">
+              <p className="text-sm text-brand-ink/80" aria-live="polite">
                 Đang xem {visible.length} / {items.length}
               </p>
               <Button
