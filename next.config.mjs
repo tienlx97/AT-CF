@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Static site (ADR-0005): `next build` writes `out/`, no server needed.
+  output: 'export',
+  trailingSlash: true,
+  images: { unoptimized: true },
   // Isolate local browser verification from an already running development app.
   distDir: process.env.NEXT_DIST_DIR || '.next',
   experimental: {

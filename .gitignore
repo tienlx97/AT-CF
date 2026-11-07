@@ -25,3 +25,7 @@ harness/runs/
 # Windows folder metadata
 desktop.ini
 Thumbs.db
+
+# Static export output (next build, ADR-0005)
+out/
+

@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+/* Brand tokens (ADR-0005). The only place hex colours are allowed. */
+@theme {
+  --color-brand: #2f6f55;
+  --color-brand-ink: #1f3d31;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef0ec;
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-surface);
+    color: var(--color-brand-ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@utility label-caps {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}

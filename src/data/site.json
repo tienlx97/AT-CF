@@ -1,0 +1,33 @@
+{
+  "name": "Anh Tú Coffee",
+  "brandMain": "ANH TÚ",
+  "brandSub": "COFFEE",
+  "tagline": "Cà phê pha máy. Nguyên chất mỗi sáng.",
+  "intro": "Anh Tú Coffee là quán cà phê pha máy 100% nguyên chất ở Bình Tân. Mở cửa từ 5 giờ 30 sáng với ly cà phê mang đi nhanh gọn cho người đi làm, và nhận đặt online đến 8 giờ tối.",
+  "foundedYear": 2025,
+  "siteUrl": "https://anhtucoffee.vercel.app",
+  "address": {
+    "street": "83 Đường A8, Khu phố 5",
+    "district": "Bình Tân",
+    "city": "TP. Hồ Chí Minh",
+    "country": "VN"
+  },
+  "geo": { "lat": 10.8052243, "lng": 106.589173 },
+  "mapUrl": "https://maps.app.goo.gl/NZhs6usRNtHDTdib8",
+  "phone": "0932311434",
+  "zalo": "0932311434",
+  "social": {
+    "facebook": "https://www.facebook.com/anhtucoffee2025",
+    "tiktok": "",
+    "instagram": ""
+  },
+  "order": {
+    "shopeefood": "",
+    "grabfood": ""
+  },
+  "hours": {
+    "timeZone": "Asia/Ho_Chi_Minh",
+    "store": { "open": "05:30", "close": "11:00", "label": "Bán tại quán · mang đi" },
+    "online": { "open": "11:00", "close": "20:00", "label": "Bán online · ShopeeFood, GrabFood" }
+  }
+}

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "Anh Tú Coffee website. Next.js (App Router, JavaScript), under the OpenSpec x Harness workflow.",
+  "type": "module",
   "scripts": {
     "audit": "./harness/audit-harness.sh",
     "build": "next build",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",
+    "@tailwindcss/postcss": "^4.3.4",
     "@types/node": "^26.1.2",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -38,6 +40,7 @@
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unused-imports": "^4.4.1",
     "prettier": "^3.9.6",
+    "tailwindcss": "^4.3.4",
     "typescript": "^5.5.0"
   },
   "packageManager": "pnpm@11.5.3+sha512.7ac1c919341c213a34dc0d02afb7143c5c26ac26ee8c4782deea821b8ac64d2134a081fd8941dae6e29bbb48f58dfc2b7fbceeccc07cb2f09d219d342a4969ed",

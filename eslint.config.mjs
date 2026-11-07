@@ -60,8 +60,29 @@ const config = [
       'react/jsx-filename-extension': ['error', { extensions: ['.jsx'] }],
     },
   },
-  eslintConfigPrettier,
   {
+    // Colour comes only from the Tailwind brand tokens (openspec/project.md,
+    // ADR-0005). Hex values live in src/app/globals.css `@theme` and their JS
+    // mirror src/shared/config/brand.js.
+    files: ['src/**/*.js', 'src/**/*.jsx'],
+    ignores: ['src/shared/config/brand.js'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'Literal[value=/(^#[0-9a-fA-F]{3,8}$)|(\\[#[0-9a-fA-F]{3,8}\\])/]',
+          message:
+            'Hex colour in source. Use a brand token class (bg-brand, text-brand-ink, bg-surface-alt) or BRAND_COLORS from @/shared/config/brand.',
+        },
+        {
+          selector: 'TemplateElement[value.raw=/(^#[0-9a-fA-F]{3,8}$)|(\\[#[0-9a-fA-F]{3,8}\\])/]',
+          message:
+            'Hex colour in source. Use a brand token class (bg-brand, text-brand-ink, bg-surface-alt) or BRAND_COLORS from @/shared/config/brand.',
+        },
+      ],
+    },
+  },
+  eslintConfigPrettier,  {
     ignores: [
       '.next/**',
       '.next-*/**',
@@ -69,6 +90,8 @@ const config = [
       'harness/**',
       '.agents/**',
       '.claude/**',
+      'out/**',
+      'media-src/**',
     ],
   },
 ];

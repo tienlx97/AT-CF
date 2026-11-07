@@ -3,6 +3,21 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — site-foundation 1.1: Tailwind tokens, static export, site.json, open status
+
+- Brief `ANH-TU-PROMP.md` turned into `openspec/project.md` (purpose, routes, facts,
+  thresholds) and 8 changes under `openspec/changes/`: site-foundation, media-pipeline,
+  home-page, menu-page, gallery-page, print-menu, seo-sharing, launch-performance.
+- Task 1.1 done: Tailwind v4 (`@theme` tokens brand/brand-ink/surface/surface-alt),
+  Montserrat latin+vietnamese, `output: 'export'` + `trailingSlash` (ADR-0005),
+  `src/data/site.json`, `src/shared/{types,config,api,hooks}` (open status in
+  Asia/Ho_Chi_Minh, price/phone/tel/Zalo formatters, order-link rule) with 10 unit
+  tests; ESLint `no-restricted-syntax` rejects hex colours outside
+  `src/shared/config/brand.js`; logos copied unchanged to `public/brand/`;
+  `"type": "module"` in package.json. Map coordinates resolved from the short link:
+  10.8052243, 106.589173.
+- Evidence: `harness/runs/20261107-104401-DH2F7h/` (passed, fresh).
+- Next: site-foundation 2.1 (shared components + site-chrome feature, browser checks).
 ## 2026-11-07 — project bootstrap: harness, agent config, skills
 
 - User: start ANH-TU-COFFEE (website for Anh Tú Coffee) from the harness, agent
@@ -24,8 +39,12 @@ Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>
 
 ## Harness gaps
 
-- None recorded yet. When the UI library is chosen, add its styling rules
-  (lint + `harness/quality-grades.mjs` rubric) in the same change.
+- Fixed (site-foundation 1.1): `harness/lib/workflow.mjs` fingerprint hashed a Windows
+  symlink target with `\` while the WSL gate clone stores `/` (`.claude/skills/design-taste-frontend`),
+  so every Windows run reported `fresh: false`. Targets are now normalised to `/` on win32.
+  TODO: a harness test for the symlink case (`harness/tests/workflow.test.cjs`).
+- Styling rule chosen (ADR-0005): hex-colour lint is in place; the quality-grade rubric
+  has no styling criterion yet.
 
 ## Discovered
 

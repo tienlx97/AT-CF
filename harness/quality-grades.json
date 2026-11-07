@@ -5,7 +5,54 @@
     "B": "acceptable, minor drift: anything between A and C (e.g. only autofixable lint warnings, one or two large files, too few tests)",
     "C": "known debt, do not copy: 5+ non-autofix lint warnings, or 3+ source files over 800 lines, or no tests in a unit of 10+ source files"
   },
-  "grades": {},
-  "metrics": {},
+  "grades": {
+    "src/app": "A",
+    "src/shared/api": "A",
+    "src/shared/config": "A",
+    "src/shared/hooks": "A",
+    "src/shared/types": "A"
+  },
+  "metrics": {
+    "src/app": {
+      "sourceFiles": 2,
+      "testFiles": 0,
+      "lines": 43,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/shared/api": {
+      "sourceFiles": 3,
+      "testFiles": 3,
+      "lines": 102,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/shared/config": {
+      "sourceFiles": 2,
+      "testFiles": 0,
+      "lines": 38,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/shared/hooks": {
+      "sourceFiles": 1,
+      "testFiles": 0,
+      "lines": 22,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/shared/types": {
+      "sourceFiles": 1,
+      "testFiles": 0,
+      "lines": 17,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    }
+  },
   "updated": "2026-11-07"
 }

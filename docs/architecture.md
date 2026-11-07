@@ -12,7 +12,9 @@ browser ──► Next.js (src/app routes, server + client components)
                └── src/shared/               code used by several features
 ```
 
-No backend, database or CMS yet. Adding one is an ADR in `docs/adr/` first.
+Static export (ADR-0005): `next build` writes `out/`. No backend, database or CMS;
+adding one is an ADR in `docs/adr/` first. Content lives in `src/data/*.json` and
+is read only through `src/shared/config`.
 
 ## Layer responsibilities
 
@@ -43,5 +45,14 @@ Rules: `harness/structure.rules.cjs`, run by `./harness/verify.sh` (structure st
 
 ## Current inventory
 
-Empty: no application source yet. The first change adds the app shell and the
-first feature from the design brief, and updates this section.
+| Path | Holds |
+|---|---|
+| `src/data/site.json` | Owner-edited shop facts: name, address, phone, hours, order links |
+| `src/shared/config/site.js` | Validated `site`, `NAV_LINKS` |
+| `src/shared/config/brand.js` | Hex mirror of the colour tokens (only JS file allowed hex) |
+| `src/shared/api/open-status.js` | Open / online / closed in Vietnam time |
+| `src/shared/api/format.js` | Price, phone, tel/Zalo links |
+| `src/shared/api/order-links.js` | Which order platforms show; header CTA rule |
+| `src/shared/hooks/use-open-status.js` | Live status after mount |
+| `src/app/globals.css` | Tailwind import and `@theme` brand tokens |
+| `public/brand/` | Logo files copied unchanged from `assets/logo/` |

@@ -54,7 +54,9 @@ export function fingerprint(root) {
     const link = stat.isSymbolicLink() || (windows && mode === '120000');
     // A symlink's own mode is 0777 on Linux and meaningless everywhere: never "executable".
     const executable = !link && (windows ? mode === '100755' : Boolean(stat.mode & 0o111));
-    entries.push({ file, link, executable, target: stat.isSymbolicLink() ? readlinkSync(absolute) : null });
+    // Git stores link targets with "/"; a native Windows symlink reports "\".
+    const target = stat.isSymbolicLink() ? readlinkSync(absolute) : null;
+    entries.push({ file, link, executable, target: target !== null && windows ? target.split('\\').join('/') : target });
   }
   const regular = entries.filter((entry) => entry.target === null);
   const blobs = regular.length
