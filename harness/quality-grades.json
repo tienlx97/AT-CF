@@ -6,7 +6,7 @@
     "C": "known debt, do not copy: 5+ non-autofix lint warnings, or 3+ source files over 800 lines, or no tests in a unit of 10+ source files"
   },
   "grades": {
-    "src/app": "A",
+    "src/app": "B",
     "src/features/gallery": "A",
     "src/features/home": "A",
     "src/features/menu": "A",
@@ -20,9 +20,9 @@
   },
   "metrics": {
     "src/app": {
-      "sourceFiles": 6,
+      "sourceFiles": 8,
       "testFiles": 1,
-      "lines": 112,
+      "lines": 196,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -68,9 +68,9 @@
       "bigFiles": 0
     },
     "src/shared/api": {
-      "sourceFiles": 9,
-      "testFiles": 10,
-      "lines": 488,
+      "sourceFiles": 10,
+      "testFiles": 11,
+      "lines": 554,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -84,9 +84,9 @@
       "bigFiles": 0
     },
     "src/shared/config": {
-      "sourceFiles": 5,
+      "sourceFiles": 6,
       "testFiles": 1,
-      "lines": 161,
+      "lines": 191,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0

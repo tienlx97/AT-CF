@@ -1,6 +1,6 @@
 # Proposal: seo-sharing
 
-**Status:** draft
+**Status:** in-progress
 **Created:** 2026-11-07
 
 ## Why
