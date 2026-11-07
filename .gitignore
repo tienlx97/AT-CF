@@ -29,3 +29,7 @@ Thumbs.db
 # Static export output (next build, ADR-0005)
 out/
 
+
+# Owner's original photos/videos (ANH-TU-PROMP.md 6.1); only the README is tracked
+media-src/*
+!media-src/README.md

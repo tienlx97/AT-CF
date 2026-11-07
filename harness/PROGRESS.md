@@ -3,6 +3,13 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — media-pipeline 1.1: media helpers
+
+- `src/shared/api/media-core.js` (slugify, classify by folder, orientation, Vietnamese alt
+  suggestion, manifest merge keeping alt/caption/featured/group, planned widths) +
+  7 tests; `src/shared/config/media-groups.js`; `media-src/` ignored except README.
+- Evidence: `harness/runs/20261107-111928-1N7GHj/` (passed, fresh).
+
 ## 2026-11-07 — site-foundation 2.1: shared components and site chrome
 
 - Shared: `Logo` (unchanged brand SVGs), `Button` (one family, 48px, hover step/press),
