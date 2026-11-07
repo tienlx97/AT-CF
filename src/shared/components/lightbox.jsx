@@ -63,7 +63,7 @@ export function Lightbox({ items, index, onIndex, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-label={`Xem ${current.type === 'video' ? 'video' : 'ảnh'} ${counterLabel(index ?? 0, length)}`}
-      className="fixed inset-0 z-[70] flex flex-col bg-black text-white"
+      className="fixed inset-0 z-[70] flex touch-pan-y flex-col overscroll-none bg-black text-white"
       onTouchStart={(event) => {
         const t = event.touches[0];
         touch.current = { x: t.clientX, y: t.clientY };

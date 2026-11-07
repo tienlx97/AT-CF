@@ -3,6 +3,18 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — gallery-page 1.1 + 1.2: /hinh-anh and lightbox
+
+- `src/features/gallery`: filters (Tất cả, Pha chế, Đồ uống, Không gian quán, Khách hàng,
+  Video) with counts, kept in `?nhom=` (useSyncExternalStore + popstate), MasonryGrid,
+  24 then "Xem thêm", placeholder per empty filter; filter change scrolls back to the grid.
+- Lightbox (from home-page 1.3) verified for the gallery: "5 / 24", caption, ←/→, swipe both
+  ways, Esc + focus return. Fixed: a right swipe from the screen edge triggered browser
+  back-navigation (`touch-pan-y overscroll-none` on the dialog).
+- UI `harness/runs/ui-gallery-1.1/` passed 390/1440 with 60 fixture photos + 3 clips
+  (removed after); 15–24 image files on first load. Without media the flow stops at the
+  lightbox step by design (`no-media/`). Gate `harness/runs/20261107-122047-VEtrxc/` (passed, fresh).
+
 ## 2026-11-07 — home-page 1.5: hours, map, contact/order, /lien-he
 
 - `Visit` (live status, hours rows, address, directions to coordinates, `LazyMap`: still
