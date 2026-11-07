@@ -13,7 +13,7 @@ Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>
   logo), mobile ContactBar (hidden while drawer/lightbox open). `ChromeGate` hides chrome
   on `BARE_ROUTES` (`/menu-in`).
 - Design direction: taste-skill **place** plan, owner brief wins on conflicts (decision
-  log in `openspec/changes/site-foundation/proposal.md`).
+  log in `openspec/archive/site-foundation/proposal.md`).
 - New harness tool `harness/ui/flow.mjs` (CDP, no dependency) + flows in
   `harness/ui/flows/`: no horizontal scroll, 44px targets, lang, one h1, console/404s,
   drawer focus/Esc. Run: `node harness/ui/flow.mjs --flow harness/ui/flows/site-chrome.mjs --root out --widths 390,1440`.
