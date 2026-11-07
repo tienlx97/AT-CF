@@ -3,6 +3,17 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — print-menu 1.1: /menu-in
+
+- `src/features/print-menu`: one A4 portrait sheet from menu.json (brand band with
+  white logo and phone, two category columns at 6.2mm rows, options line, hours,
+  address, QR codes for the online menu and Zalo made at build time with `qrcode`),
+  screen-only toolbar (Về trang menu, In menu). `@page A4 portrait`, print CSS; sheet
+  zooms down for phones. `TRANSPARENT` added to `brand.js` (hex lint caught `#0000`).
+- `harness/ui/print-pdf.mjs`: Chrome print-to-PDF + page count → 1 page, MediaBox
+  595×842 pt (A4): `harness/runs/ui-print-menu-1.1/menu-a4.pdf`. UI flow passed 390/1440.
+- Gate `harness/runs/20261107-122557-VxtFQv/` (passed, fresh).
+
 ## 2026-11-07 — gallery-page 1.1 + 1.2: /hinh-anh and lightbox
 
 - `src/features/gallery`: filters (Tất cả, Pha chế, Đồ uống, Không gian quán, Khách hàng,

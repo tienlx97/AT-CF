@@ -92,6 +92,53 @@
   }
 }
 
+/* Printable menu (/menu-in): one A4 portrait sheet. */
+.a4-sheet {
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+}
+/* Fit the 794px-wide sheet preview on smaller screens (screen only). */
+@media screen and (max-width: 840px) {
+  .a4-sheet {
+    zoom: 0.85;
+  }
+}
+@media screen and (max-width: 700px) {
+  .a4-sheet {
+    zoom: 0.6;
+  }
+}
+@media screen and (max-width: 500px) {
+  .a4-sheet {
+    zoom: 0.45;
+  }
+}
+@media screen and (max-width: 374px) {
+  .a4-sheet {
+    zoom: 0.4;
+  }
+}
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+  html,
+  body {
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .a4-sheet {
+    zoom: 1 !important;
+    margin: 0;
+  }
+}
+
 /* A lightbox or the drawer hides the floating contact buttons (unlayered: beats utilities). */
 body[data-lightbox='open'] .contact-bar,
 body[data-drawer='open'] .contact-bar {

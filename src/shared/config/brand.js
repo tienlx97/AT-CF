@@ -10,3 +10,6 @@ export const BRAND_COLORS = Object.freeze({
   surface: '#FFFFFF',
   surfaceAlt: '#EEF0EC',
 });
+
+/** Fully transparent, for generated images (QR ground). */
+export const TRANSPARENT = '#00000000';

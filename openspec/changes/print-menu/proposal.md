@@ -1,6 +1,6 @@
 # Proposal: print-menu
 
-**Status:** draft
+**Status:** done
 **Created:** 2026-11-07
 
 ## Why

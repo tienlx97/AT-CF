@@ -10,6 +10,7 @@
     "src/features/gallery": "A",
     "src/features/home": "A",
     "src/features/menu": "A",
+    "src/features/print-menu": "A",
     "src/features/site-chrome": "A",
     "src/shared/api": "A",
     "src/shared/components": "A",
@@ -19,9 +20,9 @@
   },
   "metrics": {
     "src/app": {
-      "sourceFiles": 5,
+      "sourceFiles": 6,
       "testFiles": 1,
-      "lines": 100,
+      "lines": 112,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -46,6 +47,14 @@
       "sourceFiles": 7,
       "testFiles": 1,
       "lines": 270,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/features/print-menu": {
+      "sourceFiles": 4,
+      "testFiles": 2,
+      "lines": 199,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -77,7 +86,7 @@
     "src/shared/config": {
       "sourceFiles": 5,
       "testFiles": 1,
-      "lines": 157,
+      "lines": 161,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
