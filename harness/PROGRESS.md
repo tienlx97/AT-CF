@@ -3,6 +3,15 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — home-page 1.4: gallery preview
+
+- Shared `MasonryGrid` (CSS columns, tiles open the lightbox, lazy, true ratio boxes);
+  `GalleryPreview` (8–12 photos, placeholders naming 8 shots when none, Xem tất cả ảnh).
+  `galleryPreview(limit, items, exclude)` skips the intro photo (found by the flow: the
+  same photo appeared twice). Fixture generator `harness/ui/make-fixture-media.mjs`.
+- UI `harness/runs/ui-home-1.4/` passed 390/1440 (14 fixture photos + 2 clips, removed
+  after). Gate `harness/runs/20261107-121020-OnUjvp/` (passed, fresh).
+
 ## 2026-11-07 — home-page 1.3: reels and shared lightbox
 
 - `src/shared/components/lightbox.jsx` (+ `api/lightbox.js` tested): counter "n / N",

@@ -54,10 +54,19 @@ export function reels(limit = 8, items = MEDIA_ITEMS) {
     .slice(0, limit);
 }
 
-/** Best photos for the home preview: featured first, then the rest, at most `limit`. */
-export function galleryPreview(limit = 12, items = MEDIA_ITEMS) {
+/**
+ * Best photos for the home preview: featured first, then the rest, at most
+ * `limit`, skipping ids already shown elsewhere on the page.
+ * @param {number} [limit]
+ * @param {readonly MediaItem[]} [items]
+ * @param {readonly string[]} [exclude]
+ */
+export function galleryPreview(limit = 12, items = MEDIA_ITEMS, exclude = []) {
   const photos = items.filter(
-    (item) => item.role === 'gallery' && item.type === 'image',
+    (item) =>
+      item.role === 'gallery' &&
+      item.type === 'image' &&
+      !exclude.includes(item.id),
   );
   return [...photos]
     .sort((a, b) => Number(b.featured) - Number(a.featured))

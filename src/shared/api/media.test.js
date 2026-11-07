@@ -88,6 +88,10 @@ test('gallery, reels and preview ordering', () => {
     galleryPreview(1, items).map((i) => i.id),
     ['g/2'],
   );
+  assert.deepEqual(
+    galleryPreview(5, items, ['g/2']).map((i) => i.id),
+    ['g/1'],
+  );
   assert.equal(leadPhoto('pha-che', items)?.id, 'g/2');
   assert.equal(leadPhoto('khach-hang', items), null);
 });

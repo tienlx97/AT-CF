@@ -10,8 +10,13 @@ const FACTS = [
 ];
 
 /** Short story of the shop beside one large photograph of the bar or shopfront. */
+/** The intro's photo; the gallery preview skips it so no photo shows twice. */
+export function introPhoto() {
+  return leadPhoto('pha-che') ?? leadPhoto('khong-gian');
+}
+
 export function Intro() {
-  const photo = leadPhoto('pha-che') ?? leadPhoto('khong-gian');
+  const photo = introPhoto();
   return (
     <section aria-labelledby="gioi-thieu" className="py-20 md:py-28">
       <div className="site-wrap grid items-center gap-10 md:grid-cols-12 md:gap-6">
