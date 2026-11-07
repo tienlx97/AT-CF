@@ -1,4 +1,4 @@
-import { FeaturedDrinks, Hero, Intro } from '@/features/home';
+import { FeaturedDrinks, Hero, Intro, Reels } from '@/features/home';
 
 export default function HomePage() {
   return (
@@ -6,6 +6,7 @@ export default function HomePage() {
       <Hero />
       <Intro />
       <FeaturedDrinks />
+      <Reels />
     </>
   );
 }

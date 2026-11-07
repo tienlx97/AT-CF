@@ -154,7 +154,7 @@ for (const width of widths) {
     },
     async click(selector) {
       const box = await evaluate(`(() => { const el = document.querySelector(${JSON.stringify(selector)});
-        if (!el) return null; el.scrollIntoView({ block: 'center' }); const r = el.getBoundingClientRect();
+        if (!el) return null; el.scrollIntoView({ block: 'center', behavior: 'instant' }); const r = el.getBoundingClientRect();
         return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; })()`);
       if (!box) throw new Error(`No element for ${selector}`);
       await sleep(100);

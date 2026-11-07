@@ -3,6 +3,17 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — home-page 1.3: reels and shared lightbox
+
+- `src/shared/components/lightbox.jsx` (+ `api/lightbox.js` tested): counter "n / N",
+  ← → keys, swipe, Esc, focus trap/return, sound toggle, video stops on close/next,
+  contact bar hidden. `Reels`: 4–8 portrait posters in a snap strip; placeholders name
+  the clips to shoot when none exist. Source-level component tests keep units at A.
+- Harness fix: `flow.mjs` click now scrolls with `behavior: 'instant'` (smooth scroll
+  made taps land on the old position).
+- UI: `harness/runs/ui-home-1.3/` passed 390/1440 with 5 fixture clips (removed after);
+  no mp4 before tap, one after. Gate `harness/runs/20261107-114201-oqn5OZ/` (passed, fresh).
+
 ## 2026-11-07 — home-page 1.2: intro and featured drinks
 
 - `Intro` (story + 3 facts + large photo or placeholder), `FeaturedDrinks` (menu.json
