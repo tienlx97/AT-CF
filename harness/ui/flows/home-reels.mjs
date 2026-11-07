@@ -23,8 +23,7 @@ export default async function homeReels(page, { width, check }) {
   const focusIn = await page.eval('document.querySelector("[role=dialog]").contains(document.activeElement)');
   check('focus moves into the lightbox', focusIn);
   if (width < 768) {
-    const bar = await page.eval('getComputedStyle(document.querySelector(".contact-bar")).display');
-    check('contact bar hidden over the lightbox', bar === 'none');
+    check('no floating contact bar covers the lightbox', await page.eval('!document.querySelector(".contact-bar")'));
   }
   await page.shot('lightbox');
   await page.press('ArrowRight');

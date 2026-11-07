@@ -1,0 +1,184 @@
+[
+  {
+    "id": "khai-truong",
+    "date": "2024-11-02",
+    "title": "Ngày khai trương",
+    "excerpt": "Ly cà phê đầu tiên gửi đến những vị khách đầu tiên — mở đầu bằng một cơn mưa và một tấm dù xanh.",
+    "story": [
+      "Sáng 2/11, quán dọn hàng từ 5 giờ. Trời đổ mưa lất phất, tấm dù xanh mới tinh căng lên lần đầu — cũng là tấm dù thành \"logo\" của quán từ đó đến giờ.",
+      "Khách đầu tiên là chú Ba chạy xe ôm đầu hẻm, gọi một ly cà phê đá. Đến trưa thì hết sạch đá, phải chạy đi mua thêm hai lần. Ngày đầu bán được 47 ly."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/khai-truong/tam-du-xanh.svg",
+        "caption": "Tấm dù xanh căng lên lần đầu trong mưa sáng."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khai-truong/ly-dau-tien.svg",
+        "caption": "Ly cà phê đá đầu tiên của quán — cho chú Ba xe ôm."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khai-truong/quay-pha-che.svg",
+        "caption": "Quầy pha chế buổi sáng khai trương, máy pha sẵn sàng."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khai-truong/khach-dau-tien.svg",
+        "caption": "Những vị khách đầu tiên trú mưa uống cà phê."
+      }
+    ]
+  },
+  {
+    "id": "goc-phin",
+    "date": "2025-01-18",
+    "title": "Góc pha chế",
+    "excerpt": "Máy pha chạy đều tay mỗi sáng — hạt xay tại chỗ, 100% nguyên chất.",
+    "story": [
+      "Quán đầu tư máy pha espresso ngay từ đầu: hạt rang mộc đổ vào cối xay, xay tới đâu pha tới đó. Khách ghé xe là có ly mang đi trong vài phút, không phải chờ lâu.",
+      "Cà phê 100% nguyên chất, không độn, không hương liệu. Công thức không có gì bí mật: hạt sạch, định lượng đúng, máy nóng sẵn — ly nào cũng như ly nào."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/goc-phin/hang-phin.svg",
+        "caption": "Góc pha chế lúc 6 giờ sáng — máy pha và cối xay sẵn sàng."
+      },
+      {
+        "type": "image",
+        "src": "/diary/goc-phin/giot-cafe.svg",
+        "caption": "Dòng espresso đầu tiên chảy xuống đáy ly."
+      },
+      {
+        "type": "image",
+        "src": "/diary/goc-phin/hat-rang-moc.svg",
+        "caption": "Mẻ hạt rang mộc — xay tại chỗ cho từng ly."
+      }
+    ]
+  },
+  {
+    "id": "khach-quen",
+    "date": "2025-04-06",
+    "title": "Khách quen buổi sáng",
+    "excerpt": "Bàn ghế kín chỗ lúc 7 giờ, tiếng đá va ly nghe vui tai.",
+    "story": [
+      "Sau nửa năm, quán có \"ca trực\" của riêng khách: 6 giờ nhóm chú bác đi bộ về ngồi bàn ngoài, 7 giờ dân văn phòng ghé mua mang đi, 9 giờ mấy bạn sinh viên chiếm góc trong cùng.",
+      "Có khách quen tới mức không cần gọi món — cứ ngồi xuống là ly bạc xỉu ít đá tự chạy ra. Quán nhớ món của chừng ba chục người như vậy."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/khach-quen/ban-ngoai.svg",
+        "caption": "Bàn ngoài hiên kín chỗ lúc 7 giờ sáng."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khach-quen/mang-di.svg",
+        "caption": "Hàng ly mang đi cho khách văn phòng."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khach-quen/goc-sinh-vien.svg",
+        "caption": "Góc trong cùng — \"lãnh thổ\" của mấy bạn sinh viên."
+      },
+      {
+        "type": "image",
+        "src": "/diary/khach-quen/bac-xiu-it-da.svg",
+        "caption": "Ly bạc xỉu ít đá của khách ruột, không cần gọi."
+      }
+    ]
+  },
+  {
+    "id": "mon-moi",
+    "date": "2025-08-24",
+    "title": "Ra mắt cà phê muối",
+    "excerpt": "Món mới được cả xóm ủng hộ — kem muối béo mặn đúng vị.",
+    "story": [
+      "Thử công thức kem muối gần một tháng: đánh kem tươi với muối biển, thêm chút sữa đặc, thử đi thử lại 14 lần mới ra tỉ lệ mặn — béo — ngọt ưng ý.",
+      "Tuần đầu ra mắt bán đồng giá, khách góp ý trực tiếp tại quầy. Giờ cà phê muối thành món bán chạy thứ hai của quán, chỉ sau cà phê sữa."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/mon-moi/kem-muoi.svg",
+        "caption": "Mẻ kem muối thử nghiệm lần thứ 14 — lần ra công thức chuẩn."
+      },
+      {
+        "type": "image",
+        "src": "/diary/mon-moi/ly-cafe-muoi.svg",
+        "caption": "Ly cà phê muối hoàn chỉnh, lớp kem phủ dày."
+      },
+      {
+        "type": "image",
+        "src": "/diary/mon-moi/khach-thu-mon.svg",
+        "caption": "Khách thử món mới tuần ra mắt, góp ý ngay tại quầy."
+      },
+      {
+        "type": "image",
+        "src": "/diary/mon-moi/bang-gia-moi.svg",
+        "caption": "Bảng giá viết tay tuần đầu bán đồng giá."
+      }
+    ]
+  },
+  {
+    "id": "goc-xanh",
+    "date": "2026-02-14",
+    "title": "Thêm góc cây xanh",
+    "excerpt": "Trồng thêm giàn cây trước hiên, ngồi sáng nào cũng mát.",
+    "story": [
+      "Tết xong, quán sửa lại hiên: thêm giàn cây leo, kê thêm hai bộ bàn dưới bóng dừa. Tấm dù xanh giờ có \"đồng đội\" — cả góc quán nhìn ra chỉ thấy một màu lá.",
+      "Khách ngồi lâu hơn hẳn. Có người mang cả sách ra đọc nguyên buổi sáng, gọi thêm ly sữa chua đá xay lúc trưa nắng."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/goc-xanh/gian-cay.svg",
+        "caption": "Giàn cây leo mới trồng trước hiên quán."
+      },
+      {
+        "type": "image",
+        "src": "/diary/goc-xanh/ban-duoi-bong-dua.svg",
+        "caption": "Hai bộ bàn mới kê dưới bóng dừa."
+      },
+      {
+        "type": "image",
+        "src": "/diary/goc-xanh/khach-doc-sach.svg",
+        "caption": "Khách quen đọc sách nguyên buổi sáng ở góc xanh."
+      },
+      {
+        "type": "image",
+        "src": "/diary/goc-xanh/du-va-la.svg",
+        "caption": "Tấm dù xanh lẫn giữa màu lá — góc chụp được khách thích nhất."
+      }
+    ]
+  },
+  {
+    "id": "hom-nay",
+    "date": "2026-06-30",
+    "title": "Quán của hôm nay",
+    "excerpt": "Vẫn là ly cà phê cũ, chỗ ngồi quen — hẹn gặp bạn ở quán.",
+    "story": [
+      "Gần hai năm từ ngày căng tấm dù xanh đầu tiên. Menu vẫn gọn 7 món, giá vẫn bình dân, máy pha vẫn chạy đều tay — ly nào cũng 100% nguyên chất.",
+      "Trang này là nhật ký của quán — thỉnh thoảng sẽ có thêm hình mới, chuyện mới. Còn muốn biết quán thế nào thật thì... ghé uống một ly là biết."
+    ],
+    "media": [
+      {
+        "type": "image",
+        "src": "/diary/hom-nay/toan-canh.svg",
+        "caption": "Toàn cảnh quán một chiều tháng 6."
+      },
+      {
+        "type": "image",
+        "src": "/diary/hom-nay/quay-hom-nay.svg",
+        "caption": "Quầy pha chế hôm nay — vẫn chiếc máy pha ấy."
+      },
+      {
+        "type": "image",
+        "src": "/diary/hom-nay/hoang-hon.svg",
+        "caption": "Quán lúc chạng vạng, đèn dây vừa bật."
+      }
+    ]
+  }
+]

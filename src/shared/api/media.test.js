@@ -107,3 +107,14 @@ test('video source picks the smallest that fills', () => {
   assert.equal(videoSource(clip, 900)?.src, 'a-1080');
   assert.equal(videoSource(clip, 2000)?.src, 'a-1080');
 });
+
+test('hero slides keep every hero photo and clip in file order', async () => {
+  const { heroSlides } = await import('./media.js');
+  const list = /** @type {any[]} */ ([
+    { id: 'hero/02-clip', role: 'hero', type: 'video' },
+    { id: 'gallery/x', role: 'gallery', type: 'image' },
+    { id: 'hero/01-photo', role: 'hero', type: 'image' },
+  ]);
+  assert.deepEqual(heroSlides(list).map((item) => item.id), ['hero/01-photo', 'hero/02-clip']);
+  assert.deepEqual(heroSlides([]), []);
+});

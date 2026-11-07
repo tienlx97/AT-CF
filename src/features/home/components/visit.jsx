@@ -25,7 +25,7 @@ export function Visit({ headingLevel = 'h2' }) {
             id="gio-mo-cua"
             className="mt-3 text-3xl leading-tight font-extrabold tracking-tight md:text-[2.75rem]"
           >
-            Ghé quán ở {site.address.district}
+            Ghé quầy Anh Tú
           </Heading>
           <StatusBadge tone="dark" className="mt-5" />
           <ul className="mt-8 divide-y divide-brand-ink/10 border-y border-brand-ink/10">

@@ -1,7 +1,7 @@
 import { ChromeGate } from './chrome-gate';
-import { ContactBar } from './contact-bar';
 import { Footer } from './footer';
 import { Header } from './header';
+import { ShopeeFoodFloat } from './shopeefood-float';
 
 /** @param {{ children: import('react').ReactNode }} props */
 export function SiteFrame({ children }) {
@@ -13,7 +13,7 @@ export function SiteFrame({ children }) {
       <main id="noi-dung">{children}</main>
       <ChromeGate>
         <Footer />
-        <ContactBar />
+        <ShopeeFoodFloat />
       </ChromeGate>
     </>
   );

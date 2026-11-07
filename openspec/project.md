@@ -7,11 +7,11 @@
 ANH-TU-COFFEE is the website of Anh Tú Coffee, a take-away espresso-machine coffee
 shop (100% pure coffee) at Đường A8, Bình Tân, TP. Hồ Chí Minh. Mornings it sells
 at the counter (05:30–11:00), afternoons and evenings online through ShopeeFood
-and GrabFood (11:00–20:00). Source brief: `ANH-TU-PROMP.md` (owner's prompt).
+(11:00–20:00). Source brief: `ANH-TU-PROMP.md`, amended by the owner's 2026-11-07 direction: ShopeeFood is the only purchase channel; no phone/Zalo purchase actions or direct-order contact section.
 
 Audience: neighbours and commuters, mostly on phones over 4G. In a few seconds a
 visitor must be able to (1) see whether the shop is open now or selling online,
-(2) read the menu and prices, (3) call, message on Zalo or get directions.
+(2) read the menu and prices, (3) order on ShopeeFood or get directions.
 
 The site is image- and video-heavy (the shop has many photos and clips) yet must
 load fast on mobile. Vietnamese only in v1; data is structured so English can be
@@ -21,10 +21,10 @@ added later without rewriting.
 
 | Route | Content | Change |
 |---|---|---|
-| `/` | Home: hero video, intro, featured drinks, reels, gallery preview, hours + map, contact/order online | `home-page` |
+| `/` | Home: 92svh photo/clip hero, intro, cup-led Thực đơn, reels, gallery preview, hours + map; ShopeeFood purchase links | `home-page`, `layout-readability` |
 | `/menu` | Full menu with sticky category tabs | `menu-page` |
 | `/hinh-anh` | Full photo/video gallery, filters, lightbox | `gallery-page` |
-| `/lien-he` | Hours, map, contacts | `home-page` (shares blocks) |
+| `/lien-he` | Address, hours and map (route retained for existing links) | `home-page` (shares blocks) |
 | `/menu-in` | One-page A4 printable menu, no site chrome | `print-menu` |
 
 ### Change plan (in order)
@@ -43,9 +43,9 @@ added later without rewriting.
 - Name: **ANH TÚ** + **COFFEE**; opened 2025.
 - Address: 83 Đường A8, Khu phố 5, Bình Tân, TP. Hồ Chí Minh; map
   `https://maps.app.goo.gl/NZhs6usRNtHDTdib8` (resolved: 10.8052243, 106.589173).
-- Phone/Zalo: 0932 311 434 (`tel:+84932311434`, `https://zalo.me/0932311434`).
+- Retained phone/Zalo data: 0932 311 434; not shown as public purchase contacts.
 - Facebook: `https://www.facebook.com/anhtucoffee2025`. TikTok/Instagram: none (hidden).
-- ShopeeFood/GrabFood links: pending; empty strings hide their buttons.
+- Purchase channel: ShopeeFood only. The owner authorized `https://shopeefood.vn/` as a temporary platform-homepage destination until the real store link exists. Update `site.order.shopeefood` when supplied. GrabFood and direct phone/Zalo ordering are not shown; stored phone/Zalo facts are retained but not published in UI or JSON-LD.
 - Brand colours and logo: see Conventions. Never AI or stock images: missing media
   shows a labelled `surface-alt` placeholder naming the shot to take.
 
@@ -112,3 +112,5 @@ Features are isolated and reachable from outside only via their `index.js`;
 | Lighthouse mobile (Perf, A11y, BP, SEO) | ≥ 90 each | Lighthouse mobile |
 | Touch targets | ≥ 44×44 px | browser check |
 | Horizontal scroll at 375/390 px | none | browser check |
+
+Owner extension (2026-11-07): /nhat-ky/ and six static journal article pages reuse the content supplied in E:/VIBE CODE/ANH-TU-COFFEE, with explicit illustration labels and no unavailable video controls. Navbar has five destinations; tablet uses the drawer below 1280px.

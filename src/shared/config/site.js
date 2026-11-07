@@ -20,7 +20,8 @@ export const site = validateSite(siteData);
 
 export const NAV_LINKS = Object.freeze([
   { href: '/', label: 'Trang chủ' },
-  { href: '/menu/', label: 'Menu' },
+  { href: '/menu/', label: 'Thực đơn' },
   { href: '/hinh-anh/', label: 'Hình ảnh' },
-  { href: '/lien-he/', label: 'Liên hệ' },
+  { href: '/nhat-ky/', label: 'Nhật ký' },
+  { href: '/lien-he/', label: 'Địa chỉ' },
 ]);

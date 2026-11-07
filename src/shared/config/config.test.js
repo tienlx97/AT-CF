@@ -10,7 +10,7 @@ test('site.json carries the confirmed shop facts', () => {
   assert.equal(site.phone, '0932311434');
   assert.equal(site.hours.store.open, '05:30');
   assert.equal(site.hours.online.close, '20:00');
-  assert.equal(NAV_LINKS.length, 4);
+  assert.equal(NAV_LINKS.length, 5);
 });
 
 test('missing required fields fail the build with their names', () => {
@@ -40,3 +40,4 @@ test('gallery filters and media budgets match the brief', () => {
   assert.deepEqual([...IMAGE_WIDTHS], [480, 960, 1600]);
   assert.equal(BUDGETS.heroMobile, 2 * 1024 * 1024);
 });
+

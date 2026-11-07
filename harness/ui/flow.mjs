@@ -104,7 +104,11 @@ const sleep = (ms) => new Promise((ok) => setTimeout(ok, ms));
 
 const results = [];
 let failed = 0;
-const flow = (await import(pathToFileURL(resolve(args.flow)).href)).default;
+const flowModule = await import(pathToFileURL(resolve(args.flow)).href);
+const flow = flowModule.default;
+// The home intro splash plays once per tab session; flows that do not test it
+// start as returning visitors so their screenshots show the page, not the splash.
+const SKIP_INTRO = flowModule.playsIntro ? '' : 'try { sessionStorage.setItem("atc-intro-seen", "1"); } catch {}';
 
 for (const width of widths) {
   const height = width < 600 ? 844 : 900;
@@ -122,6 +126,7 @@ for (const width of widths) {
     if (msg.method === 'Log.entryAdded' && msg.params.entry.level === 'error') consoleErrors.push(msg.params.entry.text);
   });
   await s('Page.enable');
+  if (SKIP_INTRO) await s('Page.addScriptToEvaluateOnNewDocument', { source: SKIP_INTRO });
   await s('Runtime.enable');
   await s('Log.enable');
   await s('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 600 });

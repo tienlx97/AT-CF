@@ -57,14 +57,14 @@ Rules: `harness/structure.rules.cjs`, run by `./harness/verify.sh` (structure st
 | `src/app/globals.css` | Tailwind import and `@theme` brand tokens |
 | `src/shared/hooks/use-dialog.js` | Modal focus trap, Esc, scroll lock, body flag (drawer, lightbox) |
 | `src/shared/components/` | Logo, Button (one family), StatusBadge, MediaPlaceholder, brand icons |
-| `src/features/site-chrome/` | `SiteFrame`: header, mobile drawer, footer, contact bar; `ChromeGate` hides them on `BARE_ROUTES` |
+| `src/features/site-chrome/` | `SiteFrame`: compact green header, mobile drawer, minimal footer and an official ShopeeFood floating action; `ChromeGate` hides them on `BARE_ROUTES`. Only ShopeeFood purchases; no phone/Zalo contact bar. |
 | `src/data/menu.json`, `src/data/media.json` | Owner menu; media list written by `pnpm media` (captions kept) |
 | `src/shared/{config,api}/menu.js` | Validated menu (Vietnamese errors), featured, options, price range |
 | `src/shared/api/media.js`, `media-core.js` | Media readers (srcset, hero, reels, preview); pipeline helpers |
 | `src/shared/api/{contact,lightbox,seo,routes}.js` | Map/directions URLs, lightbox stepping, JSON-LD, path helpers |
 | `src/shared/components/` | + ResponsiveImage, VideoPoster, MasonryGrid, Lightbox, LazyMap |
 | `src/shared/config/page-meta.js` | Per-route title/description/canonical/OG |
-| `src/features/home/` | Hero, Intro, FeaturedDrinks, Reels, GalleryPreview, Visit, ContactOrder (`/`, `/lien-he`) |
+| `src/features/home/` | Hero, Intro, FeaturedDrinks (cup-led Thực đơn), Reels, GalleryPreview, Visit (`/`, `/lien-he`). No direct-order contact block. |
 | `src/features/menu/` | `/menu`: sticky tabs, ruled item rows |
 | `src/features/gallery/` | `/hinh-anh`: filters in `?nhom=`, 24 per page, lightbox |
 | `src/features/print-menu/` | `/menu-in`: one A4 sheet, build-time QR codes |
@@ -78,3 +78,5 @@ Rules: `harness/structure.rules.cjs`, run by `./harness/verify.sh` (structure st
 Route groups are not used: under static export Next 16 writes their prefetch
 files under a name the client never requests (404s). Chrome-less pages are listed
 in `BARE_ROUTES` instead.
+
+Journal: src/features/journal owns the newest-first index and six static /nhat-ky/[id]/ articles. Owner content is in src/data/journal.json; supplied SVG illustrations are in public/diary, explicitly labeled, and missing reference videos are omitted. src/app/sitemap.js reads the feature's public export to include every article.

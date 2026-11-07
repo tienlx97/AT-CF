@@ -3,16 +3,25 @@ import { test } from 'node:test';
 
 import { headerCta, orderPlatforms } from './order-links.js';
 
-const both = { shopeefood: 'https://shopeefood.vn/x', grabfood: 'https://food.grab.com/y' };
-
-test('empty links are hidden', () => {
-  assert.deepEqual(orderPlatforms({ shopeefood: '', grabfood: '' }), []);
-  assert.deepEqual(orderPlatforms({ shopeefood: both.shopeefood, grabfood: ' ' }).map((p) => p.id), ['shopeefood']);
+const links = {
+  shopeefood: 'https://shopeefood.vn/anh-tu',
+  grabfood: 'https://food.grab.com/another',
+};
+test('only ShopeeFood is exposed even when another vendor is configured', () => {
+  assert.deepEqual(orderPlatforms(links), [
+    { id: 'shopeefood', label: 'ShopeeFood', href: links.shopeefood },
+  ]);
 });
-
-test('header shows order online only with both links during online hours', () => {
-  assert.equal(headerCta(both, 'online'), 'order-online');
-  assert.equal(headerCta(both, 'open'), 'call');
-  assert.equal(headerCta({ ...both, grabfood: '' }, 'online'), 'call');
-  assert.equal(headerCta(both, null), 'call');
+test('empty and unsafe links do not create purchase or contact fallbacks', () => {
+  for (const shopeefood of ['', ' ', 'javascript:alert(1)', 'tel:123']) {
+    assert.deepEqual(orderPlatforms({ ...links, shopeefood }), []);
+    assert.equal(headerCta({ ...links, shopeefood }), null);
+  }
+});
+test('the purchase action goes directly to the configured external platform', () => {
+  assert.deepEqual(headerCta(links), {
+    label: 'Đặt qua ShopeeFood',
+    href: links.shopeefood,
+    kind: 'order',
+  });
 });

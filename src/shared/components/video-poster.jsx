@@ -33,7 +33,7 @@ export function VideoPoster({ item, onPlay, className = '', label }) {
         className="h-full w-full object-cover"
       />
       <span className="absolute inset-0 flex items-center justify-center">
-        <span className="flex size-14 items-center justify-center rounded-full bg-white/90 text-brand-ink shadow-lg transition duration-150 group-hover:scale-105">
+        <span className="flex size-14 items-center justify-center rounded-full border-[1.5px] border-brand-ink/20 bg-white/90 text-brand-ink shadow-lg transition duration-150 group-hover:scale-105">
           <Play
             aria-hidden="true"
             className="ml-0.5 size-6"

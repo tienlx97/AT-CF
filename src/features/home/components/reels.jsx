@@ -26,15 +26,13 @@ export function Reels() {
   return (
     <section
       aria-labelledby="video-ngan"
-      className="overflow-hidden bg-brand-ink py-20 text-white md:py-28"
+      className="overflow-hidden bg-surface-alt py-16 md:py-20"
     >
       <div className="site-wrap">
         <SectionHead
           id="video-ngan"
-          tone="light"
           label="Video ngắn"
-          title="Một buổi sáng ở quầy pha"
-          lead="Bấm vào video để xem, có tiếng."
+          title="Pha cà phê tại quầy"
           link={
             clips.length
               ? { href: '/hinh-anh/?nhom=video', label: 'Xem tất cả video' }
@@ -47,24 +45,24 @@ export function Reels() {
           ? clips.map((clip, i) => (
               <li
                 key={clip.id}
-                className="w-[44%] shrink-0 snap-start sm:w-[30%] md:w-[calc((100%-3rem)/4)]"
+                className="w-[72%] shrink-0 snap-start sm:w-[42%] lg:w-[calc((100%-4.5rem)/4)]"
               >
                 <VideoPoster
                   item={clip}
                   onPlay={() => setIndex(i)}
-                  className="aspect-[9/16]"
+                  className="aspect-[9/16] overflow-hidden rounded-xl"
                 />
               </li>
             ))
           : WANTED_SHOTS.map((shot) => (
               <li
                 key={shot}
-                className="w-[44%] shrink-0 snap-start sm:w-[30%] md:w-[calc((100%-3rem)/4)]"
+                className="w-[72%] shrink-0 snap-start sm:w-[42%] lg:w-[calc((100%-4.5rem)/4)]"
               >
                 <div
                   role="img"
                   aria-label={`Chờ video: ${shot.toLowerCase()}`}
-                  className="flex aspect-[9/16] flex-col items-center justify-center gap-3 bg-white/8 p-4 text-center"
+                  className="relative flex aspect-[9/16] flex-col items-center justify-center gap-5 rounded-xl border border-brand-ink/10 bg-brand-ink p-6 text-center text-white"
                 >
                   <Play aria-hidden="true" className="size-7 text-white/90" />
                   <span className="label-caps leading-relaxed text-white/90">

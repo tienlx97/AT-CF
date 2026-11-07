@@ -8,6 +8,8 @@ const ROUTES = {
   '/menu': 'menu/page.jsx',
   '/hinh-anh': 'hinh-anh/page.jsx',
   '/lien-he': 'lien-he/page.jsx',
+  '/nhat-ky': 'nhat-ky/page.jsx',
+  '/nhat-ky/article': 'nhat-ky/[id]/page.jsx',
   '/menu-in': 'menu-in/page.jsx',
 };
 
@@ -31,7 +33,10 @@ test('root layout sets lang="vi" and preloads the Vietnamese font file', () => {
   assert.match(layout, /rel="preload"/);
   const css = readFileSync(file('globals.css'), 'utf8');
   // Vietnamese letters (Ữ Ặ Ỷ: U+1EA0–1EF9) and đ map to the preloaded file.
-  assert.match(css, /montserrat-vietnamese-wght-normal\.woff2[\s\S]*?U\+1EA0-1EF9/);
+  assert.match(
+    css,
+    /montserrat-vietnamese-wght-normal\.woff2[\s\S]*?U\+1EA0-1EF9/,
+  );
 });
 
 test('globals.css declares exactly the four brand colour tokens', () => {

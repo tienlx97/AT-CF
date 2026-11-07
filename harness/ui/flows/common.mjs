@@ -5,6 +5,8 @@ const STRAY_TEXT = String.raw`[...document.querySelectorAll('body, body *:not(sc
   .map((n) => n.textContent.trim().slice(0, 30))`;
 // Checks every page must pass at every width (openspec/project.md thresholds).
 export async function pageBasics(page, check, label) {
+  const directOrderContacts = await page.eval(`document.querySelectorAll('a[href^="tel:"], a[href*="zalo.me"], a[href*="food.grab.com"]').length`);
+  check(`${label}: no direct-contact or alternate purchase links`, directOrderContacts === 0, String(directOrderContacts));
   const overflow = await page.eval('document.documentElement.scrollWidth - window.innerWidth');
   check(`${label}: no horizontal scroll`, overflow <= 0, `overflow ${overflow}px`);
   const broken = await page.eval(`[...document.images].filter((img) => img.complete && img.naturalWidth === 0 && img.loading !== 'lazy').map((img) => img.src)`);

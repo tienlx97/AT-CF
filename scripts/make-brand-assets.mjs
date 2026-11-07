@@ -108,6 +108,8 @@ function ico(png) {
   return Buffer.concat([header, png]);
 }
 
+// Keep both favicon formats white: browsers may prefer icon.svg over favicon.ico.
+writeFileSync(join(ROOT, 'src/app/icon.svg'), logoWhite);
 const white = BRAND_COLORS.surface;
 writeFileSync(join(ROOT, 'public/og.png'), await ogImage());
 const apple = await icon(180, white, logo, 0.22);
@@ -126,7 +128,7 @@ writeFileSync(
 );
 writeFileSync(
   join(ROOT, 'src/app/favicon.ico'),
-  ico(await icon(32, white, logo, 0.04)),
+  ico(await icon(32, BRAND_COLORS.brandInk, logoWhite, 0.04)),
 );
 console.log(
   'brand assets: public/og.png, icons, src/app/apple-icon.png, src/app/favicon.ico',

@@ -2,12 +2,17 @@ import { site } from '@/shared/config/site';
 
 /**
  * The shop's leaf mark (file unchanged from assets/logo) with the two-line name.
- * @param {{ tone?: 'brand' | 'white', size?: 'md' | 'lg', className?: string }} props
+ * @param {{ tone?: 'brand' | 'white', size?: 'md' | 'lg' | 'nav', className?: string }} props
  */
 export function Logo({ tone = 'brand', size = 'md', className = '' }) {
   const src =
     tone === 'white' ? '/brand/leaf-mark-white.svg' : '/brand/leaf-mark.svg';
-  const mark = size === 'lg' ? 'size-14' : 'size-10';
+  const mark =
+    size === 'nav'
+      ? 'size-10 md:size-12'
+      : size === 'lg'
+        ? 'size-14'
+        : 'size-10';
   const main = size === 'lg' ? 'text-3xl' : 'text-xl';
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>

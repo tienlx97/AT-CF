@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#3B2417"/><stop offset="1" stop-color="#17251D"/>
+  </linearGradient></defs>
+  <rect width="900" height="600" fill="url(#g)"/>
+  <path d="M330 210q120-70 240 0l-18 10q-102-58-204 0z" fill="rgba(244,240,225,0.35)"/>
+  <circle cx="450" cy="250" r="56" fill="rgba(5,59,40,0.65)"/><path d="M432 222l52 28-52 28z" fill="#F4F0E1"/>
+  <text x="450" y="392" text-anchor="middle" font-family="'Be Vietnam Pro', system-ui, sans-serif" font-size="32" font-weight="600" fill="#F4F0E1">Phin nhỏ giọt</text>
+  <text x="450" y="434" text-anchor="middle" font-family="'Be Vietnam Pro', system-ui, sans-serif" font-size="19" fill="rgba(244,240,225,0.75)">Ảnh minh hoạ — thay bằng ảnh thật của quán</text>
+</svg>

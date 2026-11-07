@@ -1,5 +1,781 @@
 {
   "version": 1,
   "updatedAt": "2026-11-07",
-  "items": []
+  "items": [
+    {
+      "id": "gallery/do-uong/ca-phe-02",
+      "type": "image",
+      "role": "gallery",
+      "group": "do-uong",
+      "source": "gallery/do-uong/ca-phe-02.jpg",
+      "hash": "d38925ef736fd229",
+      "src": "/media/gallery/do-uong/ca-phe-02",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZACdMoAltQ0dOm/ic4zTdBPq9rgA4b7N17G4Eu8ufSutrleQOxuGMOymv/vtGbDV6OuesANry3Q7lhsMnxqXoS7/d7cqzcp0Ua6xCyQMN+vTCTl+1oEWwdF1n2qoeZANhjPRHbq9C6RNDWjTxKO8IoN/zJIAAAA=",
+      "alt": "Cà phê tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/do-uong/ca-phe-den-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "do-uong",
+      "source": "gallery/do-uong/ca-phe-den-01.jpg",
+      "hash": "1ec5c4e6c70be78a",
+      "src": "/media/gallery/do-uong/ca-phe-den-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3000,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwC/OBg24KuvS/u1axcAAP7Ff4ZfDXv8ny5kx42i+sYqJiUS2ns8mhEFdmAzPblrkoP8RCtimDhQiF3Jth2BNsF625QKqN4AAA==",
+      "alt": "Cà phê đen tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/do-uong/ca-phe-sua-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "do-uong",
+      "source": "gallery/do-uong/ca-phe-sua-01.jpg",
+      "hash": "bc017c6b84283f5b",
+      "src": "/media/gallery/do-uong/ca-phe-sua-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYgCsAYx2pJnmmtlPompT+AAA/mbHgdcRebF0K9UFZ0i6HPkpZMJmQK+nkMwESySTo7mw6yhIjn99IVoOz0lAi73srOvSLJTFBkhaaTEQ4MPbEz4Vvh5gSLVqVkm+86tLbybI+Yo2raPHgNXUuCZq/NtX+BjlcbDW14+0ui0Ws8i9VPkRvZWI40ATSAD+AAA=",
+      "alt": "Cà phê sữa tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/do-uong/ly-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "do-uong",
+      "source": "gallery/do-uong/ly-01.jpg",
+      "hash": "e9f9d5e589f32ca4",
+      "src": "/media/gallery/do-uong/ly-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 2195,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAgCdASoQAA8AA4BaJbACdAYsFzm/kY7sMmyeLeAA/vXpjOiHb9amg5d7t3vS4gX4g1OTffCicb5dSb+q0db7AZqnMwAX83+jsPS6mbtPZ/i7zEEHwT3CYSCf3GaV3aWzu5GhPBtj3Wd7cBnTYXZo8ZEExuR1NczaADkAAAA=",
+      "alt": "Ly tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/do-uong/ly-02",
+      "type": "image",
+      "role": "gallery",
+      "group": "do-uong",
+      "source": "gallery/do-uong/ly-02.jpg",
+      "hash": "ec0500c90cc5454d",
+      "src": "/media/gallery/do-uong/ly-02",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JQAALfTewMuaqw/XLgiYIAAD+8qqfGH+GFvP0vzxavKBDAVx4zMuMOTxlB/mtzvftdBfr29BHIwOA5zw5vidk9FTHAVlU5tHuJyokBt/J2e+8yLj1/M6NWn6RYJY1PGkb6ogA",
+      "alt": "Ly tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khach-hang/khach-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "khach-hang",
+      "source": "gallery/khach-hang/khach-01.jpg",
+      "hash": "237fc78eb9a02cdb",
+      "src": "/media/gallery/khach-hang/khach-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1600,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAsAA4BaJYgCdAYv1zj+OWS5ApQA/oPF703dQviEmdSH4DcZpL5xu7tz69dVHvUcSHFboOkSDlhJajO+RPppM7a5n5MBqKhB7iDGYeYjAk9G6S7R84qPuuUmotjAULEiwAAA",
+      "alt": "Khách tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khach-hang/khach-02",
+      "type": "image",
+      "role": "gallery",
+      "group": "khach-hang",
+      "source": "gallery/khach-hang/khach-02.jpg",
+      "hash": "1f5440a8af1f0be9",
+      "src": "/media/gallery/khach-hang/khach-02",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAABQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYwCdAdwA9gjhsX7vj91T2W2AAP4+xSAnYx8ibos4t4+UkSEhrK6mK49tsSS602VKEGi1qfJqnG1eh3RdPBF//oJs5rym7dVMh8mIqMhc+ZLbeOfTyKuXrcAAAA==",
+      "alt": "Khách tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khach-hang/khach-03",
+      "type": "image",
+      "role": "gallery",
+      "group": "khach-hang",
+      "source": "gallery/khach-hang/khach-03.jpg",
+      "hash": "5e21ebd3cf90715a",
+      "src": "/media/gallery/khach-hang/khach-03",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAACwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYgC06ywTlIk8yhvmHy+2diMxdY1gAP5LSzfeIqYrAq5i0CL7Dy7OwM0fMV9byUTHacsRd72suywzC7WTwNTqV01It3wrirjiKWBiG0blzutQFdRuw1l5MbeWZgm4kBZYiCAFWVXwy792xdrzVXWwA1N/7ABzN4udYb5TCBWIHyv9ImfLwz0Cca/+rAUH0J6XYVUcW/zqBISAlExIqrlT2D+hGU3OzE/tSPzFbvDo5FwAAAA=",
+      "alt": "Khách tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khong-gian/ban-ghe-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "khong-gian",
+      "source": "gallery/khong-gian/ban-ghe-01.jpg",
+      "hash": "2295c05c04c7e854",
+      "src": "/media/gallery/khong-gian/ban-ghe-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1645,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACwAQCdASoQAAsAA4BaJZQAAZgD1+QAAMtLIpgKEmdjDZUYDcU4kIZgDjd/n7MXU7QcQJtZC3bNb91+sBKdG93I6NzSZpHmfFou1f8dwAbIAA==",
+      "alt": "Bàn ghế tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khong-gian/ban-ghe-02",
+      "type": "image",
+      "role": "gallery",
+      "group": "khong-gian",
+      "source": "gallery/khong-gian/ban-ghe-02.jpg",
+      "hash": "2450baca3e7dbe71",
+      "src": "/media/gallery/khong-gian/ban-ghe-02",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1600,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAwAgCdASoQAAsAA4BaJYwC7AYtplF620KSAAD+NFCzrzbhGEFj76RWU3rN6qDJWI+70ZnwhwC/lkgQHidXNX5Kn9ICVUXkROH8y8F/XvGTH558ilgtkgwAAAA=",
+      "alt": "Bàn ghế tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/khong-gian/mat-tien-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "khong-gian",
+      "source": "gallery/khong-gian/mat-tien-01.jpg",
+      "hash": "acd34a9b36629cf7",
+      "src": "/media/gallery/khong-gian/mat-tien-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1586,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAgCdASoQAAsAA4BaJYwCdADJ+XA0FVEAAP5yaOliWtcYt7QQ+XCgj05T8OJKaeDPxHmfMVF+5ZyItl1KadD/F42zzIfwemAAAA==",
+      "alt": "Mặt tiền quán tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/pha-che/hat-ca-phe-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "pha-che",
+      "source": "gallery/pha-che/hat-ca-phe-01.jpg",
+      "hash": "f11d0838a6027e95",
+      "src": "/media/gallery/pha-che/hat-ca-phe-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZQC+SCFFmkG9kPmB+O86kcAA/E6YyREZtKOsvoR/JY0Xdth2F3XFePhO101ma9oJwZ8nqfx+XAIsAOhO5tqn0L3QI2rNVSHxZXPlE7XFRKt7Vs9r/iKeurncA41w+sX+M2BuIL/DgAAA",
+      "alt": "Hạt cà phê cà phê tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/pha-che/may-pha-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "pha-che",
+      "source": "gallery/pha-che/may-pha-01.jpg",
+      "hash": "0dd88ee1a6296e20",
+      "src": "/media/gallery/pha-che/may-pha-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1600,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoQAAsAA4BaJYwCdAEPSmpKVcNoAP7xGLaH2TJe4lXilLoqU1UoNB9w8a9XRgVu9kvuA6EYzviAAA==",
+      "alt": "Máy pha cà phê tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "gallery/pha-che/quay-01",
+      "type": "image",
+      "role": "gallery",
+      "group": "pha-che",
+      "source": "gallery/pha-che/quay-01.jpg",
+      "hash": "86089ffbc50afc95",
+      "src": "/media/gallery/pha-che/quay-01",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1350,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAkAA4BaJZQC7ADQ+o7BYQAA/guvcnU3i7BbTUuKpJHTsxPfJ4MfuPaYcCAkXtBeDQEcuD6SGwb4sm2txVD1Yg4AAA==",
+      "alt": "Quầy pha chế tại Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "hero/01-rot-ca-phe",
+      "type": "image",
+      "role": "hero",
+      "group": "hero",
+      "source": "hero/01-rot-ca-phe.jpg",
+      "hash": "8a7baef41fdf5df9",
+      "src": "/media/hero/01-rot-ca-phe",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1600,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQAAsAA4BaJZQAD4/JhRkgAAD+7PYG0Kf8kgiQV7gL/Gxrk3Wba6y09KUrGekP0TwpHZJJBbsIWC2XyEQ5TQW7j+ibFXkfdo9aDsCHG/6WPo36mWksZXXOrGNSBnAA",
+      "alt": "Video pha cà phê tại quầy Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "hero/02-hat-ca-phe",
+      "type": "video",
+      "role": "hero",
+      "group": "hero",
+      "source": "hero/02-hat-ca-phe.mp4",
+      "hash": "9c7d53713176d672",
+      "src": "/media/hero/02-hat-ca-phe-720.mp4",
+      "widths": [],
+      "formats": [
+        "mp4"
+      ],
+      "width": 1920,
+      "height": 1080,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoQAAkAA4BaJYwCdAEO/kPaMAD+8qN82nq1eLgSq3vfBk3TgAA=",
+      "poster": "/media/hero/02-hat-ca-phe-poster.webp",
+      "videos": [
+        {
+          "src": "/media/hero/02-hat-ca-phe-720.mp4",
+          "height": 720,
+          "bytes": 634569
+        },
+        {
+          "src": "/media/hero/02-hat-ca-phe-1080.mp4",
+          "height": 1080,
+          "bytes": 1235029
+        }
+      ],
+      "duration": 8,
+      "alt": "Video pha cà phê tại quầy Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "hero/03-khong-gian",
+      "type": "image",
+      "role": "hero",
+      "group": "hero",
+      "source": "hero/03-khong-gian.jpg",
+      "hash": "2f0e074e1f328d30",
+      "src": "/media/hero/03-khong-gian",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1600,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQAAsAA4BaJYgCdAEPdrPoVPYNcAD+QTnWnlZ4xpMkD6mbl/KJl9pWdg7Lf9Vmor68Vsn5GEf4KtEWM2w4XxmyZeBgaigstO/7+9dZ5hDbG1OpoU/J5zB5q1kHWdcCoQAAAA==",
+      "alt": "Video pha cà phê tại quầy Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "hero/04-ly-ca-phe",
+      "type": "image",
+      "role": "hero",
+      "group": "hero",
+      "source": "hero/04-ly-ca-phe.jpg",
+      "hash": "a5727a99f75bb4cb",
+      "src": "/media/hero/04-ly-ca-phe",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1602,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoQAAsAA4BaJYgCdAYuHZowP+CAAPwvsFmi9dQgduoulwz55zO7o3kLKBw/cORDh9ICSVvKQwRnGXixuHnZs2aimBaVU8OOZ/3p1AnJkMBhQR/LdRmCabcMAAA=",
+      "alt": "Video pha cà phê tại quầy Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "video/clip-01",
+      "type": "video",
+      "role": "reel",
+      "group": "video",
+      "source": "video/clip-01.mp4",
+      "hash": "218a1882c1eba510",
+      "src": "/media/video/clip-01-720.mp4",
+      "widths": [],
+      "formats": [
+        "mp4"
+      ],
+      "width": 720,
+      "height": 1280,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAACQBACdASoQABwAPu1iqU2ppaQiMAgBMB2JYwCw7YxExosip3YKXHtfURB2kAAA/uJEmY/E2+X81b631s4EJKTIi/YrQmpB2YDN26mYJYspwQvmFNm18vOo+Jp2h2cdxFTj19T5uLWG23sL/CSaePx/t8s2WYvTcudvw87wJCOIQb3MNKRGU4NVN6PcLHt/1CQqFyZGa/eUC6Ridx3GzeVYJs86NWLla1WjlZFfcgdJZIZcnFiz9E27tW6OnuQRVFRWaLPegAQKAAAA",
+      "poster": "/media/video/clip-01-poster.webp",
+      "videos": [
+        {
+          "src": "/media/video/clip-01-720.mp4",
+          "height": 720,
+          "bytes": 339277
+        }
+      ],
+      "duration": 6,
+      "alt": "Video tại quán ở Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "video/clip-02",
+      "type": "video",
+      "role": "reel",
+      "group": "video",
+      "source": "video/clip-02.mp4",
+      "hash": "4fb02ca10e65ca00",
+      "src": "/media/video/clip-02-720.mp4",
+      "widths": [],
+      "formats": [
+        "mp4"
+      ],
+      "width": 720,
+      "height": 1280,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAADQBACdASoQABwAPu1iqU2ppaOiMAgBMB2JYgCdMoKOOPoAfntV/9bC4bec80hsgAD+m6xPuFVCcoqEmg0qYYehmt8PNSNcvn5ID5fMNyz/dYlVZyWdawOfAmHebIFCY1o2J0fDrjHOEFvyj3LGRpQSqyDN27ilsVFl1/k5Dp1VvWK/lO8uYGq5gB1tBkZ84ORilaCoyGLlV/rtDbj1Grx/DdLBMhFSigGAvnDnDy0/YYTnEKWAAA==",
+      "poster": "/media/video/clip-02-poster.webp",
+      "videos": [
+        {
+          "src": "/media/video/clip-02-720.mp4",
+          "height": 720,
+          "bytes": 283988
+        }
+      ],
+      "duration": 6,
+      "alt": "Video tại quán ở Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "video/clip-03",
+      "type": "video",
+      "role": "reel",
+      "group": "video",
+      "source": "video/clip-03.mp4",
+      "hash": "4c3d4fbb0a5ef29b",
+      "src": "/media/video/clip-03-720.mp4",
+      "widths": [],
+      "formats": [
+        "mp4"
+      ],
+      "width": 720,
+      "height": 1280,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRsQAAABXRUJQVlA4ILgAAADQBACdASoQABwAPu1kqU2ppaOiMAgBMB2JagCdMoR3AkgPd0TIV42BI6f6x2iuAAD3TAo/n2bdjUtjio1Chw0Y+p+j+CUCPAMqbuq5/mx08e1qHuY8GKcM0B1+i5hyDP+9fCLY0woprGdD1ws/BXmfz9WpuiMg8PbBQfZg/BpHS3WBHMLIGrA7qZy+p1BITfdF5OrJUT6xPQW/9gOS+skBhAsfPokT52AyTuHcr6kH3PJ/Ip7aQAAA",
+      "poster": "/media/video/clip-03-poster.webp",
+      "videos": [
+        {
+          "src": "/media/video/clip-03-720.mp4",
+          "height": 720,
+          "bytes": 397890
+        }
+      ],
+      "duration": 6,
+      "alt": "Video tại quán ở Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "video/clip-04",
+      "type": "video",
+      "role": "reel",
+      "group": "video",
+      "source": "video/clip-04.mp4",
+      "hash": "8111c0b79b5ba25b",
+      "src": "/media/video/clip-04-720.mp4",
+      "widths": [],
+      "formats": [
+        "mp4"
+      ],
+      "width": 720,
+      "height": 1280,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAQBACdASoQABwAPu1iqU2ppaOiMAgBMB2JQBOiP/wEvjzZBlc7PNEmQAD4WGlqR1FAtcjdF0rjgVCKkbvXts5SkRD/s5W7OUVAHLnp3da0gXeLNq054kd0iGbn1TnwDRBR0Zq97eH7m1pxSSgHVg0QIKZ7lf0R3A9BLj2e4A6u72IPI/BEHgHKFzZ1D5rvDdwcGkzs0Zfh03z65OWJxhPwgI9i2LTC3oCewAAA",
+      "poster": "/media/video/clip-04-poster.webp",
+      "videos": [
+        {
+          "src": "/media/video/clip-04-720.mp4",
+          "height": 720,
+          "bytes": 618852
+        }
+      ],
+      "duration": 6,
+      "alt": "Video tại quán ở Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/bac-xiu",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/bac-xiu.jpg",
+      "hash": "e9f9d5e589f32ca4",
+      "src": "/media/menu/bac-xiu",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 2195,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAACwAgCdASoQAA8AA4BaJbACdAYsFzm/kY7sMmyeLeAA/vXpjOiHb9amg5d7t3vS4gX4g1OTffCicb5dSb+q0db7AZqnMwAX83+jsPS6mbtPZ/i7zEEHwT3CYSCf3GaV3aWzu5GhPBtj3Wd7cBnTYXZo8ZEExuR1NczaADkAAAA=",
+      "alt": "Ly bạc xỉu của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/ca-phe-den",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/ca-phe-den.jpg",
+      "hash": "1ec5c4e6c70be78a",
+      "src": "/media/menu/ca-phe-den",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3000,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JZwC/OBg24KuvS/u1axcAAP7Ff4ZfDXv8ny5kx42i+sYqJiUS2ns8mhEFdmAzPblrkoP8RCtimDhQiF3Jth2BNsF625QKqN4AAA==",
+      "alt": "Ly cà phê đen của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/ca-phe-muoi",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/ca-phe-muoi.jpg",
+      "hash": "a5727a99f75bb4cb",
+      "src": "/media/menu/ca-phe-muoi",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 1602,
+      "orientation": "landscape",
+      "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoQAAsAA4BaJYgCdAYuHZowP+CAAPwvsFmi9dQgduoulwz55zO7o3kLKBw/cORDh9ICSVvKQwRnGXixuHnZs2aimBaVU8OOZ/3p1AnJkMBhQR/LdRmCabcMAAA=",
+      "alt": "Ly cà phê muối của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/ca-phe-sua",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/ca-phe-sua.jpg",
+      "hash": "bc017c6b84283f5b",
+      "src": "/media/menu/ca-phe-sua",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYgCsAYx2pJnmmtlPompT+AAA/mbHgdcRebF0K9UFZ0i6HPkpZMJmQK+nkMwESySTo7mw6yhIjn99IVoOz0lAi73srOvSLJTFBkhaaTEQ4MPbEz4Vvh5gSLVqVkm+86tLbybI+Yo2raPHgNXUuCZq/NtX+BjlcbDW14+0ui0Ws8i9VPkRvZWI40ATSAD+AAA=",
+      "alt": "Ly cà phê sữa của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/ca-phe-sua-tuoi",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/ca-phe-sua-tuoi.jpg",
+      "hash": "5e21ebd3cf90715a",
+      "src": "/media/menu/ca-phe-sua-tuoi",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAACwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYgC06ywTlIk8yhvmHy+2diMxdY1gAP5LSzfeIqYrAq5i0CL7Dy7OwM0fMV9byUTHacsRd72suywzC7WTwNTqV01It3wrirjiKWBiG0blzutQFdRuw1l5MbeWZgm4kBZYiCAFWVXwy792xdrzVXWwA1N/7ABzN4udYb5TCBWIHyv9ImfLwz0Cca/+rAUH0J6XYVUcW/zqBISAlExIqrlT2D+hGU3OzE/tSPzFbvDo5FwAAAA=",
+      "alt": "Ly cà phê sữa tươi của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/cacao",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/cacao.jpg",
+      "hash": "d38925ef736fd229",
+      "src": "/media/menu/cacao",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 2400,
+      "height": 3600,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAACQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZACdMoAltQ0dOm/ic4zTdBPq9rgA4b7N17G4Eu8ufSutrleQOxuGMOymv/vtGbDV6OuesANry3Q7lhsMnxqXoS7/d7cqzcp0Ua6xCyQMN+vTCTl+1oEWwdF1n2qoeZANhjPRHbq9C6RNDWjTxKO8IoN/zJIAAAA=",
+      "alt": "Ly cacao của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/nuoc-cam",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/nuoc-cam.jpg",
+      "hash": "72093aa2f77b4d51",
+      "src": "/media/menu/nuoc-cam",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 1600,
+      "height": 2400,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRsIAAABXRUJQVlA4ILYAAABQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JbACdAB9SkE5e4s9n19xiAN8AAP7uoS1gI9IKfQg53ZAm5cw+RJRFs1102XmI9L3ph5gKjIi3Gk+/RGCQybw10bcKOM0ZMJXhxvOoFp+MViCf6nUb1ck6PaEJNWOAmd9vB/O9mkOE1FyLXq4idy8EgBi5vUnwFk6pbQnEfDavQ8TZ8/L7Px/dTk/t+Z/+57duC7RqzlXg7lU5vgAAAA==",
+      "alt": "Ly nước cam của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    },
+    {
+      "id": "menu/sua-chua-da",
+      "type": "image",
+      "role": "menu",
+      "group": "menu",
+      "source": "menu/sua-chua-da.jpg",
+      "hash": "66ddf8bcff54ae95",
+      "src": "/media/menu/sua-chua-da",
+      "widths": [
+        480,
+        960,
+        1600
+      ],
+      "formats": [
+        "avif",
+        "webp"
+      ],
+      "width": 1600,
+      "height": 2400,
+      "orientation": "portrait",
+      "blur": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZgCdIKq2QAGMAOEC+c7yyOAA/u/UWKyuPBxuIDYQb1Tv0h49pQ6pSP9luPjA9Rgdjf+w/SxzuXNhjhyZ0ukKYO8HLt1cSXTt/bgxDjOG76ygy4mNAfYdR52+5SndbuvYisWvbGrvXpvMa1vdSuu5pjKNAV6Xp6c96+kiRr36MrtTD+Fgot8ifL5cyWWt2B2L6ekUEAA=",
+      "alt": "Ly sữa chua đá của Anh Tú Coffee",
+      "caption": "",
+      "featured": false
+    }
+  ]
 }

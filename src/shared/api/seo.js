@@ -19,7 +19,6 @@ export function cafeJsonLd(site, prices) {
     logo: `${site.siteUrl}/brand/leaf-mark.svg`,
     image: [`${site.siteUrl}/og.png`],
     description: site.intro,
-    telephone: `+84${site.phone.replace(/^0/, '')}`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -61,5 +60,6 @@ export const SITEMAP_ROUTES = Object.freeze([
   { path: '/', priority: 1, changeFrequency: 'weekly' },
   { path: '/menu/', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/hinh-anh/', priority: 0.7, changeFrequency: 'weekly' },
+  { path: '/nhat-ky/', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/lien-he/', priority: 0.8, changeFrequency: 'monthly' },
 ]);

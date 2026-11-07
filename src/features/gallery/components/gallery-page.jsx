@@ -52,7 +52,7 @@ export function GalleryPage() {
       </header>
       <nav
         aria-label="Lọc theo nhóm"
-        className="sticky top-16 z-30 border-b border-brand-ink/10 bg-surface/95 backdrop-blur md:top-[4.5rem]"
+        className="sticky top-16 z-30 border-b border-brand-ink/10 bg-surface/95 backdrop-blur md:top-[4rem]"
       >
         <ul className="site-wrap flex gap-2 overflow-x-auto py-3 [scrollbar-width:none]">
           {FILTERS.map((f) => {
@@ -70,10 +70,10 @@ export function GalleryPage() {
                       .getElementById('anh-va-video')
                       ?.scrollIntoView({ block: 'start' });
                   }}
-                  className={`inline-flex min-h-11 items-center gap-2 rounded-full px-5 text-[0.9375rem] font-bold transition-colors duration-150 ${
+                  className={`inline-flex min-h-11 items-center gap-2 rounded-full border-[1.5px] px-5 text-[0.9375rem] font-bold transition-colors duration-150 ${
                     active
-                      ? 'bg-brand text-white'
-                      : 'bg-surface-alt text-brand-ink hover:bg-brand-ink/10'
+                      ? 'border-brand-ink/30 bg-brand text-white'
+                      : 'border-brand-ink/15 bg-surface-alt text-brand-ink hover:border-brand-ink/40 hover:bg-brand-ink/10'
                   }`}
                 >
                   {f.label}

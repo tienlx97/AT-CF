@@ -2,31 +2,52 @@ import Link from 'next/link';
 
 import { formatPrice } from '@/shared/api/format';
 import { menuImage } from '@/shared/api/media';
-import { featuredItems } from '@/shared/api/menu';
+import { visibleCategories } from '@/shared/api/menu';
+import { Button } from '@/shared/components/button';
 import { ResponsiveImage } from '@/shared/components/responsive-image';
 
-import { SectionHead } from './section-head';
-
-/** 3–4 drinks marked `featured` in menu.json: large photo, name, price. */
+/** A product-led menu preview, ready for the owner's isolated cup photographs. */
 export function FeaturedDrinks() {
-  const items = featuredItems(4);
+  const categories = visibleCategories();
+  const coffee = categories.find((category) => category.id === 'ca-phe');
+  const items = [
+    ...(coffee?.items ?? categories.flatMap((category) => category.items)),
+  ]
+    .sort(
+      (a, b) =>
+        Number(b.available) - Number(a.available) ||
+        Number(b.featured) - Number(a.featured),
+    )
+    .slice(0, 4);
   if (items.length === 0) return null;
+
   return (
     <section
       aria-labelledby="mon-noi-bat"
-      className="bg-surface-alt py-20 md:py-28"
+      className="bg-surface-alt py-16 md:py-20"
     >
-      <div className="site-wrap">
-        <SectionHead
+      <div className="site-wrap text-center">
+        <h2
           id="mon-noi-bat"
-          label="Món nổi bật"
-          title="Ly được gọi nhiều nhất"
-          lead="Giá một ly mang đi, pha ngay khi bạn gọi."
-          link={{ href: '/menu/', label: 'Xem cả menu' }}
-        />
-        <ul
-          className={`mt-12 grid grid-cols-2 gap-x-3 gap-y-8 md:gap-x-6 ${items.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}
+          className="text-3xl font-extrabold tracking-[0.08em] uppercase md:text-4xl"
         >
+          Thực đơn
+        </h2>
+        <nav
+          aria-label="Nhóm thực đơn"
+          className="mt-5 flex flex-wrap justify-center gap-x-8 gap-y-2"
+        >
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              href={`/menu/#nhom-${category.id}`}
+              className="nav-link inline-flex min-h-11 items-center text-base font-semibold text-brand-ink"
+            >
+              {category.name}
+            </Link>
+          ))}
+        </nav>
+        <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-8">
           {items.map((item) => {
             const photo = menuImage(item.image);
             return (
@@ -35,37 +56,39 @@ export function FeaturedDrinks() {
                   href="/menu/"
                   className="group block transition-transform duration-200 hover:-translate-y-0.5"
                 >
-                  <div className="zoom-frame relative aspect-[4/5] bg-surface">
+                  <div className="zoom-frame mx-auto aspect-[4/5] w-full max-w-[16rem] p-3 md:p-5">
                     {photo ? (
                       <ResponsiveImage
                         item={photo}
                         fill
-                        sizes="(min-width: 768px) 25vw, 50vw"
+                        fit="contain"
+                        imgClassName="object-bottom"
+                        sizes="(min-width: 768px) 24vw, 48vw"
                       />
                     ) : (
-                      <div className="flex h-full w-full items-center justify-center p-4 text-center">
+                      <div className="flex h-full items-center justify-center bg-surface p-4">
                         <span className="label-caps leading-relaxed text-brand-ink/80">
                           Ảnh ly {item.name}
                         </span>
                       </div>
                     )}
-                    {item.bestseller ? (
-                      <span className="absolute top-3 left-3 rounded-[2px] bg-brand px-2 py-1 text-[0.6875rem] font-bold tracking-[0.12em] text-white uppercase">
-                        Bán chạy
-                      </span>
-                    ) : null}
                   </div>
-                  <div className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                    <h3 className="text-lg font-bold">{item.name}</h3>
-                    <p className="text-lg font-extrabold text-brand tabular-nums">
-                      {formatPrice(item.price)}
-                    </p>
-                  </div>
+                  <h3 className="mt-4 text-lg font-bold md:text-xl">
+                    {item.name}
+                  </h3>
+                  <p className="mt-1 text-base font-semibold text-brand tabular-nums">
+                    {formatPrice(item.price)}
+                  </p>
                 </Link>
               </li>
             );
           })}
         </ul>
+        <div className="mt-10">
+          <Button href="/menu/" variant="secondary">
+            Xem thực đơn
+          </Button>
+        </div>
       </div>
     </section>
   );

@@ -61,15 +61,25 @@
 }
 
 @utility label-caps {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
-/* Page frame: one wrap for header, sections and footer (taste-skill place: 1200 column). */
+/* Wider shared frame requested by owner; keep equal, responsive gutters. */
 @utility site-wrap {
-  width: min(100% - 3rem, 75rem);
+  width: min(100% - clamp(2rem, 6vw, 6rem), 100rem);
   margin-inline: auto;
+}
+
+/* Larger screen type without scaling millimetre-based printable content. */
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+  .a4-sheet {
+    font-size: 16px;
+  }
 }
 
 @layer components {
@@ -174,10 +184,301 @@
   }
 }
 
-/* A lightbox or the drawer hides the floating contact buttons (unlayered: beats utilities). */
-body[data-lightbox='open'] .contact-bar,
-body[data-drawer='open'] .contact-bar {
+/* Owner-requested platform action: short, two-wave pulses, never a contact widget. */
+.shopee-float {
+  --shopeefood-ink: #ee4d2d;
+  position: fixed;
+  right: max(1.5rem, env(safe-area-inset-right));
+  bottom: calc(6rem + env(safe-area-inset-bottom));
+  z-index: 30;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--shopeefood-ink);
+  box-shadow: 0 5px 20px rgb(0 0 0 / 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.shopee-float:hover,
+.shopee-float:focus-visible {
+  transform: scale(1.04);
+  box-shadow: 0 7px 24px rgb(0 0 0 / 0.23);
+}
+.shopee-float:active { transform: scale(0.97); }
+.shopee-float__ring {
+  position: absolute;
+  inset: -2px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  animation: shopee-beacon 1.8s ease-out 2;
+}
+.shopee-float__ring--delayed { animation-delay: 0.8s; }
+.shopee-float:hover .shopee-float__ring,
+.shopee-float:focus .shopee-float__ring { animation-name: shopee-beacon-replay; }
+.shopee-float__icon {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 43px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.shopee-float__icon img { display: block; width: 220px; height: 43px; max-width: none; }
+.shopee-float__label {
+  position: absolute;
+  right: calc(100% + 12px);
+  padding: 8px 12px;
+  border-radius: 2px;
+  background: var(--color-brand-ink);
+  color: var(--color-surface);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.shopee-float:hover .shopee-float__label,
+.shopee-float:focus-visible .shopee-float__label { opacity: 1; }
+@keyframes shopee-beacon {
+  from { transform: scale(1); opacity: 0.48; }
+  to { transform: scale(1.65); opacity: 0; }
+}
+@keyframes shopee-beacon-replay {
+  from { transform: scale(1); opacity: 0.48; }
+  to { transform: scale(1.65); opacity: 0; }
+}
+@media (min-width: 768px) {
+  .shopee-float { bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+}
+body[data-lightbox='open'] .shopee-float,
+body[data-drawer='open'] .shopee-float { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .shopee-float__ring { animation: none !important; }
+  .shopee-float,
+  .shopee-float__label { transition: none !important; }
+}
+@media print { .shopee-float { display: none !important; } }
+
+/* Home opening (owner request, after giaoyeniz.com). Tokens only, pure CSS. */
+.hero-shade {
+  background:
+    linear-gradient(
+      to right,
+      rgb(0 0 0 / 0.2) 0%,
+      transparent 65%
+    ),
+    linear-gradient(to top, rgb(0 0 0 / 0.65) 0%, rgb(0 0 0 / 0.25) 32%, transparent 65%);
+}
+@media (min-width: 1024px) {
+  .hero-shade {
+    background: linear-gradient(to top, rgb(0 0 0 / 0.35), transparent 50%);
+  }
+}
+/* Slider: cross-fade, slow push-in on the shown photo, dash progress fill. */
+.hero-slide {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-slide[data-active] {
+  opacity: 1;
+}
+.hero-slide[data-active] img {
+  animation: hero-push 7.5s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-dash__fill {
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: hero-dash linear forwards paused;
+}
+.hero-dash__fill[data-running] {
+  animation-play-state: running;
+}
+@keyframes hero-push {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1.01);
+  }
+}
+@keyframes hero-dash {
+  to {
+    transform: scaleX(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-slide[data-active] img {
+    transition: none;
+    animation: none;
+  }
+  .hero-dash__fill {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
+.hero-rise {
+  animation: hero-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--rise-step, 0s) both;
+}
+.hero-copy .hero-rise:nth-child(2) {
+  --rise-step: 0.08s;
+}
+.hero-copy p.hero-rise {
+  --rise-step: 0.18s;
+}
+.hero-copy div.hero-rise {
+  --rise-step: 0.28s;
+}
+/* Under the splash the hero paints at once (early LCP) and the wipe reveals it. */
+html:not([data-intro-seen]) .hero-rise {
+  animation: none;
+}
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  overflow: hidden;
+  pointer-events: none;
+  color: white;
+  background: var(--color-brand-ink);
+  clip-path: inset(0);
+  animation: intro-wipe 0.9s cubic-bezier(0.76, 0, 0.24, 1) 2.3s forwards;
+}
+html[data-intro-seen] .intro-splash {
   display: none;
+}
+.intro-splash > * {
+  position: absolute;
+}
+.intro-splash__photo {
+  inset: 0;
+  filter: grayscale(0.5) brightness(0.55) contrast(1.1);
+  animation: intro-zoom 3.4s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.intro-splash__tint {
+  inset: 0;
+  background:
+    radial-gradient(55% 40% at 75% 100%, rgb(47 111 85 / 0.55), transparent 70%),
+    linear-gradient(110deg, rgb(31 61 49 / 0.95), rgb(31 61 49 / 0.8) 45%, rgb(47 111 85 / 0.55));
+}
+.intro-splash__sweep {
+  inset: -20% -40%;
+  background: linear-gradient(105deg, transparent 42%, rgb(255 255 255 / 0.1) 50%, transparent 58%);
+  animation: intro-sweep 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+.intro-splash__ghost {
+  top: 6vh;
+  right: -2vw;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.14);
+  font-size: clamp(100px, 24vw, 360px);
+  font-weight: 800;
+  line-height: 0.9;
+  animation: intro-drift 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+.intro-splash__wrap {
+  left: clamp(1rem, 3vw, 3rem);
+  right: 1.25rem;
+  bottom: clamp(3rem, 12vh, 8.75rem);
+}
+.intro-splash__mask {
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.intro-splash__mask > div {
+  animation: intro-line 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.intro-splash__mask + .intro-splash__mask > div {
+  animation-delay: 0.12s;
+}
+.intro-splash__eyebrow {
+  font-size: clamp(1rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.intro-splash__title {
+  font-size: clamp(2.75rem, 12vw, 11rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.intro-splash__rule {
+  width: min(46vw, 32rem);
+  height: 3px;
+  margin-top: 1.125rem;
+  background: white;
+  transform-origin: left center;
+  animation: intro-rule 1s cubic-bezier(0.65, 0, 0.35, 1) 0.8s both;
+}
+.intro-splash__tagline {
+  margin-top: 0.875rem;
+  font-size: 1rem;
+  font-weight: 600;
+  animation: hero-rise 0.7s ease 1.2s both;
+}
+@keyframes intro-wipe {
+  to {
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+  }
+}
+@keyframes intro-zoom {
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+@keyframes intro-line {
+  from {
+    transform: translateY(112%);
+  }
+}
+@keyframes intro-rule {
+  from {
+    transform: scaleX(0);
+  }
+}
+@keyframes intro-sweep {
+  from {
+    transform: translateX(-60%);
+  }
+  to {
+    transform: translateX(60%);
+  }
+}
+@keyframes intro-drift {
+  from {
+    opacity: 0;
+    transform: translateX(6vw);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intro-splash {
+    display: none;
+  }
+}
+@media print {
+  .intro-splash {
+    display: none;
+  }
 }
 
 @layer base {

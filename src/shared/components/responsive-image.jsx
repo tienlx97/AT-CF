@@ -7,7 +7,8 @@ import { fallbackSrc, srcSet } from '@/shared/api/media';
  * other eager images and the critical scripts on a slow connection.
  * @param {{
  *   item: import('@/shared/types/media').MediaItem, sizes: string, priority?: boolean,
- *   highPriority?: boolean, className?: string, imgClassName?: string, alt?: string, fill?: boolean
+ *   highPriority?: boolean, className?: string, imgClassName?: string, alt?: string, fill?: boolean,
+ *   fit?: 'cover' | 'contain'
  * }} props
  */
 export function ResponsiveImage({
@@ -19,14 +20,16 @@ export function ResponsiveImage({
   imgClassName = '',
   alt,
   fill = false,
+  fit = 'cover',
 }) {
-  const style = item.blur
-    ? {
-        backgroundImage: `url(${item.blur})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }
-    : undefined;
+  const style =
+    item.blur && fit === 'cover'
+      ? {
+          backgroundImage: `url(${item.blur})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }
+      : undefined;
   return (
     <picture
       className={`block ${fill ? 'h-full w-full' : ''} ${className}`}
@@ -34,7 +37,6 @@ export function ResponsiveImage({
     >
       <source type="image/avif" srcSet={srcSet(item, 'avif')} sizes={sizes} />
       <source type="image/webp" srcSet={srcSet(item, 'webp')} sizes={sizes} />
-      { }
       <img
         src={fallbackSrc(item)}
         alt={alt ?? item.alt}
@@ -43,7 +45,7 @@ export function ResponsiveImage({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         fetchPriority={highPriority ? 'high' : 'auto'}
-        className={`${fill ? 'h-full w-full object-cover' : 'h-auto w-full'} ${imgClassName}`}
+        className={`${fill ? `h-full w-full ${fit === 'contain' ? 'object-contain' : 'object-cover'}` : 'h-auto w-full'} ${imgClassName}`}
       />
     </picture>
   );

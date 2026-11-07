@@ -14,12 +14,10 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
     <ResponsiveImage
       item={photo}
       fill
+      fit="contain"
+      imgClassName="object-bottom"
       priority={priority}
-      sizes={
-        row
-          ? '96px'
-          : '(min-width: 1024px) 282px, (min-width: 640px) 45vw, 96px'
-      }
+      sizes={row ? '96px' : '(min-width: 1024px) 24vw, 48vw'}
       alt={photo.alt}
     />
   ) : (
@@ -45,17 +43,12 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
         ) : null}
       </div>
       <div className={`flex min-w-0 flex-1 flex-col ${row ? '' : 'pt-4'}`}>
-        <div className="flex items-baseline justify-between gap-3">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
           <h3 className="text-lg leading-snug font-bold">{item.name}</h3>
           <p className="shrink-0 text-lg font-extrabold text-brand tabular-nums">
             {formatPrice(item.price)}
           </p>
         </div>
-        {item.description ? (
-          <p className="mt-1 text-base leading-relaxed text-brand-ink/85">
-            {item.description}
-          </p>
-        ) : null}
         {item.available ? null : (
           <p className="mt-2 inline-flex w-fit rounded-[2px] bg-brand-ink px-2 py-1 text-xs font-bold tracking-[0.12em] text-white uppercase">
             Tạm hết

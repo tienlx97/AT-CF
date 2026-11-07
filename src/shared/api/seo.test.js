@@ -8,7 +8,7 @@ test('JSON-LD describes the cafe as the brief asks', () => {
   const ld = cafeJsonLd(/** @type {any} */ (site), { min: 8000, max: 20000 });
   assert.equal(ld['@type'], 'CafeOrCoffeeShop');
   assert.equal(ld.priceRange, '8.000đ–20.000đ');
-  assert.equal(ld.telephone, '+84932311434');
+  assert.equal('telephone' in ld, false);
   assert.deepEqual(ld.geo, {
     '@type': 'GeoCoordinates',
     latitude: 10.8052243,
@@ -22,9 +22,9 @@ test('JSON-LD describes the cafe as the brief asks', () => {
   assert.deepEqual(ld.sameAs, ['https://www.facebook.com/anhtucoffee2025']);
 });
 
-test('sitemap lists the four public routes, not the print menu', () => {
+test('sitemap lists the five public routes, not the print menu', () => {
   assert.deepEqual(
     SITEMAP_ROUTES.map((r) => r.path),
-    ['/', '/menu/', '/hinh-anh/', '/lien-he/'],
+    ['/', '/menu/', '/hinh-anh/', '/nhat-ky/', '/lien-he/'],
   );
 });

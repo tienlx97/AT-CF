@@ -31,3 +31,11 @@ test('five slogan options, all short', () => {
   assert.equal(SLOGAN_OPTIONS.length, 5);
   for (const slogan of SLOGAN_OPTIONS) assert.ok(slogan.length <= 45, slogan);
 });
+
+test('slide index wraps both ways', async () => {
+  const { wrapSlide } = await import('./hero.js');
+  assert.equal(wrapSlide(3, 1, 4), 0);
+  assert.equal(wrapSlide(0, -1, 4), 3);
+  assert.equal(wrapSlide(1, 1, 4), 2);
+  assert.equal(wrapSlide(0, 1, 0), 0);
+});

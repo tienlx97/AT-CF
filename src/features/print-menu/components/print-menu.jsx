@@ -1,10 +1,6 @@
-import {
-  formatPhone,
-  formatPrice,
-  shortTime,
-  zaloHref,
-} from '@/shared/api/format';
+import { formatPrice, shortTime } from '@/shared/api/format';
 import { categoryOptions, visibleCategories } from '@/shared/api/menu';
+import { headerCta } from '@/shared/api/order-links';
 import { site } from '@/shared/config/site';
 
 import { qrSvg } from '../api/qr';
@@ -12,14 +8,15 @@ import { PrintToolbar } from './print-button';
 
 /**
  * One A4 portrait sheet built from menu.json at build time: logo, name,
- * categories with prices large enough to read from 1–2 m, hours, phone and
- * two QR codes (website menu, Zalo).
+ * categories with prices large enough to read from 1–2 m, hours and
+ * QR codes for the website menu and the sole purchase channel, ShopeeFood.
  */
 export async function PrintMenu() {
   const categories = visibleCategories();
-  const [webQr, zaloQr] = await Promise.all([
+  const order = headerCta(site.order);
+  const [webQr, orderQr] = await Promise.all([
     qrSvg(`${site.siteUrl}/menu/`),
-    qrSvg(zaloHref(site.zalo)),
+    order ? qrSvg(order.href) : Promise.resolve(null),
   ]);
   const { store, online } = site.hours;
   const items = categories.reduce((sum, c) => sum + c.items.length, 0);
@@ -57,9 +54,7 @@ export async function PrintMenu() {
               <p className="text-[4mm] font-bold tracking-[0.25em] uppercase">
                 Cà phê pha máy · Mang đi
               </p>
-              <p className="mt-[2mm] text-[9mm] font-extrabold tabular-nums">
-                {formatPhone(site.phone)}
-              </p>
+              <p className="mt-[2mm] text-[6mm] font-extrabold">ShopeeFood</p>
             </div>
           </header>
 
@@ -133,15 +128,17 @@ export async function PrintMenu() {
                 Xem menu online
               </figcaption>
             </figure>
-            <figure className="text-center">
-              <div
-                className="size-[24mm]"
-                dangerouslySetInnerHTML={{ __html: zaloQr }}
-              />
-              <figcaption className="mt-[1.5mm] text-[3.4mm] font-bold">
-                Nhắn Zalo đặt món
-              </figcaption>
-            </figure>
+            {orderQr ? (
+              <figure className="text-center">
+                <div
+                  className="size-[24mm]"
+                  dangerouslySetInnerHTML={{ __html: orderQr }}
+                />
+                <figcaption className="mt-[1.5mm] text-[3.4mm] font-bold">
+                  Đặt qua ShopeeFood
+                </figcaption>
+              </figure>
+            ) : null}
           </footer>
         </article>
       </div>

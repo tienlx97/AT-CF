@@ -28,3 +28,13 @@ export const SLOGAN_OPTIONS = Object.freeze([
   'Nguyên chất từ hạt, pha máy từng ly.',
   'Sáng mua tại quán, chiều đặt online.',
 ]);
+
+/** How long a photo slide stays (ms); a clip stays until it ends, at most CLIP_MAX_MS. */
+export const SLIDE_MS = 6000;
+export const CLIP_MAX_MS = 20000;
+
+/** Next slide index, wrapping both ways. @param {number} index @param {number} step @param {number} count */
+export function wrapSlide(index, step, count) {
+  if (count <= 0) return 0;
+  return (((index + step) % count) + count) % count;
+}

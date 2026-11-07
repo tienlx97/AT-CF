@@ -1,9 +1,9 @@
 import {
-  ContactOrder,
   FeaturedDrinks,
   GalleryPreview,
   Hero,
   Intro,
+  IntroSplash,
   Reels,
   Visit,
 } from '@/features/home';
@@ -22,13 +22,13 @@ export default function HomePage() {
           __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
+      <IntroSplash />
       <Hero />
       <Intro />
       <FeaturedDrinks />
       <Reels />
       <GalleryPreview />
       <Visit />
-      <ContactOrder />
     </>
   );
 }

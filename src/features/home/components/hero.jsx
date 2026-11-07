@@ -1,103 +1,57 @@
-'use client';
-
 import { MapPin, Utensils } from 'lucide-react';
 
-import { shortTime } from '@/shared/api/format';
-import { heroMedia, videoSource } from '@/shared/api/media';
+import { heroSlides } from '@/shared/api/media';
 import { Button } from '@/shared/components/button';
-import { StatusBadge } from '@/shared/components/status-badge';
 import { site } from '@/shared/config/site';
 
-import { HERO_HEIGHT, heroFor } from '../config/hero';
-import { useHeroVideo } from '../hooks/use-hero-video';
+import { HeroSlider } from './hero-slider';
 
-/** Full-screen hero: video (or its poster) under a green veil, the shop's facts and two actions. */
+/**
+ * Near-full-screen slider: photos and clips from
+ * media-src/hero behind a left-weighted shade, a tracked eyebrow over a large
+ * brand title, one outlined category line and two actions. The copy stays
+ * still while the media changes. The intro's fact card overlaps its lower edge.
+ */
 export function Hero() {
-  const hero = heroMedia();
-  const variant = useHeroVideo();
-  const posterLandscape = hero.landscape?.poster ?? hero.portrait?.poster;
-  const posterPortrait = hero.portrait?.poster ?? hero.landscape?.poster;
-  const playing = variant ? heroFor(hero, variant) : null;
-  const source =
-    playing && variant ? videoSource(playing, HERO_HEIGHT[variant]) : null;
-  const { store, online } = site.hours;
+  const slides = heroSlides();
 
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-brand-ink text-white"
+      className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-brand-ink text-white"
     >
-      {posterLandscape ? (
-        <picture className="absolute inset-0 -z-20">
-          {posterPortrait ? (
-            <source media="(max-width: 767px)" srcSet={posterPortrait} />
-          ) : null}
-          {}
-          <img
-            src={posterLandscape}
-            alt=""
-            fetchPriority="high"
-            className="h-full w-full object-cover"
-          />
-        </picture>
-      ) : (
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 flex items-start justify-end p-6 pt-24"
-        >
-          <span className="label-caps max-w-[18rem] text-right leading-relaxed text-white/90">
-            Chờ video hero: rót cà phê tại quầy, dù xanh của quán
-          </span>
-        </div>
-      )}
-      {source ? (
-        <video
-          key={source.src}
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-          src={source.src}
-          poster={playing?.poster}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
-      ) : null}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-brand-ink/65"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-linear-to-t from-brand-ink/85 to-transparent"
-      />
+      {slides.length ? <HeroSlider slides={slides} /> : null}
+      <div aria-hidden="true" className="hero-shade absolute inset-0 -z-10" />
 
-      <div className="site-wrap pt-28 pb-14 md:pb-20">
-        <StatusBadge />
-        <h1
-          id="hero-title"
-          className="mt-5 max-w-[14ch] text-[2.5rem] leading-[1.02] font-extrabold tracking-tight sm:text-6xl lg:text-7xl"
-        >
-          Cà phê pha máy mang đi ở {site.address.district}
-        </h1>
-        <p className="mt-5 max-w-xl text-lg leading-relaxed font-medium text-white md:text-xl">
-          {site.tagline} Bán tại quán {shortTime(store.open)} –{' '}
-          {shortTime(store.close)}, đặt online đến {shortTime(online.close)}.
-        </p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/menu/" variant="light">
-            <Utensils aria-hidden="true" className="size-5" />
-            Xem menu
-          </Button>
-          <Button href={site.mapUrl} variant="outlineLight">
-            <MapPin aria-hidden="true" className="size-5" />
-            Chỉ đường
-          </Button>
+      <div className="hero-copy site-wrap pt-24 pb-44 md:pt-28 md:pb-40 lg:pb-36">
+        <div className="relative isolate lg:max-w-[32rem]">
+          <div
+            data-overlay="true"
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-x-28 -inset-y-20 -z-10 hidden bg-[radial-gradient(closest-side,rgba(8,12,22,0.54)_0%,rgba(8,12,22,0.48)_60%,rgba(8,12,22,0)_100%)] lg:block"
+          />
+          <h1 id="hero-title">
+            <span className="hero-rise block text-[clamp(0.8125rem,1.2vw,1rem)] leading-normal font-bold tracking-[0.14em] uppercase">
+              CAFE PHA MÁY
+            </span>
+            <span className="hero-rise hero-title mt-3 block text-[clamp(3rem,7.5vw,7rem)] leading-[1.05] font-extrabold tracking-[-0.035em]">
+              {site.brandMain}
+            </span>
+          </h1>
+          <p className="hero-rise mt-6 inline-block rounded-[2px] border-[1.5px] border-white/60 px-4 py-2 text-[clamp(0.8125rem,3.4vw,1rem)] font-semibold tracking-[0.06em] uppercase">
+            100% NGUYÊN CHẤT - ORGANIC
+          </p>
+          <div className="hero-rise mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="/menu/" variant="light">
+              <Utensils aria-hidden="true" className="size-5" />
+              Xem thực đơn
+            </Button>
+            <Button href={site.mapUrl} variant="outlineLight">
+              <MapPin aria-hidden="true" className="size-5" />
+              Chỉ đường
+            </Button>
+          </div>
         </div>
-        <p className="label-caps mt-10 hidden text-white/90 md:block">
-          {site.address.street} · {site.address.district} · {site.address.city}
-        </p>
       </div>
     </section>
   );

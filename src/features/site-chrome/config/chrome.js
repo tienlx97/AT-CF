@@ -1,13 +1,11 @@
 import { normalizePath } from '@/shared/api/routes.js';
 
-/** Routes whose first screen is a dark hero: the header starts transparent there. */
+/** Routes whose first screen has hero media, used only for the over-hero state. */
 export const HERO_ROUTES = Object.freeze(['/']);
 
-/** Pixels scrolled before the header turns solid. */
+/** Scroll threshold for the over-hero state; never changes navbar geometry. */
 export const SOLID_AFTER = 24;
 
-/** Anchor of the order-online block on the home page. */
-export const ORDER_ANCHOR = '/#dat-online';
 /** Routes printed or shown without site chrome (the A4 menu). */
 export const BARE_ROUTES = Object.freeze(['/menu-in']);
 

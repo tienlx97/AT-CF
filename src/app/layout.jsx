@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { INTRO_ONCE_SCRIPT } from '@/features/home';
 import { SiteFrame } from '@/features/site-chrome';
 import { BRAND_COLORS } from '@/shared/config/brand';
 import { site } from '@/shared/config/site';
@@ -13,9 +14,9 @@ const FONT_FILES = [
   '/fonts/montserrat-vietnamese-wght-normal.woff2',
 ];
 
-const HOME_TITLE = `${site.name} — Cà phê pha máy nguyên chất, mang đi | Bình Tân, TP.HCM`;
+const HOME_TITLE = `${site.name}`;
 const DESCRIPTION =
-  'Cà phê pha máy 100% nguyên chất, mang đi tại 83 Đường A8, Bình Tân. Mở cửa 5:30 – 11:00, đặt online 11:00 – 20:00. Cà phê sữa, bạc xỉu, cà phê muối từ 15.000đ.';
+  'Cà phê pha máy 100% nguyên chất, organic tại 83 Đường A8, Bình Tân. Mở cửa 5:30 – 11:00, bán online 11:00 – 20:00.';
 
 /** @type {import('next').Metadata} */
 export const metadata = {
@@ -46,7 +47,7 @@ export const metadata = {
     description: DESCRIPTION,
     images: ['/og.png'],
   },
-  formatDetection: { telephone: true, address: false, email: false },
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export const viewport = {
@@ -58,8 +59,10 @@ export const viewport = {
 /** @param {{ children: import('react').ReactNode }} props */
 export default function RootLayout({ children }) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
       <head>
+        {/* Decides before first paint whether the home intro plays (static JS, no input). */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_ONCE_SCRIPT }} />
         {FONT_FILES.map((href) => (
           <link
             key={href}

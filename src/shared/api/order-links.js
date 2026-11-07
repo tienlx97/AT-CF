@@ -1,20 +1,25 @@
 /**
- * Online-order buttons present in site.json, in display order. Empty links are
- * hidden so the owner only edits JSON to show or hide a platform.
+ * ShopeeFood is the site's only purchase channel. Empty or invalid links hide
+ * the action; there is no direct-contact fallback.
  * @param {import('@/shared/types/site').OrderLinks} order
  */
 export function orderPlatforms(order) {
   return [
-    { id: 'shopeefood', label: 'ShopeeFood', href: order.shopeefood?.trim() ?? '' },
-    { id: 'grabfood', label: 'GrabFood', href: order.grabfood?.trim() ?? '' },
+    {
+      id: 'shopeefood',
+      label: 'ShopeeFood',
+      href: order.shopeefood?.trim() ?? '',
+    },
   ].filter((platform) => /^https?:\/\//.test(platform.href));
 }
 
 /**
- * Header CTA: "Đặt online" only while selling online and both platforms exist.
+ * The external purchase action, independent of the site's local opening clock.
  * @param {import('@/shared/types/site').OrderLinks} order
- * @param {import('@/shared/types/site').OpenState | null} state
  */
-export function headerCta(order, state) {
-  return state === 'online' && orderPlatforms(order).length === 2 ? 'order-online' : 'call';
+export function headerCta(order) {
+  const platform = orderPlatforms(order)[0];
+  return platform
+    ? { label: 'Đặt qua ShopeeFood', href: platform.href, kind: 'order' }
+    : null;
 }

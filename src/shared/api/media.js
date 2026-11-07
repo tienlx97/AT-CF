@@ -95,3 +95,15 @@ export function videoSource(item, wanted) {
   const list = [...(item.videos ?? [])].sort((a, b) => a.height - b.height);
   return list.find((v) => v.height >= wanted) ?? list[list.length - 1] ?? null;
 }
+
+/**
+ * Hero slider frames: every photo and clip in media-src/hero, in file-name
+ * order (owner numbers them 01-, 02- …). A photo should come first: it is the
+ * page's LCP image, a clip's file only loads when its slide is shown.
+ * @param {readonly MediaItem[]} [items]
+ */
+export function heroSlides(items = MEDIA_ITEMS) {
+  return items
+    .filter((item) => item.role === 'hero')
+    .sort((a, b) => a.id.localeCompare(b.id));
+}

@@ -8,7 +8,7 @@ import { Lightbox } from '@/shared/components/lightbox';
 import { MasonryGrid } from '@/shared/components/masonry-grid';
 import { MediaPlaceholder } from '@/shared/components/media-placeholder';
 
-import { introPhoto } from './intro';
+import { introPhotos } from './intro';
 import { SectionHead } from './section-head';
 
 const WANTED = [
@@ -24,8 +24,8 @@ const WANTED = [
 
 /** The 8–12 best photos as masonry, each opening the lightbox, then a link to /hinh-anh. */
 export function GalleryPreview() {
-  const lead = introPhoto();
-  const photos = galleryPreview(12, undefined, lead ? [lead.id] : []);
+  const shown = introPhotos().flatMap((photo) => (photo ? [photo.id] : []));
+  const photos = galleryPreview(12, undefined, shown);
   const [index, setIndex] = useState(/** @type {number | null} */ (null));
   return (
     <section aria-labelledby="hinh-anh-quan" className="py-20 md:py-28">
@@ -33,7 +33,7 @@ export function GalleryPreview() {
         <SectionHead
           id="hinh-anh-quan"
           label="Hình ảnh"
-          title="Quán, quầy pha và những ly mang đi"
+          title="Hình ảnh quầy và đồ uống"
           link={{ href: '/hinh-anh/', label: 'Xem tất cả ảnh' }}
         />
         <div className="mt-12">

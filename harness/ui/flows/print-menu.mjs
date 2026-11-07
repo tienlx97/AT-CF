@@ -10,11 +10,11 @@ export default async function printMenu(page, { check }) {
   await page.wait(500);
   await pageBasics(page, check, 'menu-in');
   await page.shot('screen', { full: true });
-  const chrome = await page.eval('Boolean(document.querySelector("header.fixed, footer.bg-brand, .contact-bar"))');
+  const chrome = await page.eval('Boolean(document.querySelector("header.fixed, footer.bg-brand, .contact-bar, .shopee-float"))');
   check('no site header/footer/contact bar', !chrome);
   const text = await page.eval('document.querySelector(".a4-sheet").innerText');
   check('every menu item is on the sheet', names.every((n) => text.includes(n)), names.filter((n) => !text.includes(n)).join(', '));
-  check('phone on the sheet', text.includes('0932 311 434'));
+  check('ShopeeFood replaces phone/Zalo on the sheet', text.includes('ShopeeFood') && !/0932|Zalo/.test(text));
   const qrs = await page.eval('document.querySelectorAll(".a4-sheet figure svg").length');
   check('two QR codes', qrs === 2, `${qrs}`);
   const minPx = await page.eval(`Math.min(...[...document.querySelectorAll('.a4-sheet li')].map((li) => parseFloat(getComputedStyle(li).fontSize)))`);

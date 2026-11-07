@@ -9,6 +9,7 @@
     "src/app": "A",
     "src/features/gallery": "A",
     "src/features/home": "A",
+    "src/features/journal": "A",
     "src/features/menu": "A",
     "src/features/print-menu": "A",
     "src/features/site-chrome": "A",
@@ -20,9 +21,9 @@
   },
   "metrics": {
     "src/app": {
-      "sourceFiles": 9,
+      "sourceFiles": 11,
       "testFiles": 2,
-      "lines": 237,
+      "lines": 292,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -36,9 +37,17 @@
       "bigFiles": 0
     },
     "src/features/home": {
-      "sourceFiles": 11,
+      "sourceFiles": 13,
       "testFiles": 2,
-      "lines": 748,
+      "lines": 951,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/features/journal": {
+      "sourceFiles": 3,
+      "testFiles": 1,
+      "lines": 189,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -46,7 +55,7 @@
     "src/features/menu": {
       "sourceFiles": 7,
       "testFiles": 1,
-      "lines": 270,
+      "lines": 234,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -54,7 +63,7 @@
     "src/features/print-menu": {
       "sourceFiles": 4,
       "testFiles": 2,
-      "lines": 199,
+      "lines": 196,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -62,7 +71,7 @@
     "src/features/site-chrome": {
       "sourceFiles": 10,
       "testFiles": 2,
-      "lines": 415,
+      "lines": 350,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -70,7 +79,7 @@
     "src/shared/api": {
       "sourceFiles": 10,
       "testFiles": 11,
-      "lines": 554,
+      "lines": 572,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -78,7 +87,7 @@
     "src/shared/components": {
       "sourceFiles": 10,
       "testFiles": 2,
-      "lines": 600,
+      "lines": 607,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -86,7 +95,7 @@
     "src/shared/config": {
       "sourceFiles": 6,
       "testFiles": 1,
-      "lines": 191,
+      "lines": 193,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
