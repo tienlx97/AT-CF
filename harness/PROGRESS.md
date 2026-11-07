@@ -3,6 +3,27 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — site-foundation 2.1: shared components and site chrome
+
+- Shared: `Logo` (unchanged brand SVGs), `Button` (one family, 48px, hover step/press),
+  `StatusBadge`, `MediaPlaceholder`, `FacebookIcon`; hooks `useScrolled`, `useDialog`
+  (focus trap, Esc, scroll lock, body flag); `routes.js` path helpers.
+- Feature `site-chrome`: `SiteFrame` = Header (transparent over home hero, solid after
+  24px, CTA "Gọi đặt món" ↔ "Đặt online"), MobileDrawer, Footer (brand green, white
+  logo), mobile ContactBar (hidden while drawer/lightbox open). `ChromeGate` hides chrome
+  on `BARE_ROUTES` (`/menu-in`).
+- Design direction: taste-skill **place** plan, owner brief wins on conflicts (decision
+  log in `openspec/changes/site-foundation/proposal.md`).
+- New harness tool `harness/ui/flow.mjs` (CDP, no dependency) + flows in
+  `harness/ui/flows/`: no horizontal scroll, 44px targets, lang, one h1, console/404s,
+  drawer focus/Esc. Run: `node harness/ui/flow.mjs --flow harness/ui/flows/site-chrome.mjs --root out --widths 390,1440`.
+- Evidence: gate `harness/runs/20261107-111554-CZ1keY/` (passed, fresh); UI
+  `harness/runs/ui-site-foundation-2.1/` (all checks passed, screenshots 390/1440).
+- Discovered: Next 16 static export + route group `(site)` → prefetch 404s
+  (`__next.!KHNpdGUp.__PAGE__.txt`); route groups avoided (docs/architecture.md).
+  Node ESM tests need explicit `.js` in imports of `.js` logic files.
+- Harness gap: `prettier --write src` reformatted untouched files and failed
+  `no-format-churn`; format only the files you wrote.
 ## 2026-11-07 — site-foundation 1.1: Tailwind tokens, static export, site.json, open status
 
 - Brief `ANH-TU-PROMP.md` turned into `openspec/project.md` (purpose, routes, facts,

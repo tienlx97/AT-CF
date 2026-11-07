@@ -13,4 +13,4 @@ Rules:
 
 ## 2. Site chrome
 
-- [ ] 2.1 Shared components (Logo, Button, StatusBadge, MediaPlaceholder) and `site-chrome` feature (Header with transparent/solid states and CTA switch, MobileDrawer with focus trap + Esc, Footer, mobile ContactBar), wired in root layout with a minimal home shell — verify: browser screenshots 390 and 1440, drawer Esc + focus return, no horizontal scroll, gate passes
+- [x] 2.1 Shared components (Logo, Button, StatusBadge, MediaPlaceholder) and `site-chrome` feature (Header with transparent/solid states and CTA switch, MobileDrawer with focus trap + Esc, Footer, mobile ContactBar), wired in root layout with a minimal home shell — verify: browser screenshots 390 and 1440, drawer Esc + focus return, no horizontal scroll, gate passes

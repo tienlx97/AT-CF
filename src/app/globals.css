@@ -31,3 +31,84 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
 }
+/* Page frame: one wrap for header, sections and footer (taste-skill place: 1200 column). */
+@utility site-wrap {
+  width: min(100% - 3rem, 75rem);
+  margin-inline: auto;
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 60;
+    padding: 0.75rem 1rem;
+    background: var(--color-brand-ink);
+    color: white;
+    font-weight: 700;
+    clip-path: inset(50%);
+  }
+  .skip-link:focus {
+    clip-path: none;
+  }
+
+  /* Hover layer (taste-skill motion.md): words draw a 1px line 4px under them. */
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current='page']::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Zoom a photograph inside its frame when its link is hovered. */
+  .zoom-frame {
+    overflow: hidden;
+  }
+  .zoom-frame img,
+  .zoom-frame video {
+    transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  a:hover .zoom-frame img,
+  button:hover .zoom-frame img,
+  .zoom-frame:hover img {
+    transform: scale(1.03);
+  }
+}
+
+/* A lightbox or the drawer hides the floating contact buttons (unlayered: beats utilities). */
+body[data-lightbox='open'] .contact-bar,
+body[data-drawer='open'] .contact-bar {
+  display: none;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 1ms !important;
+      animation-duration: 1ms !important;
+    }
+  }
+}

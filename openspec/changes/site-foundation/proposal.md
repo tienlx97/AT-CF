@@ -1,6 +1,6 @@
 # Proposal: site-foundation
 
-**Status:** in-progress
+**Status:** done
 **Created:** 2026-11-07
 
 ## Why
@@ -41,3 +41,4 @@ and 9.2.1.
 | 2026-11-07 | Status is computed client-side after mount; server HTML renders a neutral "Giờ mở cửa 5:30 – 20:00" badge | Static export has no request time; avoids hydration mismatch |
 | 2026-11-07 | Header CTA "Đặt online" only when both order links exist and time is 11:00–20:00 | Brief section 4, block 8 |
 | 2026-11-07 | `skill design-taste-frontend` rule 9 (no house number/real phone) is overridden by the owner brief | Owner explicitly supplies real address/phone for customers to call |
+| 2026-11-07 | Design follows the taste skill's **place** plan (1200 column, equal edges, square photographs, 2px 48px buttons, flat grounds, hover layer only, visit block on screen 2, menu as ruled rows, one main action a screen). Where the skill and the owner brief differ, the brief wins: hero video with green overlay and words on it, transparent header over the hero, Montserrat 800 headings, small uppercase tracked labels, reels strip, map, real address and phone | AGENTS.md: product scope comes from the owner's brief; reference congcaphe.com (owner-supplied) for menu-by-group and social block |

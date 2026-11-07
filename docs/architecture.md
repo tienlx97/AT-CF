@@ -55,4 +55,12 @@ Rules: `harness/structure.rules.cjs`, run by `./harness/verify.sh` (structure st
 | `src/shared/api/order-links.js` | Which order platforms show; header CTA rule |
 | `src/shared/hooks/use-open-status.js` | Live status after mount |
 | `src/app/globals.css` | Tailwind import and `@theme` brand tokens |
+| `src/shared/hooks/use-dialog.js` | Modal focus trap, Esc, scroll lock, body flag (drawer, lightbox) |
+| `src/shared/components/` | Logo, Button (one family), StatusBadge, MediaPlaceholder, brand icons |
+| `src/features/site-chrome/` | `SiteFrame`: header, mobile drawer, footer, contact bar; `ChromeGate` hides them on `BARE_ROUTES` |
+| `harness/ui/flow.mjs` | Browser flow runner over CDP for `out/` (flows in `harness/ui/flows/`) |
 | `public/brand/` | Logo files copied unchanged from `assets/logo/` |
+
+Route groups are not used: under static export Next 16 writes their prefetch
+files under a name the client never requests (404s). Chrome-less pages are listed
+in `BARE_ROUTES` instead.

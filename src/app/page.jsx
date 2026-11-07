@@ -1,12 +1,36 @@
+import { Button } from '@/shared/components/button';
+import { MediaPlaceholder } from '@/shared/components/media-placeholder';
+import { StatusBadge } from '@/shared/components/status-badge';
 import { site } from '@/shared/config/site';
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center gap-3 bg-brand px-6 text-center text-white">
-      <p className="label-caps">Cà phê pha máy · Mang đi</p>
-      <h1 className="text-5xl font-extrabold tracking-tight">{site.brandMain}</h1>
-      <p className="label-caps">{site.brandSub}</p>
-      <p className="max-w-md text-base font-medium">{site.tagline}</p>
-    </main>
+    <>
+      <section className="relative flex min-h-[100svh] items-end bg-brand-ink pt-24 pb-16 text-white">
+        <div className="site-wrap">
+          <StatusBadge />
+          <h1 className="mt-5 max-w-3xl text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl">
+            Cà phê pha máy mang đi ở {site.address.district}
+          </h1>
+          <p className="mt-4 max-w-xl text-lg font-medium text-white/90">
+            {site.tagline}
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="/menu/" variant="light">
+              Xem menu
+            </Button>
+            <Button href={site.mapUrl} variant="outlineLight">
+              Chỉ đường
+            </Button>
+          </div>
+        </div>
+      </section>
+      <section className="py-24">
+        <div className="site-wrap grid gap-6 md:grid-cols-2">
+          <MediaPlaceholder label="Ảnh quầy pha máy" />
+          <MediaPlaceholder label="Ảnh mặt tiền quán" />
+        </div>
+      </section>
+    </>
   );
 }

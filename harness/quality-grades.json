@@ -7,7 +7,9 @@
   },
   "grades": {
     "src/app": "A",
+    "src/features/site-chrome": "A",
     "src/shared/api": "A",
+    "src/shared/components": "A",
     "src/shared/config": "A",
     "src/shared/hooks": "A",
     "src/shared/types": "A"
@@ -16,15 +18,31 @@
     "src/app": {
       "sourceFiles": 2,
       "testFiles": 0,
-      "lines": 43,
+      "lines": 72,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/features/site-chrome": {
+      "sourceFiles": 10,
+      "testFiles": 2,
+      "lines": 415,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
     },
     "src/shared/api": {
-      "sourceFiles": 3,
-      "testFiles": 3,
-      "lines": 102,
+      "sourceFiles": 4,
+      "testFiles": 4,
+      "lines": 148,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/shared/components": {
+      "sourceFiles": 5,
+      "testFiles": 1,
+      "lines": 180,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -32,15 +50,15 @@
     "src/shared/config": {
       "sourceFiles": 2,
       "testFiles": 0,
-      "lines": 38,
+      "lines": 54,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
     },
     "src/shared/hooks": {
-      "sourceFiles": 1,
+      "sourceFiles": 3,
       "testFiles": 0,
-      "lines": 22,
+      "lines": 116,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -48,7 +66,7 @@
     "src/shared/types": {
       "sourceFiles": 1,
       "testFiles": 0,
-      "lines": 17,
+      "lines": 18,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0

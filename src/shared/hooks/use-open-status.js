@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { getOpenStatus } from '@/shared/api/open-status';
-import { site } from '@/shared/config/site';
+import { getOpenStatus } from '@/shared/api/open-status.js';
+import { site } from '@/shared/config/site.js';
 
 /**
  * Live status, computed only in the browser (a static page has no request
@@ -11,7 +11,9 @@ import { site } from '@/shared/config/site';
  * @returns {import('@/shared/types/site').OpenStatus | null}
  */
 export function useOpenStatus() {
-  const [status, setStatus] = useState(/** @type {import('@/shared/types/site').OpenStatus | null} */ (null));
+  const [status, setStatus] = useState(
+    /** @type {import('@/shared/types/site').OpenStatus | null} */ (null),
+  );
   useEffect(() => {
     const update = () => setStatus(getOpenStatus(new Date(), site.hours));
     update();
