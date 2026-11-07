@@ -3,6 +3,17 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — media-pipeline 1.2: pnpm media
+
+- `scripts/process-media.mjs` (`pnpm media`): sharp AVIF+WebP 480/960/1600 (no upscale),
+  EXIF rotate + metadata stripped, 16px blur; ffmpeg H.264 CRF 26–28 faststart, 720/1080
+  short side, hero muted ≤20 s with CRF raised until ≤2 MB/≤3 MB, clips ≤60 s with AAC,
+  WebP poster at 1 s; cache `media-src/.cache.json`; removed sources delete their outputs.
+- Verified on generated fixtures (temp dir, `MEDIA_SRC/MEDIA_OUT/MEDIA_MANIFEST` env):
+  5 files processed, 2nd run 0 processed, hand-edited caption kept, deleted clip's outputs removed,
+  hero 720/1080 within budget. `src/data/media.json` empty until the owner adds media.
+- Evidence: `harness/runs/20261107-112140-xGyh7o/` (passed, fresh).
+
 ## 2026-11-07 — media-pipeline 1.1: media helpers
 
 - `src/shared/api/media-core.js` (slugify, classify by folder, orientation, Vietnamese alt
