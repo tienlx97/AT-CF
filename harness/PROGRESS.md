@@ -3,6 +3,13 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — menu-page 1.1: menu.json and readers
+
+- `src/data/menu.json` (13 provisional items, options đường/đá, descriptions proposed for owner
+  review); `src/shared/config/menu.js` validation with Vietnamese errors; `src/shared/api/menu.js`
+  (featured, options, price range, visible categories) + 5 tests.
+- Evidence: `harness/runs/20261107-112717-ZLDcfj/` (passed, fresh).
+
 ## 2026-11-07 — media-pipeline 1.3: media readers and components
 
 - `src/shared/api/media.js` (srcset, hero landscape/portrait, menu image, gallery, reels,

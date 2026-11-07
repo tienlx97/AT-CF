@@ -1,6 +1,6 @@
 # Proposal: menu-page
 
-**Status:** draft
+**Status:** in-progress
 **Created:** 2026-11-07
 
 ## Why
@@ -22,3 +22,5 @@ to add items and categories by editing JSON only. Source: `ANH-TU-PROMP.md` sect
 
 | Date | Decision | Why |
 |---|---|---|
+| 2026-11-07 | Menu data reader lives in `src/shared/{config,api}/menu.js`, not inside the menu feature | Home (featured), `/menu` and `/menu-in` all read it; features cannot import each other |
+| 2026-11-07 | Item descriptions are proposals for the owner to approve; small bottled drinks have none | Brief 5: "mô tả ngắn Claude đề xuất, tôi duyệt lại" |

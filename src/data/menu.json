@@ -1,0 +1,164 @@
+{
+  "currency": "VND",
+  "updatedAt": "2026-11-07",
+  "options": [
+    {
+      "id": "sugar",
+      "label": "Đường",
+      "values": ["Ít đường", "Bình thường", "Nhiều đường", "Không đường"]
+    },
+    {
+      "id": "ice",
+      "label": "Đá",
+      "values": ["Ít đá", "Bình thường", "Nhiều đá", "Đá riêng", "Nóng"]
+    }
+  ],
+  "categories": [
+    {
+      "id": "ca-phe",
+      "name": "Cà phê",
+      "description": "Pha máy từ hạt nguyên chất, rót ngay khi bạn gọi.",
+      "optionIds": ["sugar", "ice"],
+      "items": [
+        {
+          "id": "ca-phe-den",
+          "name": "Cà phê đen",
+          "price": 15000,
+          "description": "Espresso pha máy, đậm vị, thơm, hậu ngọt nhẹ.",
+          "image": "menu/ca-phe-den",
+          "bestseller": true,
+          "featured": true,
+          "available": true
+        },
+        {
+          "id": "ca-phe-sua",
+          "name": "Cà phê sữa",
+          "price": 17000,
+          "description": "Cà phê pha máy với sữa đặc, đậm và béo.",
+          "image": "menu/ca-phe-sua",
+          "bestseller": true,
+          "featured": true,
+          "available": true
+        },
+        {
+          "id": "bac-xiu",
+          "name": "Bạc xỉu",
+          "price": 17000,
+          "description": "Nhiều sữa, ít cà phê, ngọt dịu dễ uống.",
+          "image": "menu/bac-xiu",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "ca-phe-sua-tuoi",
+          "name": "Cà phê sữa tươi",
+          "price": 17000,
+          "description": "Cà phê pha máy với sữa tươi, nhẹ và thanh.",
+          "image": "menu/ca-phe-sua-tuoi",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "ca-phe-muoi",
+          "name": "Cà phê muối",
+          "price": 20000,
+          "description": "Cà phê pha máy, lớp kem muối béo mặn nhẹ.",
+          "image": "menu/ca-phe-muoi",
+          "bestseller": false,
+          "featured": true,
+          "available": true
+        },
+        {
+          "id": "cacao",
+          "name": "Cacao",
+          "price": 20000,
+          "description": "Cacao đậm, béo, uống nóng hoặc đá.",
+          "image": "menu/cacao",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        }
+      ]
+    },
+    {
+      "id": "do-uong-khac",
+      "name": "Đồ uống khác",
+      "description": "Mát lạnh, mang đi cùng ly cà phê.",
+      "optionIds": [],
+      "items": [
+        {
+          "id": "sua-chua-da",
+          "name": "Sữa chua đá",
+          "price": 15000,
+          "description": "Sữa chua chua ngọt, đá xay mát.",
+          "image": "menu/sua-chua-da",
+          "bestseller": false,
+          "featured": true,
+          "available": true
+        },
+        {
+          "id": "nuoc-cam",
+          "name": "Nước cam",
+          "price": 15000,
+          "description": "Cam vắt tươi mỗi ngày.",
+          "image": "menu/nuoc-cam",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "nuoc-suoi-saka",
+          "name": "Nước suối Saka",
+          "price": 8000,
+          "description": "",
+          "image": "",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "revive",
+          "name": "Revive",
+          "price": 12000,
+          "description": "",
+          "image": "",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "pepsi",
+          "name": "Pepsi",
+          "price": 12000,
+          "description": "",
+          "image": "",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "247",
+          "name": "247",
+          "price": 12000,
+          "description": "",
+          "image": "",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        },
+        {
+          "id": "bo-huc",
+          "name": "Bò húc",
+          "price": 17000,
+          "description": "",
+          "image": "",
+          "bestseller": false,
+          "featured": false,
+          "available": true
+        }
+      ]
+    }
+  ]
+}
