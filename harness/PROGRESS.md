@@ -17,7 +17,7 @@ Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>
   `harness/runs/lighthouse-launch-1.1-with-media/` — 100 ×4, home 1008 KB incl. 715 KB
   mobile hero video (≈ 290 KB without it; budget 1.5 MB).
 - taste-skill `consistency.mjs`: 164 → 131 FAIL; the rest are owner-brief overrides recorded
-  in `openspec/changes/launch-performance/proposal.md`.
+  in `openspec/archive/launch-performance/proposal.md`.
 - Final flows at 375/390/1440 all passed (`harness/runs/ui-launch-1.1/final-*`), SEO checks passed.
 - `docs/deploy.md`: Vercel via GitHub, Cloudflare Pages / Netlify fallback, R2/Bunny for heavy
   video, domain purchase + DNS, Google Business Profile and Search Console.

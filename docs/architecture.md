@@ -58,8 +58,22 @@ Rules: `harness/structure.rules.cjs`, run by `./harness/verify.sh` (structure st
 | `src/shared/hooks/use-dialog.js` | Modal focus trap, Esc, scroll lock, body flag (drawer, lightbox) |
 | `src/shared/components/` | Logo, Button (one family), StatusBadge, MediaPlaceholder, brand icons |
 | `src/features/site-chrome/` | `SiteFrame`: header, mobile drawer, footer, contact bar; `ChromeGate` hides them on `BARE_ROUTES` |
-| `harness/ui/flow.mjs` | Browser flow runner over CDP for `out/` (flows in `harness/ui/flows/`) |
-| `public/brand/` | Logo files copied unchanged from `assets/logo/` |
+| `src/data/menu.json`, `src/data/media.json` | Owner menu; media list written by `pnpm media` (captions kept) |
+| `src/shared/{config,api}/menu.js` | Validated menu (Vietnamese errors), featured, options, price range |
+| `src/shared/api/media.js`, `media-core.js` | Media readers (srcset, hero, reels, preview); pipeline helpers |
+| `src/shared/api/{contact,lightbox,seo,routes}.js` | Map/directions URLs, lightbox stepping, JSON-LD, path helpers |
+| `src/shared/components/` | + ResponsiveImage, VideoPoster, MasonryGrid, Lightbox, LazyMap |
+| `src/shared/config/page-meta.js` | Per-route title/description/canonical/OG |
+| `src/features/home/` | Hero, Intro, FeaturedDrinks, Reels, GalleryPreview, Visit, ContactOrder (`/`, `/lien-he`) |
+| `src/features/menu/` | `/menu`: sticky tabs, ruled item rows |
+| `src/features/gallery/` | `/hinh-anh`: filters in `?nhom=`, 24 per page, lightbox |
+| `src/features/print-menu/` | `/menu-in`: one A4 sheet, build-time QR codes |
+| `src/app/{sitemap,robots,manifest}.js` | Static SEO files |
+| `scripts/process-media.mjs` | `pnpm media`: sharp + ffmpeg into `public/media/` |
+| `scripts/make-brand-assets.mjs` | `pnpm brand`: og.png, icons, favicon from the logo |
+| `scripts/flatten-prefetch.mjs` | Post-build fix for Next 16 export prefetch file names |
+| `harness/ui/` | `flow.mjs` + `flows/`, `lighthouse.mjs`, `check-seo.mjs`, `print-pdf.mjs`, `make-fixture-media.mjs` |
+| `public/brand/`, `public/fonts/` | Logo files copied unchanged; self-hosted Montserrat (OFL) |
 
 Route groups are not used: under static export Next 16 writes their prefetch
 files under a name the client never requests (404s). Chrome-less pages are listed
