@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "audit": "./harness/audit-harness.sh",
+    "brand": "node scripts/make-brand-assets.mjs",
     "build": "next build && node scripts/flatten-prefetch.mjs out",
     "dev": "next dev",
     "format": "prettier --write .",

@@ -3,6 +3,21 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — seo-sharing 1.1 + 1.2: metadata, JSON-LD, share image, icons
+
+- Root metadata (metadataBase, title template, OG/Twitter large card with `/og.png`),
+  `pageMetadata()` per route (canonical, OG, `/menu-in/` noindex); `cafeJsonLd()`
+  (CafeOrCoffeeShop: address, geo, hours, menu, priceRange 8.000đ–20.000đ, sameAs) on home;
+  `sitemap.xml` (4 routes), `robots.txt` (disallow /menu-in/), `manifest.webmanifest`.
+- `pnpm brand` (`scripts/make-brand-assets.mjs`): og.png 1200×630 (green, white logo, name;
+  adds a cup photo on the right once menu photos exist — rerun then), icons 192/512/maskable,
+  apple-icon, favicon.ico, all from the unchanged logo SVGs.
+- `harness/ui/check-seo.mjs out` → all SEO checks passed. Gate
+  `harness/runs/20261107-122946-dYf5RV/` (passed, fresh).
+- Post-launch (owner): Google Business Profile (claim "Anh Tú Coffee" pin, same hours/phone,
+  website link, photos), Google Search Console (verify domain, submit /sitemap.xml);
+  set `siteUrl` in site.json to the final domain and rebuild.
+
 ## 2026-11-07 — print-menu 1.1: /menu-in
 
 - `src/features/print-menu`: one A4 portrait sheet from menu.json (brand band with
