@@ -10,7 +10,7 @@
     "src/features/site-chrome": "A",
     "src/shared/api": "A",
     "src/shared/components": "A",
-    "src/shared/config": "A",
+    "src/shared/config": "B",
     "src/shared/hooks": "A",
     "src/shared/types": "A"
   },
@@ -32,25 +32,25 @@
       "bigFiles": 0
     },
     "src/shared/api": {
-      "sourceFiles": 4,
-      "testFiles": 4,
-      "lines": 148,
+      "sourceFiles": 6,
+      "testFiles": 6,
+      "lines": 374,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
     },
     "src/shared/components": {
-      "sourceFiles": 5,
+      "sourceFiles": 7,
       "testFiles": 1,
-      "lines": 180,
+      "lines": 277,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
     },
     "src/shared/config": {
-      "sourceFiles": 2,
+      "sourceFiles": 4,
       "testFiles": 0,
-      "lines": 54,
+      "lines": 98,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -64,9 +64,9 @@
       "bigFiles": 0
     },
     "src/shared/types": {
-      "sourceFiles": 1,
+      "sourceFiles": 2,
       "testFiles": 0,
-      "lines": 18,
+      "lines": 34,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0

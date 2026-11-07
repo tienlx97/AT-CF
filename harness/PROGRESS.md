@@ -3,6 +3,15 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — media-pipeline 1.3: media readers and components
+
+- `src/shared/api/media.js` (srcset, hero landscape/portrait, menu image, gallery, reels,
+  preview, lead photo, video source by height) + tests; `ResponsiveImage` (picture AVIF/WebP,
+  width/height, blur, lazy unless priority) and `VideoPoster` (poster + play, no video load).
+- Task 1.4 blocked: `media-src/` is empty (owner has not copied photos/videos yet). Pages
+  render labelled placeholders until then; continuing with home-page in parallel.
+- Evidence: `harness/runs/20261107-112433-YjrZGr/` (passed, fresh).
+
 ## 2026-11-07 — media-pipeline 1.2: pnpm media
 
 - `scripts/process-media.mjs` (`pnpm media`): sharp AVIF+WebP 480/960/1600 (no upscale),
