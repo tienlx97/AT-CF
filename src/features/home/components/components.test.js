@@ -34,7 +34,10 @@ test('intro splash is CSS-only, decorative, once per session and skipped under r
   assert.match(source, /sessionStorage/);
   assert.doesNotMatch(source, /use client|setInterval|<video|useEffect/);
   assert.match(source, /location\.pathname!=='\/'/);
-  const css = readFileSync(new URL('../../../app/globals.css', import.meta.url), 'utf8');
+  const css = readFileSync(
+    new URL('../../../app/globals.css', import.meta.url),
+    'utf8',
+  );
   assert.match(css, /\.intro-splash \{[^}]*pointer-events: none/);
   assert.match(
     css,
@@ -48,6 +51,19 @@ test('intro facts come from site.json and menu.json', () => {
   assert.match(source, /site\.hours\.store\.open/);
   assert.match(source, /site\.hours\.store\.close/);
   assert.match(source, /visibleCategories\(\)/);
+});
+
+test('intro is an editorial server section with the real owner stall and no invented history', () => {
+  const source = read('intro.jsx');
+  assert.match(source, /\/diary\/quan\/xe-ca-phe\.jpg/);
+  assert.match(source, /Cà phê pha máy\./);
+  assert.match(source, /href="\/menu\/"/);
+  assert.match(source, /href="\/lien-he\/"/);
+  assert.match(source, /loading="lazy"/);
+  assert.doesNotMatch(
+    source,
+    /use client|useEffect|setInterval|Năm mở quán|Thành lập|shadow-|-mt-/,
+  );
 });
 
 test('hero actions are Xem thực đơn and Chỉ đường', () => {

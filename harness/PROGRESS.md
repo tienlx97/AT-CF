@@ -3,6 +3,14 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — layout-readability 1.13: replacement editorial introduction
+
+- Inspected https://kafa.com.vn/about in agent-browser at desktop/mobile; screenshots: harness/runs/ui-intro-reference/. Observed bold multiline about typography, concise story copy and visual/fact hierarchy. Adapted the composition, not Kafa assets, brand colours, history, statistics or copy.
+- Replaced the old overlapping fact card, centered introduction and full-bleed photo pair with a white editorial split: three-line coffee heading, short existing shop copy, menu arrow link, source-derived coffee purity/hours/start-price rows. Actual owner stall photograph is now the primary image, cropped around the cart; existing process-detail photo sits beneath. Phone/tablet stacks copy before images. All imagery lazy-loaded; no new client state/dependency. Hero/navbar and every other section/data/price preserved; gallery exclusions remain stable.
+- Before evidence at 390/768/1024/1440: harness/runs/ui-intro-before/. After: harness/runs/ui-intro-after/result.json and intro/intro-photos screenshots, all checks passed at all four widths: images loaded, responsive composition, source facts, menu navigation, no overflow, no contacts/console errors/404s. Parent reviewed desktop/mobile screenshots. Final screenshot alignment reserves 72px for sticky header; production section itself was not obscured.
+- Fresh full WSL gate passed: harness/runs/20261107-202511-28wiRU/ (fresh true, 51.312s). Added persistent source regression and dedicated home-intro browser flow. init.sh passed all 37 checks. Taste checker still crashes internally with r.sections is not iterable (harness/runs/intro-taste.log), kit unchanged and not claimed passing.
+- No invented facts, new reference assets or deployment. Unrelated Tailwind skill installation preserved. Owner subsequently authorized commit-all then push; parent handles Git, this task worker does not commit/push.
+
 ## 2026-11-07 — layout-readability 1.12: menu and home refinement
 
 - Balanced the menu masthead with a separate desktop action column, retained full-width mobile actions, exposed existing category descriptions, added a 2/3/4-column phone/tablet/desktop grid and subtle card rules. Category navigation wraps rather than hiding links in a swipe strip. No names, prices, photographs or purchase destinations changed.

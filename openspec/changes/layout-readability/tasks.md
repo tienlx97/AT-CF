@@ -1,5 +1,7 @@
 # Tasks
 
+- [x] 1.13 Replace the home introduction and its photographs with a Kafa-about-inspired editorial coffee composition, adapted to green/white identity and existing truthful facts/photos. Preserve hero/navbar and all other sections. Inspect reference in browser, capture before/after at 390/768/1024/1440, add regression checks, run fresh full WSL gate and local scoped commit only.
+
 - [x] 1.12 Refine menu browsing and home section spacing, typography and photographic compositions on desktop/mobile. Preserve owner hero/navbar decisions, green/white identity, existing data/prices and ShopeeFood-only policy. Capture before/after screenshots, verify responsive navigation and content, and run a fresh full WSL gate.
 
 - [x] 1.10 Add an official ShopeeFood floating action at the bottom right with restrained Kafa-inspired motion, reduced-motion and overlay handling; restore the navbar to brand green with the white logo while preserving scroll geometry. Verify target URL, safe positioning, motion, drawer/lightbox/print behavior, contrast and fresh full gate.

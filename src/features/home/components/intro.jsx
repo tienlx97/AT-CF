@@ -1,20 +1,21 @@
+import Image from 'next/image';
+
 import { formatPrice, shortTime } from '@/shared/api/format';
 import { leadPhoto } from '@/shared/api/media';
 import { priceRange, visibleCategories } from '@/shared/api/menu';
-import { MediaPlaceholder } from '@/shared/components/media-placeholder';
 import { ResponsiveImage } from '@/shared/components/responsive-image';
 import { site } from '@/shared/config/site';
 
-/** The intro's photo pair; the gallery preview skips them so no photo shows twice. */
+/** Keep the reserved gallery selection stable when the introduction changes. */
 export function introPhotos() {
   return [leadPhoto('pha-che'), leadPhoto('do-uong')];
 }
 
-const WANTED = ['Ảnh quầy pha máy', 'Ảnh ly cà phê mang đi'];
-
 /** Useful shop facts; coffee pricing stays distinct from bottled drinks. */
 function facts() {
-  const coffee = visibleCategories().find((category) => category.id === 'ca-phe');
+  const coffee = visibleCategories().find(
+    (category) => category.id === 'ca-phe',
+  );
   const startingPrice = coffee
     ? Math.min(...coffee.items.map((item) => item.price))
     : priceRange().min;
@@ -24,71 +25,90 @@ function facts() {
       label: 'Bán tại quầy',
       value: `${shortTime(site.hours.store.open)} – ${shortTime(site.hours.store.close)}`,
     },
-    { label: coffee ? 'Cà phê từ' : 'Đồ uống từ', value: formatPrice(startingPrice) },
+    {
+      label: coffee ? 'Cà phê từ' : 'Đồ uống từ',
+      value: formatPrice(startingPrice),
+    },
   ];
 }
 
-/**
- * Compact practical facts, a short introduction to the take-away stall,
- * then photographs of preparation and drinks.
- */
+/** Server-rendered editorial introduction: our real stall, not another cafe. */
 export function Intro() {
-  const photos = introPhotos();
+  const preparation = introPhotos()[0];
   return (
-    <section aria-labelledby="gioi-thieu" className="bg-surface-alt pb-0">
-      <div className="site-wrap relative z-10 -mt-8 md:-mt-12">
-        <dl className="grid divide-y divide-brand-ink/10 rounded-[2px] bg-surface shadow-[0_4px_24px_rgb(31_61_49/0.08)] md:grid-cols-3 md:divide-x md:divide-y-0">
-          {facts().map((fact) => (
-            <div
-              key={fact.label}
-              className="flex items-center justify-between gap-4 px-5 py-5 md:flex-col md:items-start md:gap-2 md:px-7 md:py-6"
+    <section aria-labelledby="gioi-thieu" className="home-about bg-surface">
+      <div className="site-wrap py-16 md:py-24">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col items-start">
+            <p className="label-caps text-brand">Về Anh Tú</p>
+            <h2
+              id="gioi-thieu"
+              className="mt-5 max-w-xl text-[2.5rem] leading-[1.12] font-semibold tracking-tight sm:text-5xl xl:text-[4rem]"
             >
-              <dt className="text-sm leading-snug font-semibold">{fact.label}</dt>
-              <dd className="shrink-0 text-xl leading-snug font-bold whitespace-nowrap text-brand tabular-nums md:text-2xl">
-                {fact.value}
-              </dd>
+              Cà phê pha máy.
+              <br />
+              Nguyên chất.
+              <br />
+              Tiện mang đi.
+            </h2>
+            <p className="mt-7 max-w-lg text-lg leading-relaxed">
+              {site.intro}
+            </p>
+            <a
+              href="/menu/"
+              className="link-arrow mt-7 inline-flex min-h-11 items-center gap-3 font-semibold text-brand"
+            >
+              Xem thực đơn <span aria-hidden="true">→</span>
+            </a>
+            <dl className="mt-10 w-full divide-y divide-brand-ink/15 border-t border-brand-ink/15 lg:mt-auto lg:pt-8 lg:border-t-0">
+              {facts().map((fact) => (
+                <div
+                  key={fact.label}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-4"
+                >
+                  <dt className="text-base">{fact.label}</dt>
+                  <dd className="text-lg font-semibold whitespace-nowrap text-brand tabular-nums">
+                    {fact.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <div className="grid grid-cols-3 gap-4 self-start lg:gap-6">
+            <a
+              href="/lien-he/"
+              aria-label="Xem địa chỉ quầy Anh Tú Coffee"
+              className="zoom-frame col-span-3 block aspect-[4/3] overflow-hidden bg-surface-alt"
+            >
+              <Image
+                src="/diary/quan/xe-ca-phe.jpg"
+                alt="Quầy cà phê mang đi Anh Tú trên Đường A8"
+                width={1400}
+                height={1867}
+                sizes="(min-width: 1024px) 46vw, 94vw"
+                loading="lazy"
+                className="h-full w-full object-cover object-[35%_70%]"
+              />
+            </a>
+            {preparation ? (
+              <div className="zoom-frame col-span-2 aspect-[2/1] overflow-hidden">
+                <ResponsiveImage
+                  item={preparation}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, 62vw"
+                />
+              </div>
+            ) : null}
+            <div
+              aria-hidden="true"
+              className="flex items-end justify-end text-right text-sm leading-relaxed font-semibold tracking-[0.16em] text-brand"
+            >
+              ANH TÚ
+              <br />
+              COFFEE
             </div>
-          ))}
-        </dl>
-      </div>
-
-      <div className="site-wrap py-16 text-center md:py-20">
-        <p className="label-caps flex items-center justify-center gap-4 text-brand">
-          <span aria-hidden="true" className="h-px w-12 bg-brand/50" />
-          Giới thiệu
-          <span aria-hidden="true" className="h-px w-12 bg-brand/50" />
-        </p>
-        <h2
-          id="gioi-thieu"
-          className="mx-auto mt-4 max-w-3xl text-3xl leading-tight font-semibold tracking-tight md:text-[2.75rem]"
-        >
-          Cà phê mang đi trên Đường A8
-        </h2>
-        <span
-          aria-hidden="true"
-          className="mx-auto mt-6 block h-1 w-20 bg-brand [clip-path:polygon(0_0,100%_0,calc(100%-6px)_100%,6px_100%)]"
-        />
-        <p className="mx-auto mt-7 max-w-3xl text-lg leading-relaxed md:text-xl">
-          {site.intro}
-        </p>
-      </div>
-
-      <div className="grid sm:grid-cols-2">
-        {photos.map((photo, index) =>
-          photo ? (
-            <div key={photo.id} className="zoom-frame aspect-[4/3] md:aspect-[16/11]">
-              <ResponsiveImage item={photo} fill sizes="(min-width: 640px) 50vw, 100vw" />
-            </div>
-          ) : (
-            <MediaPlaceholder
-              key={WANTED[index]}
-              label={WANTED[index]}
-              ratio="16 / 11"
-              tone="brand"
-              className={index === 1 ? 'border-t border-white/15 sm:border-t-0 sm:border-l' : ''}
-            />
-          ),
-        )}
+          </div>
+        </div>
       </div>
     </section>
   );

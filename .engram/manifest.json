@@ -48,6 +48,14 @@
       "sessions": 1,
       "memories": 2,
       "prompts": 0
+    },
+    {
+      "id": "136b2171",
+      "created_by": "Admin",
+      "created_at": "2026-11-07T13:26:50.4196741Z",
+      "sessions": 1,
+      "memories": 2,
+      "prompts": 0
     }
   ]
 }

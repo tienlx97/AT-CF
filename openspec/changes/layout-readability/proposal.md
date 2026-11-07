@@ -19,6 +19,10 @@ Owner requests one hero slide similar in setup to https://giaoyeniz.com/ with le
 
 Place: take-away coffee. Retain the existing green/white palette, Montserrat pairing and owner-approved hero/navbar without re-dealing them. Refine the menu as an always-visible category index and clear, spacious category groups; keep every price/name and uncropped product image. On home, keep the centered Thực đơn direction while improving product-card spacing and consistent section headings; use the existing introduction photo pair and gallery composition, no invented photography or claims. Responsive layouts must preserve readable 16px body text, usable category links, equal content edges and reduced-motion behavior. Before/after screenshots and fresh full WSL evidence are required. No deployment or push.
 
+## Owner follow-up: replace introduction (task 1.13)
+
+Place: take-away coffee. Replace only the home introduction and its photographic composition, inspired by browser-observed https://kafa.com.vn/about: assertive editorial heading, concise about copy, photography and practical coffee facts. Retain existing green/white tokens and Montserrat, hero/navbar and every other recent improvement. No Kafa assets, copy, history or business claims; use existing licensed process photography and/or the supplied real stall photo. Capture before/after at 390/768/1024/1440, maintain source-derived hours/prices, add persistent intro regression checks and fresh full WSL gate. Local scoped commit only; no push/deploy.
+
 ## Verification
 Build and full WSL gate; browser chrome/menu/home flows at mobile and desktop, screenshots at 390/768/1024/1440. No horizontal overflow; print remains one A4 page.
 
