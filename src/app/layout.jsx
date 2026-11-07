@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="vi" className={montserrat.variable}>
       <body className="font-sans antialiased">
-        `n <SiteFrame>{children}</SiteFrame>`n{' '}
+        <SiteFrame>{children}</SiteFrame>
       </body>
     </html>
   );

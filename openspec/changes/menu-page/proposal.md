@@ -1,6 +1,6 @@
 # Proposal: menu-page
 
-**Status:** in-progress
+**Status:** done
 **Created:** 2026-11-07
 
 ## Why
@@ -23,4 +23,5 @@ to add items and categories by editing JSON only. Source: `ANH-TU-PROMP.md` sect
 | Date | Decision | Why |
 |---|---|---|
 | 2026-11-07 | Menu data reader lives in `src/shared/{config,api}/menu.js`, not inside the menu feature | Home (featured), `/menu` and `/menu-in` all read it; features cannot import each other |
+| 2026-11-07 | Menu items shown as ruled rows (photo thumb, name, price, description) in 2 columns on desktop, 1 on phone, instead of photo cards | taste-skill place: menus as `.rows`; reads well with 2 or 30 items; photos still show once supplied |
 | 2026-11-07 | Item descriptions are proposals for the owner to approve; small bottled drinks have none | Brief 5: "mô tả ngắn Claude đề xuất, tôi duyệt lại" |

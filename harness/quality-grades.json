@@ -7,18 +7,27 @@
   },
   "grades": {
     "src/app": "A",
+    "src/features/menu": "A",
     "src/features/site-chrome": "A",
     "src/shared/api": "A",
     "src/shared/components": "A",
-    "src/shared/config": "B",
+    "src/shared/config": "A",
     "src/shared/hooks": "A",
     "src/shared/types": "A"
   },
   "metrics": {
     "src/app": {
-      "sourceFiles": 2,
+      "sourceFiles": 3,
       "testFiles": 0,
-      "lines": 72,
+      "lines": 84,
+      "lintWarnings": 0,
+      "autofixWarnings": 0,
+      "bigFiles": 0
+    },
+    "src/features/menu": {
+      "sourceFiles": 7,
+      "testFiles": 1,
+      "lines": 270,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -32,9 +41,9 @@
       "bigFiles": 0
     },
     "src/shared/api": {
-      "sourceFiles": 6,
-      "testFiles": 6,
-      "lines": 374,
+      "sourceFiles": 7,
+      "testFiles": 8,
+      "lines": 413,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -48,9 +57,9 @@
       "bigFiles": 0
     },
     "src/shared/config": {
-      "sourceFiles": 4,
-      "testFiles": 0,
-      "lines": 98,
+      "sourceFiles": 5,
+      "testFiles": 1,
+      "lines": 157,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
@@ -64,9 +73,9 @@
       "bigFiles": 0
     },
     "src/shared/types": {
-      "sourceFiles": 2,
+      "sourceFiles": 3,
       "testFiles": 0,
-      "lines": 34,
+      "lines": 46,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0

@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "audit": "./harness/audit-harness.sh",
-    "build": "next build",
+    "build": "next build && node scripts/flatten-prefetch.mjs out",
     "dev": "next dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

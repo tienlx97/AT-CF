@@ -1,3 +1,8 @@
+// Text nodes holding leaked template/escape artefacts (a backtick-n, "undefined", "NaN").
+const STRAY_TEXT = String.raw`[...document.querySelectorAll('body, body *:not(script):not(style)')]
+  .flatMap((el) => [...el.childNodes])
+  .filter((n) => n.nodeType === 3 && /\x60n|\\n|\bundefined\b|\bNaN\b|\[object /.test(n.textContent))
+  .map((n) => n.textContent.trim().slice(0, 30))`;
 // Checks every page must pass at every width (openspec/project.md thresholds).
 export async function pageBasics(page, check, label) {
   const overflow = await page.eval('document.documentElement.scrollWidth - window.innerWidth');
@@ -12,6 +17,8 @@ export async function pageBasics(page, check, label) {
       .map((el) => (el.textContent || el.getAttribute('aria-label') || el.tagName).trim().slice(0, 30))`);
     check(`${label}: touch targets >= 44px`, small.length === 0, small.slice(0, 5).join(', '));
   }
+  const stray = await page.eval(STRAY_TEXT);
+  check(`${label}: no stray literal text`, stray.length === 0, stray.join(' | '));
   const lang = await page.eval('document.documentElement.lang');
   check(`${label}: lang="vi"`, lang === 'vi');
   const h1 = await page.eval('document.querySelectorAll("h1").length');

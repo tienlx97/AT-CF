@@ -3,6 +3,19 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — menu-page 1.2: /menu
+
+- `src/features/menu`: MenuPage (header with price range, call + print buttons), sticky`n  CategoryTabs with scroll-spy, MenuCategory (options, ruled 2-column rows), MenuItemCard`n  (photo or name frame, Bán chạy, Tạm hết dimmed). Route `src/app/menu/page.jsx`.
+- Fixed: stray ```
+` text in `src/app/layout.jsx` since site-foundation 2.1 (PowerShell escape
+  inside a here-string). Harness: `harness/ui/flows/common.mjs` now fails on stray literal text
+  (proved against the old layout).
+- Fixed: Next 16 export writes `menu/__next.menu/__PAGE__.txt` but the router requests
+  `menu/__next.menu.__PAGE__.txt` (404 on every client navigation). `scripts/flatten-prefetch.mjs`
+  runs after `next build` (tested).
+- UI: `harness/runs/ui-menu-page-1.2/` all checks passed at 390/1440, incl. a temporary 25-item
+  category (`stress/`, not committed). Gate: `harness/runs/20261107-113204-GRdx2b/` (passed, fresh).
+
 ## 2026-11-07 — menu-page 1.1: menu.json and readers
 
 - `src/data/menu.json` (13 provisional items, options đường/đá, descriptions proposed for owner
