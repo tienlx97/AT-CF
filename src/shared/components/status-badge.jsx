@@ -23,7 +23,7 @@ export function StatusBadge({ tone = 'light', className = '' }) {
   const skin =
     tone === 'light'
       ? 'bg-black/35 text-white ring-1 ring-white/25'
-      : 'bg-surface-alt text-brand-ink';
+      : 'bg-surface text-brand-ink ring-1 ring-brand-ink/10';
   return (
     <p
       className={`inline-flex min-h-9 items-center gap-2 rounded-full px-3.5 text-sm font-semibold ${skin} ${className}`}

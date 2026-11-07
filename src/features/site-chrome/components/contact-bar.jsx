@@ -10,7 +10,7 @@ const PILL =
 export function ContactBar() {
   return (
     <div className="contact-bar fixed right-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] z-30 flex gap-2 md:hidden">
-      <a href={telHref(site.phone)} className={`${PILL} bg-brand text-white`}>
+      <a href={telHref(site.phone)} className={`${PILL} bg-brand text-white ring-2 ring-white`}>
         <Phone aria-hidden="true" className="size-5" />
         Gọi
       </a>

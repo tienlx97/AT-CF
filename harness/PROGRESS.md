@@ -3,6 +3,17 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — home-page 1.5: hours, map, contact/order, /lien-he
+
+- `Visit` (live status, hours rows, address, directions to coordinates, `LazyMap`: still
+  card; iframe on tap on phones, on approach on desktop), `ContactOrder` (#dat-online:
+  ShopeeFood/GrabFood buttons only for filled links, otherwise phone/Zalo fallback; tel,
+  Zalo, Facebook cards). `/lien-he` reuses both with its own h1. `src/shared/api/contact.js` tested.
+- Order links verified both ways: empty → no buttons + fallback; filled (temporary
+  site.json edit, reverted) → two buttons and header CTA "Đặt online" in online hours.
+- UI `harness/runs/ui-home-1.5/` (empty-links, with-links, regress-*). Gate
+  `harness/runs/20261107-121449-EqEQ5W/` (passed, fresh).
+
 ## 2026-11-07 — home-page 1.4: gallery preview
 
 - Shared `MasonryGrid` (CSS columns, tiles open the lightbox, lazy, true ratio boxes);

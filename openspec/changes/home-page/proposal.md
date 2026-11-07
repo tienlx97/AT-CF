@@ -1,6 +1,6 @@
 # Proposal: home-page
 
-**Status:** in-progress
+**Status:** done
 **Created:** 2026-11-07
 
 ## Why
