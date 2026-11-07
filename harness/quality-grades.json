@@ -20,15 +20,15 @@
     "src/app": {
       "sourceFiles": 3,
       "testFiles": 0,
-      "lines": 53,
+      "lines": 59,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0
     },
     "src/features/home": {
-      "sourceFiles": 4,
+      "sourceFiles": 7,
       "testFiles": 1,
-      "lines": 185,
+      "lines": 367,
       "lintWarnings": 0,
       "autofixWarnings": 0,
       "bigFiles": 0

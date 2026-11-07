@@ -99,6 +99,10 @@ body[data-drawer='open'] .contact-bar {
 }
 
 @layer base {
+  /* Anchored targets clear the fixed header. */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
   :focus-visible {
     outline: 2px solid var(--color-brand);
     outline-offset: 2px;

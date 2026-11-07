@@ -1,5 +1,11 @@
-import { Hero } from '@/features/home';
+import { FeaturedDrinks, Hero, Intro } from '@/features/home';
 
 export default function HomePage() {
-  return <Hero />;
+  return (
+    <>
+      <Hero />
+      <Intro />
+      <FeaturedDrinks />
+    </>
+  );
 }

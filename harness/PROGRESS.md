@@ -3,6 +3,24 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — home-page 1.2: intro and featured drinks
+
+- `Intro` (story + 3 facts + large photo or placeholder), `FeaturedDrinks` (menu.json
+  `featured`, 4:5 cards, Bán chạy), shared `SectionHead`. `[id]` scroll-margin for the header.
+- Price change test: ca-phe-muoi 20000 → 22000 showed `22.000đ` on home and `/menu`
+  (reverted). UI `harness/runs/ui-home-1.2/` passed 390/1440. Gate
+  `harness/runs/20261107-113750-mP0ZfR/` (passed, fresh).
+
+## 2026-11-07 — home-page 1.1: hero
+
+- `src/features/home`: Hero (poster picture, landscape/portrait video picked after mount,
+  green veil, status badge, h1 + hours, Xem menu / Chỉ đường), `useHeroVideo`
+  (`useSyncExternalStore` over matchMedia + Save-Data), slogan options in `config/hero.js`.
+- UI: `harness/runs/ui-home-1.1/{no-media,with-media,reduced}/` all passed at 390/1440:
+  phone plays `doc-720.mp4`, desktop `ngang-1080.mp4`, one mp4 each; reduced motion
+  requests none. Fixture hero videos were generated, then removed (not committed).
+- Gate: `harness/runs/20261107-113549-tTVOga/` (passed, fresh).
+
 ## 2026-11-07 — menu-page 1.2: /menu
 
 - `src/features/menu`: MenuPage (header with price range, call + print buttons), sticky
