@@ -5,10 +5,12 @@ Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>
 
 ## 2026-11-07 — menu-page 1.2: /menu
 
-- `src/features/menu`: MenuPage (header with price range, call + print buttons), sticky`n  CategoryTabs with scroll-spy, MenuCategory (options, ruled 2-column rows), MenuItemCard`n  (photo or name frame, Bán chạy, Tạm hết dimmed). Route `src/app/menu/page.jsx`.
-- Fixed: stray ```
-` text in `src/app/layout.jsx` since site-foundation 2.1 (PowerShell escape
-  inside a here-string). Harness: `harness/ui/flows/common.mjs` now fails on stray literal text
+- `src/features/menu`: MenuPage (header with price range, call + print buttons), sticky
+  CategoryTabs with scroll-spy, MenuCategory (options, ruled 2-column rows), MenuItemCard
+  (photo or name frame, Bán chạy, Tạm hết dimmed). Route `src/app/menu/page.jsx`.
+- Fixed: stray "backtick-n" text in `src/app/layout.jsx` since site-foundation 2.1 (PowerShell
+  escape written into source). Harness gap closed: write source files with the write/edit
+  tools, never PowerShell string replacement with backtick escapes. Harness: `harness/ui/flows/common.mjs` now fails on stray literal text
   (proved against the old layout).
 - Fixed: Next 16 export writes `menu/__next.menu/__PAGE__.txt` but the router requests
   `menu/__next.menu.__PAGE__.txt` (404 on every client navigation). `scripts/flatten-prefetch.mjs`
