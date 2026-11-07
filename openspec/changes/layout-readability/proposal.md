@@ -15,6 +15,10 @@ Keep Anh Tú branding and routes. Widen the shared content frame to 1600px with 
 ## Owner follow-up: home hero
 Owner requests one hero slide similar in setup to https://giaoyeniz.com/ with less text. Keep the existing brand palette/type and approved static photography (no video, autoplay or carousel). Use one full-screen image layer with compact left-aligned brand/category/location text and existing menu/directions actions; remove the status badge, long paragraph, hours and repeated street line from this hero only. The visit section retains detailed practical information. Real space photography is still pending; retain the honest brand-colour fallback, never borrow the reference's imagery. This targeted owner direction overrides the taste kit's default place hero (text below photograph); do not restyle unrelated sections.
 
+## Owner follow-up: menu and home refinement (task 1.12)
+
+Place: take-away coffee. Retain the existing green/white palette, Montserrat pairing and owner-approved hero/navbar without re-dealing them. Refine the menu as an always-visible category index and clear, spacious category groups; keep every price/name and uncropped product image. On home, keep the centered Thực đơn direction while improving product-card spacing and consistent section headings; use the existing introduction photo pair and gallery composition, no invented photography or claims. Responsive layouts must preserve readable 16px body text, usable category links, equal content edges and reduced-motion behavior. Before/after screenshots and fresh full WSL evidence are required. No deployment or push.
+
 ## Verification
 Build and full WSL gate; browser chrome/menu/home flows at mobile and desktop, screenshots at 390/768/1024/1440. No horizontal overflow; print remains one A4 page.
 

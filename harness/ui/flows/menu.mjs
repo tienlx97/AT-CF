@@ -11,6 +11,17 @@ export default async function menuFlow(page, { width, check }) {
   check('all categories render', groups.length >= 2, groups.join(', '));
   const tabs = await page.eval('[...document.querySelectorAll("nav[aria-label=\'Nhóm món\'] a")].length');
   check('category tabs present', tabs === groups.length, `${tabs} tabs`);
+  const browsing = await page.eval(`({
+    links: [...document.querySelectorAll('nav[aria-label="Nhóm món"] a')].map(a => ({
+      target: Boolean(document.querySelector(a.getAttribute('href'))),
+      visible: a.getBoundingClientRect().left >= 0 && a.getBoundingClientRect().right <= innerWidth
+    })),
+    descriptions: [...document.querySelectorAll('.menu-category-head p')].every(p => p.textContent.trim().length > 0),
+    columns: getComputedStyle(document.querySelector('main section .grid')).gridTemplateColumns.split(' ').length
+  })`);
+  check('all category links are visible without sideways scrolling and resolve', browsing.links.every(a => a.target && a.visible));
+  check('category descriptions remain readable from source data', browsing.descriptions);
+  check('menu grid adapts to phone tablet desktop', browsing.columns === (width >= 1024 ? 4 : width >= 768 ? 3 : 2), `${browsing.columns} columns`);
   await page.scrollTo(1400);
   const stuck = await page.eval('Math.round(document.querySelector("nav[aria-label=\'Nhóm món\']").getBoundingClientRect().top)');
   check('tabs stick under the header', stuck > 40 && stuck < 90, `top ${stuck}`);

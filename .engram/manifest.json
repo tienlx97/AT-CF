@@ -40,6 +40,14 @@
       "sessions": 1,
       "memories": 1,
       "prompts": 0
+    },
+    {
+      "id": "c1535ba7",
+      "created_by": "Admin",
+      "created_at": "2026-11-07T09:44:54.034129Z",
+      "sessions": 1,
+      "memories": 2,
+      "prompts": 0
     }
   ]
 }

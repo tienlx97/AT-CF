@@ -22,7 +22,7 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
     />
   ) : (
     <div className="flex h-full w-full items-center justify-center bg-surface-alt p-3 text-center">
-      <span className="text-[0.6875rem] leading-snug font-bold tracking-[0.18em] text-brand-ink/80 uppercase">
+      <span className="text-sm leading-snug font-medium text-brand-ink">
         {item.name}
       </span>
     </div>
@@ -42,7 +42,9 @@ export function MenuItemCard({ item, layout = 'card', priority = false }) {
           </span>
         ) : null}
       </div>
-      <div className={`flex min-w-0 flex-1 flex-col ${row ? '' : 'pt-4'}`}>
+      <div
+        className={`flex min-w-0 flex-1 flex-col ${row ? '' : 'border-b border-brand-ink/15 pt-5 pb-5'}`}
+      >
         <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
           <h3 className="text-lg leading-snug font-bold">{item.name}</h3>
           <p className="shrink-0 text-lg font-extrabold text-brand tabular-nums">

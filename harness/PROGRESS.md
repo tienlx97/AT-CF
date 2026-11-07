@@ -3,6 +3,14 @@
 Entries newer than 14 days, newest first. Older ones: harness/progress/<YYYY-MM>.md
 (`node harness/progress-rotate.mjs`). Add new entries at the top.
 
+## 2026-11-07 — layout-readability 1.12: menu and home refinement
+
+- Balanced the menu masthead with a separate desktop action column, retained full-width mobile actions, exposed existing category descriptions, added a 2/3/4-column phone/tablet/desktop grid and subtle card rules. Category navigation wraps rather than hiding links in a swipe strip. No names, prices, photographs or purchase destinations changed.
+- Home keeps the approved centered menu composition, uncropped cup-ready photographs, hero and green/white navbar. Refined menu spacing, sentence-case heading and lighter consistent section typography across introduction/gallery/reels/visit.
+- Fresh full WSL gate passed: harness/runs/20261107-164207-axhIfA/ (fresh true). Menu and home-featured browser flows passed at 390/768/1024/1440: harness/runs/ui-refinement-menu-after/result.json and harness/runs/ui-refinement-home-after/result.json. Before screenshots: ui-refinement-baseline/ and ui-refinement-home-baseline/; after screenshots reviewed desktop/mobile including menu, introduction and featured drinks. Added persistent category-link visibility/target, description and responsive-column checks to menu flow. init.sh: 37 checks passed.
+- Print-menu flow passed 390/1440 (all items, two QR codes, ShopeeFood, no site chrome): harness/runs/ui-refinement-print/result.json. Site-chrome assertions passed both widths (green/white logo, 0px geometry shift, contrast 11.86, drawer focus/Escape) but the final screenshot stalled; interrupted that optional run and do not claim a complete site-chrome result.json.
+- Harness gaps: root out/ initially held a pre-ShopeeFood export; rebuilt current sources before baseline, and excluded the stale ui-refinement-before/ results. Whole-file Prettier introduced legacy format churn; restored original formatting around scoped edits and reran the gate successfully. Taste layout checker still fails internally with r.sections is not iterable (existing Next/site-wrap incompatibility); kit unchanged, not claimed passing. No new assets, dependencies, assumed business facts, push or deployment.
+
 ## 2026-11-07 — layout-readability 1.11: owner-reference journal
 
 - Added /nhat-ky/ and six statically exported /nhat-ky/[id]/ articles using the content from E:/VIBE CODE/ANH-TU-COFFEE without modifying the reference project. New journal feature exposes its pages and entries only through index.js. Editable copy: src/data/journal.json; illustrations: public/diary/. Preserved supplied dates/stories; explicitly labeled the reference SVG placeholders and omitted missing placeholder videos.

@@ -13,7 +13,7 @@ export function CategoryTabs({ tabs }) {
       aria-label="Nhóm món"
       className="sticky top-16 z-30 border-b border-brand-ink/10 bg-surface/95 backdrop-blur md:top-[4rem]"
     >
-      <ul className="site-wrap flex gap-2 overflow-x-auto py-3 [scrollbar-width:none]">
+      <ul className="site-wrap flex flex-wrap gap-2 py-3">
         {tabs.map((tab) => {
           const current = tab.id === active;
           return (

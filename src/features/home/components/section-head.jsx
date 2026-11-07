@@ -15,7 +15,7 @@ export function SectionHead({ id, label, title, lead, link, tone = 'dark' }) {
         <p className={`label-caps ${accent}`}>{label}</p>
         <h2
           id={id}
-          className="mt-3 text-3xl leading-tight font-extrabold tracking-tight md:text-[2.75rem]"
+          className="mt-3 text-3xl leading-tight font-semibold tracking-tight md:text-[2.75rem]"
         >
           {title}
         </h2>

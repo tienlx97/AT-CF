@@ -1,5 +1,7 @@
 # Tasks
 
+- [x] 1.12 Refine menu browsing and home section spacing, typography and photographic compositions on desktop/mobile. Preserve owner hero/navbar decisions, green/white identity, existing data/prices and ShopeeFood-only policy. Capture before/after screenshots, verify responsive navigation and content, and run a fresh full WSL gate.
+
 - [x] 1.10 Add an official ShopeeFood floating action at the bottom right with restrained Kafa-inspired motion, reduced-motion and overlay handling; restore the navbar to brand green with the white logo while preserving scroll geometry. Verify target URL, safe positioning, motion, drawer/lightbox/print behavior, contrast and fresh full gate.
 
 - [x] 1.8 Add the owner's localized desktop title overlay, refine the navbar while preserving scroll alignment, and redesign the home drinks section as Thực đơn inspired by Cộng's category/product presentation with uncropped cup-ready image slots. Preserve menu data/prices and verify overlay geometry, responsive menu/navigation, full gate and screenshots.

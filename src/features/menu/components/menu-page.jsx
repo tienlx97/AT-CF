@@ -19,16 +19,18 @@ export function MenuPage() {
   return (
     <>
       <header className="bg-surface-alt pt-28 pb-12 md:pt-36 md:pb-16">
-        <div className="site-wrap">
-          <p className="label-caps text-brand">Cà phê pha máy · Mang đi</p>
-          <h1 className="mt-3 text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl">
-            Thực đơn Anh Tú
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-ink">
-            Giá từ {formatPrice(range.min)} đến {formatPrice(range.max)} một ly.
-            Cập nhật {formatDate(menu.updatedAt)}.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="site-wrap menu-page-head">
+          <div>
+            <p className="label-caps text-brand">Cà phê pha máy · Mang đi</p>
+            <h1 className="mt-3 text-4xl leading-[1.05] font-extrabold tracking-tight md:text-6xl">
+              Thực đơn Anh Tú
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg text-brand-ink">
+              Giá từ {formatPrice(range.min)} đến {formatPrice(range.max)} một
+              ly. Cập nhật {formatDate(menu.updatedAt)}.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col lg:items-stretch">
             {order ? (
               <Button href={order.href}>
                 <ShoppingBag aria-hidden="true" className="size-5" />

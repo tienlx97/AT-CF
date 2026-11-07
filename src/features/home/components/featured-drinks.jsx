@@ -24,12 +24,12 @@ export function FeaturedDrinks() {
   return (
     <section
       aria-labelledby="mon-noi-bat"
-      className="bg-surface-alt py-16 md:py-20"
+      className="bg-surface-alt py-20 md:py-28"
     >
       <div className="site-wrap text-center">
         <h2
           id="mon-noi-bat"
-          className="text-3xl font-extrabold tracking-[0.08em] uppercase md:text-4xl"
+          className="text-3xl font-semibold tracking-tight md:text-[2.75rem]"
         >
           Thực đơn
         </h2>
@@ -47,7 +47,7 @@ export function FeaturedDrinks() {
             </Link>
           ))}
         </nav>
-        <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-8">
+        <ul className="mt-10 grid grid-cols-2 gap-x-4 gap-y-10 md:mt-12 md:grid-cols-4 md:gap-x-8">
           {items.map((item) => {
             const photo = menuImage(item.image);
             return (
@@ -73,7 +73,7 @@ export function FeaturedDrinks() {
                       </div>
                     )}
                   </div>
-                  <h3 className="mt-4 text-lg font-bold md:text-xl">
+                  <h3 className="mt-5 text-base leading-snug font-semibold md:text-xl">
                     {item.name}
                   </h3>
                   <p className="mt-1 text-base font-semibold text-brand tabular-nums">

@@ -60,7 +60,7 @@ export function Intro() {
         </p>
         <h2
           id="gioi-thieu"
-          className="mx-auto mt-4 max-w-3xl text-3xl leading-tight font-extrabold tracking-tight md:text-5xl"
+          className="mx-auto mt-4 max-w-3xl text-3xl leading-tight font-semibold tracking-tight md:text-[2.75rem]"
         >
           Cà phê mang đi trên Đường A8
         </h2>

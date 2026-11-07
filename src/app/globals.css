@@ -82,6 +82,33 @@
   }
 }
 
+/* Menu keeps the shared page edges; heading and actions balance without a tall empty masthead. */
+.menu-page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.menu-category-head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 1024px) {
+  .menu-page-head,
+  .menu-category-head {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .menu-page-head > :first-child {
+    max-width: 48rem;
+  }
+  .menu-page-head > :last-child {
+    flex-shrink: 0;
+  }
+}
+
 @layer components {
   .skip-link {
     position: fixed;
